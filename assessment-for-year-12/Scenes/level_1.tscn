@@ -8,6 +8,7 @@
 texture = ExtResource("1_vk57k")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -74,6 +75,7 @@ texture_region_size = Vector2i(128, 128)
 
 [sub_resource type="TileSet" id="TileSet_xfk5q"]
 tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8ffim")
 
 [node name="Level1" type="Node2D" unique_id=1070369827]
@@ -84,5 +86,5 @@ tile_map_data = PackedByteArray("AAABAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAFAAQAAAAAAAA
 tile_set = SubResource("TileSet_xfk5q")
 
 [node name="Player" parent="." unique_id=448143370 instance=ExtResource("2_8ffim")]
-position = Vector2(42, 184)
+position = Vector2(31, 182)
 script = ExtResource("3_xfk5q")
