@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://dogrnujfdfeju"]
 
 [ext_resource type="Texture2D" uid="uid://1wq6fbqvr71j" path="res://icon.svg" id="1_vk57k"]
+[ext_resource type="PackedScene" uid="uid://jrk3tr2k7wke" path="res://Sprites/player.tscn" id="2_8ffim"]
+[ext_resource type="Script" uid="uid://5xvylk7bl2os" path="res://Sprites/player.gd" id="3_xfk5q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ffim"]
 texture = ExtResource("1_vk57k")
@@ -80,3 +82,7 @@ sources/0 = SubResource("TileSetAtlasSource_8ffim")
 scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AAABAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAALAAQAAAAAAAAAAAANAAQAAAAAAAAAAAAPAAQAAAAAAAAAAAARAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_xfk5q")
+
+[node name="Player" parent="." unique_id=448143370 instance=ExtResource("2_8ffim")]
+position = Vector2(42, 184)
+script = ExtResource("3_xfk5q")
