@@ -1,5 +1,21 @@
 [gd_scene format=3 uid="uid://q8jc6iae6ehc"]
 
+[ext_resource type="Texture2D" uid="uid://c4lu2ttjgd4oo" path="res://LabPlaceholder (1).jpg" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://da4k7xnc56qn4" path="res://Scenes/main_menu.gd" id="1_xhh6f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xhh6f"]
+texture = ExtResource("1_1rerr")
+modulate_color = Color(0.61339027, 0.61339027, 0.6133901, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4yt8"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.61)
+
 [node name="MainMenu" type="Control" unique_id=1074313591]
 layout_mode = 3
 anchors_preset = 15
@@ -7,17 +23,80 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xhh6f")
 
-[node name="Button" type="Button" parent="." unique_id=958320903]
+[node name="Background" type="Panel" parent="." unique_id=878178166]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -116.5
-offset_top = -32.5
-offset_right = 116.5
-offset_bottom = 32.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xhh6f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=535067310]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.337
+anchor_top = 0.35000002
+anchor_right = 0.69200003
+anchor_bottom = 0.71800005
+offset_left = 1.776001
+offset_top = 0.19998169
+offset_right = -0.184021
+offset_bottom = -0.2640381
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Start Game" type="Button" parent="VBoxContainer" unique_id=958320903]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_u4yt8")
+text = "Start Game"
+
+[node name="Achievements" type="Button" parent="VBoxContainer" unique_id=534995145]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_u4yt8")
+text = "Achievements"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1596786288]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_u4yt8")
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=424130093]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_u4yt8")
+text = "Quit"
+
+[node name="Label" type="Label" parent="." unique_id=819532593]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 15.0
+offset_right = 139.0
+offset_bottom = 113.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 86
+text = "Labratory Bolt"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Achievements" to="." method="_on_achievements_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

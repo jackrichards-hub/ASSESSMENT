@@ -1,3 +1,100 @@
-[gd_scene format=3 uid="uid://dpok11347aj7w"]
+[gd_scene format=4 uid="uid://dpok11347aj7w"]
+
+[ext_resource type="Script" uid="uid://b0vgse544kuwn" path="res://Scenes/tutorial.gd" id="1_i6t4g"]
+[ext_resource type="Texture2D" uid="uid://1wq6fbqvr71j" path="res://icon.svg" id="1_ka2pi"]
+[ext_resource type="Script" uid="uid://5xvylk7bl2os" path="res://Sprites/player.gd" id="1_omtrn"]
+[ext_resource type="PackedScene" uid="uid://jrk3tr2k7wke" path="res://Sprites/player.tscn" id="3_i6t4g"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feyax"]
+texture = ExtResource("1_ka2pi")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_omtrn"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_feyax")
 
 [node name="Tutorial" type="Node2D" unique_id=1053723955]
+script = ExtResource("1_i6t4g")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=212940606]
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAAPAAUAAAAAAAAAAAAQAAUAAAAAAAAAAAARAAUAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_omtrn")
+
+[node name="Player" parent="." unique_id=448143370 instance=ExtResource("3_i6t4g")]
+position = Vector2(45, 267)
+script = ExtResource("1_omtrn")
+
+[node name="Skip Tutorial" type="Button" parent="." unique_id=1124736139]
+offset_right = 225.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 32
+text = "Skip Tutorial"
+
+[connection signal="pressed" from="Skip Tutorial" to="." method="_on_skip_tutorial_pressed"]
