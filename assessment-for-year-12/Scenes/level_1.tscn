@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://dogrnujfdfeju"]
 
+[ext_resource type="Script" uid="uid://2tefen6g01t0" path="res://Scenes/level_1.gd" id="1_7p6j4"]
 [ext_resource type="Texture2D" uid="uid://1wq6fbqvr71j" path="res://icon.svg" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://jrk3tr2k7wke" path="res://Sprites/player.tscn" id="2_8ffim"]
 [ext_resource type="Script" uid="uid://5xvylk7bl2os" path="res://Sprites/player.gd" id="3_xfk5q"]
@@ -79,6 +80,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8ffim")
 
 [node name="Level1" type="Node2D" unique_id=1070369827]
+script = ExtResource("1_7p6j4")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1186693519]
 scale = Vector2(0.5, 0.5)
@@ -86,5 +88,12 @@ tile_map_data = PackedByteArray("AAABAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAFAAQAAAAAAAA
 tile_set = SubResource("TileSet_xfk5q")
 
 [node name="Player" parent="." unique_id=448143370 instance=ExtResource("2_8ffim")]
-position = Vector2(31, 182)
+position = Vector2(33, 198)
 script = ExtResource("3_xfk5q")
+
+[node name="Button" type="Button" parent="." unique_id=358532610]
+offset_right = 115.0
+offset_bottom = 31.0
+text = "Back to menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
