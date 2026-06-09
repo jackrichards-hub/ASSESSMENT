@@ -104,6 +104,12 @@ sources/2 = SubResource("TileSetAtlasSource_p1f1o")
 [node name="Tutorial" type="Node2D" unique_id=1053723955]
 script = ExtResource("1_i6t4g")
 
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1465725165]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=875968538]
+position = Vector2(489.5002, 457.99985)
+scale = Vector2(44.71094, 28.953123)
+
 [node name="Player" parent="." unique_id=448143370 instance=ExtResource("3_i6t4g")]
 position = Vector2(45, 267)
 script = ExtResource("1_omtrn")
@@ -113,12 +119,6 @@ offset_right = 225.0
 offset_bottom = 50.0
 theme_override_font_sizes/font_size = 32
 text = "Skip Tutorial"
-
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1465725165]
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=875968538]
-position = Vector2(63.5, 5)
-scale = Vector2(1.3307291, 1.0260416)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=291695505]
 scale = Vector2(0.5, 0.5)
