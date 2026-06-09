@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4lu2ttjgd4oo"
-path="res://.godot/imported/LabPlaceholder (1).jpg-10949caa2dfd29c8bb6d0ffcf5afa5f6.ctex"
+uid="uid://gpbgdeyx8og8"
+path="res://.godot/imported/LabPlaceholder (1).jpg-f86ce9329274f532226d8938e738d0bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://LabPlaceholder (1).jpg"
-dest_files=["res://.godot/imported/LabPlaceholder (1).jpg-10949caa2dfd29c8bb6d0ffcf5afa5f6.ctex"]
+source_file="res://Assets/LabPlaceholder (1).jpg"
+dest_files=["res://.godot/imported/LabPlaceholder (1).jpg-f86ce9329274f532226d8938e738d0bf.ctex"]
 
 [params]
 
