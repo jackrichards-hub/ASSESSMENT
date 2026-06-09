@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://1wq6fbqvr71j" path="res://icon.svg" id="1_ka2pi"]
 [ext_resource type="Script" uid="uid://5xvylk7bl2os" path="res://Sprites/player.gd" id="1_omtrn"]
 [ext_resource type="PackedScene" uid="uid://jrk3tr2k7wke" path="res://Sprites/player.tscn" id="3_i6t4g"]
+[ext_resource type="Texture2D" uid="uid://crxxn8wxncpkv" path="res://Assets/Basic Assets (Proper Size).png" id="5_p8jf4"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feyax"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p8jf4"]
 texture = ExtResource("1_ka2pi")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -74,18 +75,34 @@ texture_region_size = Vector2i(128, 128)
 6:7/0 = 0
 7:7/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_omtrn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p1f1o"]
+texture = ExtResource("5_p8jf4")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_ys4pu"]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_feyax")
+sources/0 = SubResource("TileSetAtlasSource_p8jf4")
+sources/2 = SubResource("TileSetAtlasSource_p1f1o")
 
 [node name="Tutorial" type="Node2D" unique_id=1053723955]
 script = ExtResource("1_i6t4g")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=212940606]
-scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAKAAUAAAAAAAAAAAALAAUAAAAAAAAAAAAMAAUAAAAAAAAAAAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAAPAAUAAAAAAAAAAAAQAAUAAAAAAAAAAAARAAUAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_omtrn")
 
 [node name="Player" parent="." unique_id=448143370 instance=ExtResource("3_i6t4g")]
 position = Vector2(45, 267)
@@ -96,5 +113,16 @@ offset_right = 225.0
 offset_bottom = 50.0
 theme_override_font_sizes/font_size = 32
 text = "Skip Tutorial"
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1465725165]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=875968538]
+position = Vector2(63.5, 5)
+scale = Vector2(1.3307291, 1.0260416)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=291695505]
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAAAAAUAAgABAAAAAAACAAUAAgABAAAAAAADAAUAAgABAAAAAAAFAAUAAgABAAAAAAAHAAUAAgABAAAAAAAJAAUAAgABAAAAAAALAAUAAgABAAAAAAANAAUAAgABAAAAAAAPAAUAAgABAAAAAAARAAUAAgABAAAAAAA=")
+tile_set = SubResource("TileSet_ys4pu")
 
 [connection signal="pressed" from="Skip Tutorial" to="." method="_on_skip_tutorial_pressed"]
