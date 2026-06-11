@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://driupamdf7o0j"]
 
+[ext_resource type="Script" uid="uid://y4n7mc3671fj" path="res://Scripts/achievements.gd" id="1_7xtne"]
+
 [node name="Achievements" type="Node2D" unique_id=449601824]
 position = Vector2(0, 2)
+script = ExtResource("1_7xtne")
 
 [node name="Label" type="Label" parent="." unique_id=732970989]
 offset_left = 315.0
@@ -10,3 +13,10 @@ offset_right = 751.0
 offset_bottom = 155.0
 theme_override_font_sizes/font_size = 64
 text = "Achievements"
+
+[node name="Button" type="Button" parent="." unique_id=41574659]
+offset_left = 457.0
+offset_top = 173.0
+offset_right = 572.0
+offset_bottom = 204.0
+text = "Back to menu"

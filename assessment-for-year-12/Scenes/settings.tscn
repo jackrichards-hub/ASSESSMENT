@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cu0ab2m56542g"]
 
+[ext_resource type="Script" uid="uid://bp40fpncijla0" path="res://Scripts/settings.gd" id="1_4geyq"]
+
 [node name="Settings" type="Node2D" unique_id=1663672562]
 position = Vector2(594, 272)
+script = ExtResource("1_4geyq")
 
 [node name="Label" type="Label" parent="." unique_id=347945253]
 anchors_preset = 8
@@ -17,3 +20,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
 text = "Settings"
+
+[node name="Button" type="Button" parent="." unique_id=1306290935]
+offset_left = -55.0
+offset_top = 60.0
+offset_right = 60.0
+offset_bottom = 91.0
+text = "Back to menu"
