@@ -115,14 +115,44 @@ position = Vector2(45, 267)
 script = ExtResource("1_omtrn")
 
 [node name="Skip Tutorial" type="Button" parent="." unique_id=1124736139]
+offset_top = -56.0
 offset_right = 225.0
-offset_bottom = 50.0
+offset_bottom = -3.0
 theme_override_font_sizes/font_size = 32
 text = "Skip Tutorial"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=291695505]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAAAAUAAgABAAAAAAACAAUAAgABAAAAAAADAAUAAgABAAAAAAAFAAUAAgABAAAAAAAHAAUAAgABAAAAAAAJAAUAAgABAAAAAAALAAUAAgABAAAAAAANAAUAAgABAAAAAAAPAAUAAgABAAAAAAARAAUAAgABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAUAAgABAAAAAAACAAUAAgABAAAAAAADAAUAAgABAAAAAAAFAAUAAgABAAAAAAAHAAUAAgABAAAAAAAJAAUAAgABAAAAAAALAAUAAgABAAAAAAANAAUAAgABAAAAAAAPAAUAAgABAAAAAAARAAUAAgABAAAAAAABAAUAAgABAAAAAAAEAAUAAgABAAAAAAAGAAUAAgABAAAAAAAIAAUAAgABAAAAAAAKAAUAAgABAAAAAAAMAAUAAgABAAAAAAAOAAUAAgABAAAAAAAQAAUAAgABAAAAAAA=")
 tile_set = SubResource("TileSet_ys4pu")
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1899377613]
+offset_left = 310.0
+offset_top = 33.0
+offset_right = 609.0
+offset_bottom = 175.0
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 16
+text = "D or > to move right
+A or < to move left"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1203936485]
+offset_left = 633.0
+offset_top = 43.0
+offset_right = 932.0
+offset_bottom = 185.0
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 16
+text = "Spacebar to jump"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=7092680]
+offset_left = 3.0
+offset_top = 36.0
+offset_right = 302.0
+offset_bottom = 178.0
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 16
+text = "Game uses A, D, arrow keys and spacebar
+"
 
 [connection signal="pressed" from="Skip Tutorial" to="." method="_on_skip_tutorial_pressed"]

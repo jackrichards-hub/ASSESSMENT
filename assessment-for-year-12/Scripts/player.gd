@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			animation.play("Idle")
 	else: 
-		animation.play("jump")
+		animation.play("Jump")
 	
 	if position.y > 900:
 		respawn()
