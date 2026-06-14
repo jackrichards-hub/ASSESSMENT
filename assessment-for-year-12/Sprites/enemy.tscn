@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://j3t5jodjqxtd"]
+
+[ext_resource type="Texture2D" uid="uid://x8ef36h6u5l2" path="res://Assets/Scientist (1).png" id="1_fq4fi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fq4fi"]
+size = Vector2(30, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3tu1"]
+atlas = ExtResource("1_fq4fi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_54dgf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3tu1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=2083891825]
+position = Vector2(227, 131)
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055178342]
+position = Vector2(-3, 4.5)
+shape = SubResource("RectangleShape2D_fq4fi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1012271108]
+position = Vector2(-2, 1)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_54dgf")

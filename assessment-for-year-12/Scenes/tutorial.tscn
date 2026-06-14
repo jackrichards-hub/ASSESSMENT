@@ -114,6 +114,14 @@ scale = Vector2(44.71094, 28.953123)
 position = Vector2(45, 267)
 script = ExtResource("1_omtrn")
 
+[node name="Skip Tutorial2" type="Button" parent="." unique_id=1957457802]
+offset_left = 925.0
+offset_top = 24.0
+offset_right = 1150.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 32
+text = "End tutorial"
+
 [node name="Skip Tutorial" type="Button" parent="." unique_id=1124736139]
 offset_top = -56.0
 offset_right = 225.0
@@ -155,4 +163,5 @@ theme_override_font_sizes/bold_font_size = 16
 text = "Game uses A, D, arrow keys and spacebar
 "
 
+[connection signal="pressed" from="Skip Tutorial2" to="." method="_on_skip_tutorial_pressed"]
 [connection signal="pressed" from="Skip Tutorial" to="." method="_on_skip_tutorial_pressed"]

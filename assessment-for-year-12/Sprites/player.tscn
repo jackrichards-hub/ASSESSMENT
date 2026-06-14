@@ -2,6 +2,80 @@
 
 [ext_resource type="Texture2D" uid="uid://bwm44aoc1fc51" path="res://Assets/Scientist (Updated) (1).png" id="1_743eh"]
 
+[sub_resource type="GDScript" id="GDScript_743eh"]
+script/source = "extends CharacterBody2D
+
+@onready var animation : AnimatedSprite2D = $AnimatedSprite2D
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+const SPRINT_SPEED = 900.0
+var sprinting = false
+var can_sprint = true
+
+var jump_count = 0
+var start_position = Vector2(31,182)
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	else:
+		jump_count = 0
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and jump_count < 2:
+		jump_count +=1 
+		velocity.y = JUMP_VELOCITY
+	
+	if Input.is_action_just_pressed(\"Sprint\") and can_sprint:
+		sprinting = true
+		can_sprint = false
+		$sprint_timer.start()
+		$sprint_again_timer.start()
+		
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		if sprinting: 
+			velocity.x = direction * SPRINT_SPEED
+		else:
+			velocity.x = direction * SPEED
+		#flip_h if moving left
+		if direction < 0.1:
+			animation.flip_h = true
+		else:
+			animation.flip_h = false
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	
+	move_and_slide()
+	if is_on_floor():
+		if abs(velocity.x) > 0.1:
+			animation.play(\"Run\")
+		else:
+			animation.play(\"Idle\")
+	else: 
+		animation.play(\"Jump\")
+	
+	if position.y > 900:
+		respawn()
+
+func respawn():
+	position = start_position
+
+#make it stop sprinting
+func _on_sprint_timer_timeout() -> void:
+	print(\"Sprint ended\")
+	sprinting = false
+
+
+func _on_sprint_again_timer_timeout() -> void:
+	can_sprint = true
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_743eh"]
 size = Vector2(46, 86)
 
@@ -141,6 +215,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=448143370]
+script = SubResource("GDScript_743eh")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1875615503]
@@ -156,3 +231,12 @@ animation = &"Jump"
 autoplay = "Idle"
 frame = 5
 frame_progress = 0.93232596
+
+[node name="sprint_timer" type="Timer" parent="." unique_id=53952120]
+one_shot = true
+
+[node name="sprint_again_timer" type="Timer" parent="." unique_id=1990296702]
+autostart = true
+
+[connection signal="timeout" from="sprint_timer" to="." method="_on_sprint_timer_timeout"]
+[connection signal="timeout" from="sprint_again_timer" to="." method="_on_sprint_again_timer_timeout"]
