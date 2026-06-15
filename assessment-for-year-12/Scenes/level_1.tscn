@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://1wq6fbqvr71j" path="res://icon.svg" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://jrk3tr2k7wke" path="res://Sprites/player.tscn" id="2_8ffim"]
 [ext_resource type="Texture2D" uid="uid://crxxn8wxncpkv" path="res://Assets/Basic Assets (Proper Size).png" id="3_6444e"]
-[ext_resource type="Script" uid="uid://5xvylk7bl2os" path="res://Scripts/player.gd" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://j3t5jodjqxtd" path="res://Sprites/enemy.tscn" id="6_evi0p"]
+[ext_resource type="PackedScene" uid="uid://l5wv47iw7112" path="res://Sprites/Battery.tscn" id="6_lsmp6"]
+[ext_resource type="Script" uid="uid://cq36bjd1d3ian" path="res://Scripts/score_label.gd" id="6_xrdnt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evi0p"]
 texture = ExtResource("1_vk57k")
@@ -107,19 +108,67 @@ script = ExtResource("1_7p6j4")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1186693519]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAADAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAALAAQAAgAAAAAAAAANAAQAAgAAAAAAAAAPAAQAAgAAAAAAAAARAAQAAgAAAAAAAAD//wQAAgAAAAAAAAD+/wQAAgAAAAAAAAD9/wQAAgAAAAAAAAD7/wQAAgAAAAAAAAD8/wQAAgAAAAAAAAD6/wQAAgAAAAAAAAD5/wQAAgAAAAAAAAD4/wQAAgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAD//wQAAgAAAAAAAAD+/wQAAgAAAAAAAAD9/wQAAgAAAAAAAAD7/wQAAgAAAAAAAAD8/wQAAgAAAAAAAAD6/wQAAgAAAAAAAAD5/wQAAgAAAAAAAAD4/wQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAHAAMAAgAAAAAAAAAIAAMAAgAAAAAAAAAJAAMAAgAAAAAAAAANAAMAAgAAAAAAAAAQAAMAAgAAAAAAAAARAAMAAgAAAAAAAAAVAAYAAgAAAAAAAAAYAAQAAgAAAAAAAAAbAAIAAgAAAAAAAAAdAAQAAgAAAAAAAAAgAAUAAgAAAAAAAAAjAAYAAgAAAAAAAAAlAAIAAgAAAAAAAAAnAAUAAgAAAAAAAAAkAAQAAgAAAAAAAAA0AAUAAgAAAAAAAAA8AAUAAgAAAAAAAABEAAUAAgAAAAAAAABMAAUAAgAAAAAAAABSAAAAAgAAAAAAAABUAAgAAgAAAAAAAABKAAEAAgAAAAAAAABPAAIAAgAAAAAAAABaAAgAAgAAAAAAAABbAAgAAgAAAAAAAABcAAgAAgAAAAAAAABfAAUAAgAAAAAAAABjAAcAAgAAAAAAAABnAAUAAgAAAAAAAABqAAgAAgAAAAAAAAAUAAEAAgAAAAAAAABXAAUAAgAAAAAAAAA3AAMAAgAAAAAAAABAAAMAAgAAAAAAAABHAAMAAgAAAAAAAABPAAMAAgAAAAAAAAAnAP//AgAAAAAAAAAoAP//AgAAAAAAAAApAP//AgAAAAAAAAApAAAAAgAAAAAAAAAxAAcAAgAAAAAAAABtAAgAAgAAAAAAAABuAAgAAgAAAAAAAABvAAgAAgAAAAAAAABwAAgAAgAAAAAAAABxAAgAAgAAAAAAAAByAAgAAgAAAAAAAAB2AAYAAgAAAAAAAAB5AAYAAgAAAAAAAAB1AAgAAgAAAAAAAAB2AAkAAgAAAAAAAAB3AAkAAgAAAAAAAAB4AAkAAgAAAAAAAAB5AAkAAgAAAAAAAAB6AAgAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_xfk5q")
 
 [node name="Player" parent="." unique_id=448143370 instance=ExtResource("2_8ffim")]
 position = Vector2(33, 198)
-script = ExtResource("3_xfk5q")
-
-[node name="Button" type="Button" parent="." unique_id=358532610]
-offset_right = 115.0
-offset_bottom = 31.0
-text = "Back to menu"
 
 [node name="Enemy" parent="." unique_id=2083891825 instance=ExtResource("6_evi0p")]
 position = Vector2(-455, 191)
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="UI layer" type="CanvasLayer" parent="." unique_id=2021173877]
+
+[node name="UI" type="Control" parent="UI layer" unique_id=194984231]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 40.0
+
+[node name="Score label" type="Label" parent="UI layer/UI" unique_id=1803097965]
+layout_mode = 0
+offset_right = 141.0
+offset_bottom = 48.0
+text = "Batteries: 0"
+script = ExtResource("6_xrdnt")
+
+[node name="Node" type="Node" parent="." unique_id=412624854]
+
+[node name="Battery2" parent="Node" unique_id=1027746616 instance=ExtResource("6_lsmp6")]
+position = Vector2(1321, -8)
+
+[node name="Battery3" parent="Node" unique_id=2085486982 instance=ExtResource("6_lsmp6")]
+position = Vector2(1736, 282)
+
+[node name="Battery" parent="Node" unique_id=739383724 instance=ExtResource("6_lsmp6")]
+position = Vector2(2074, 272)
+
+[node name="Battery4" parent="Node" unique_id=1892051773 instance=ExtResource("6_lsmp6")]
+position = Vector2(2587, -125)
+
+[node name="Battery5" parent="Node" unique_id=265781576 instance=ExtResource("6_lsmp6")]
+position = Vector2(2839, 472)
+
+[node name="Battery12" parent="Node" unique_id=1495791001 instance=ExtResource("6_lsmp6")]
+position = Vector2(7681, 516)
+
+[node name="Battery11" parent="Node" unique_id=673066312 instance=ExtResource("6_lsmp6")]
+position = Vector2(6615, 215)
+
+[node name="Battery10" parent="Node" unique_id=305118399 instance=ExtResource("6_lsmp6")]
+position = Vector2(6582, 586)
+
+[node name="Battery9" parent="Node" unique_id=1131808973 instance=ExtResource("6_lsmp6")]
+position = Vector2(5352, 308)
+
+[node name="Battery8" parent="Node" unique_id=144799319 instance=ExtResource("6_lsmp6")]
+position = Vector2(4831, 228)
+
+[node name="Battery7" parent="Node" unique_id=781329375 instance=ExtResource("6_lsmp6")]
+position = Vector2(4120, 469)
+
+[node name="Battery6" parent="Node" unique_id=1127831222 instance=ExtResource("6_lsmp6")]
+position = Vector2(3537, 114)
+
+[node name="Battery13" parent="Node" unique_id=1292440501 instance=ExtResource("6_lsmp6")]
+position = Vector2(520, 135)

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b0vgse544kuwn" path="res://Scripts/tutorial.gd" id="1_i6t4g"]
 [ext_resource type="Texture2D" uid="uid://1wq6fbqvr71j" path="res://icon.svg" id="1_ka2pi"]
-[ext_resource type="Script" uid="uid://cmfncosdv2flb" path="res://Scripts/player.gd" id="1_omtrn"]
 [ext_resource type="PackedScene" uid="uid://jrk3tr2k7wke" path="res://Sprites/player.tscn" id="3_i6t4g"]
 [ext_resource type="Texture2D" uid="uid://crxxn8wxncpkv" path="res://Assets/Basic Assets (Proper Size).png" id="5_p8jf4"]
+[ext_resource type="PackedScene" uid="uid://l5wv47iw7112" path="res://Sprites/Battery.tscn" id="6_p1f1o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p8jf4"]
 texture = ExtResource("1_ka2pi")
@@ -112,7 +112,6 @@ scale = Vector2(44.71094, 28.953123)
 
 [node name="Player" parent="." unique_id=448143370 instance=ExtResource("3_i6t4g")]
 position = Vector2(45, 267)
-script = ExtResource("1_omtrn")
 
 [node name="Skip Tutorial2" type="Button" parent="." unique_id=1957457802]
 offset_left = 1301.0
@@ -173,6 +172,15 @@ theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 16
 text = "Game uses A, D, arrow keys, shift and spacebar
 "
+
+[node name="Battery" parent="." unique_id=1292440501 instance=ExtResource("6_p1f1o")]
+position = Vector2(322, 231)
+
+[node name="Battery2" parent="." unique_id=1105826289 instance=ExtResource("6_p1f1o")]
+position = Vector2(224, 219)
+
+[node name="Battery3" parent="." unique_id=203760289 instance=ExtResource("6_p1f1o")]
+position = Vector2(391, 228)
 
 [connection signal="pressed" from="Skip Tutorial2" to="." method="_on_skip_tutorial_pressed"]
 [connection signal="pressed" from="Skip Tutorial" to="." method="_on_skip_tutorial_pressed"]
