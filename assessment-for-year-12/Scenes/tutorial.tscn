@@ -141,7 +141,7 @@ offset_right = 1263.0
 offset_bottom = 197.0
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 16
-text = "Shift to sprint"
+text = "Shift to dash"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1899377613]
 offset_left = 310.0
