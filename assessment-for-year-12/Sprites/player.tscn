@@ -18,6 +18,7 @@ var start_position = Vector2(31,182)
 
 
 func _physics_process(delta: float) -> void:
+	print(\"physics running\")
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -27,12 +28,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(\"ui_accept\") and jump_count < 2:
 		jump_count +=1 
 		velocity.y = JUMP_VELOCITY
-	
-	if Input.is_action_just_pressed(\"Sprint\") and can_sprint:
-		sprinting = true
-		can_sprint = false
-		$sprint_timer.start()
-		$sprint_again_timer.start()
+		
+	if Input.is_action_just_pressed(\"Sprint\"):
+		print(\"Input recieved\")
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

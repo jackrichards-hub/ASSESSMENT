@@ -6,6 +6,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const SPRINT_SPEED = 900.0
 var sprinting = false
+var can_sprint = true
 
 var jump_count = 0
 var start_position = Vector2(31,182)
@@ -22,8 +23,11 @@ func _physics_process(delta: float) -> void:
 		jump_count +=1 
 		velocity.y = JUMP_VELOCITY
 	
-	if Input.is_action_just_pressed("Sprint"):
+	if Input.is_action_just_pressed("Sprint") and can_sprint:
 		sprinting = true
+		$sprint_timer.start()
+		$sprint_again_timer.start()
+		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
@@ -56,3 +60,12 @@ func _physics_process(delta: float) -> void:
 
 func respawn():
 	position = start_position
+	
+#make it stop sprinting
+func _on_sprint_timer_timeout() -> void:
+	print("Sprint ended")
+	sprinting = false
+
+
+func _on_sprint_again_timer_timeout() -> void:
+	can_sprint = true

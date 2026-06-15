@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b0vgse544kuwn" path="res://Scripts/tutorial.gd" id="1_i6t4g"]
 [ext_resource type="Texture2D" uid="uid://1wq6fbqvr71j" path="res://icon.svg" id="1_ka2pi"]
-[ext_resource type="Script" uid="uid://5xvylk7bl2os" path="res://Scripts/player.gd" id="1_omtrn"]
+[ext_resource type="Script" uid="uid://cmfncosdv2flb" path="res://Scripts/player.gd" id="1_omtrn"]
 [ext_resource type="PackedScene" uid="uid://jrk3tr2k7wke" path="res://Sprites/player.tscn" id="3_i6t4g"]
 [ext_resource type="Texture2D" uid="uid://crxxn8wxncpkv" path="res://Assets/Basic Assets (Proper Size).png" id="5_p8jf4"]
 
@@ -115,10 +115,10 @@ position = Vector2(45, 267)
 script = ExtResource("1_omtrn")
 
 [node name="Skip Tutorial2" type="Button" parent="." unique_id=1957457802]
-offset_left = 925.0
-offset_top = 24.0
-offset_right = 1150.0
-offset_bottom = 77.0
+offset_left = 1301.0
+offset_top = 58.0
+offset_right = 1526.0
+offset_bottom = 111.0
 theme_override_font_sizes/font_size = 32
 text = "End tutorial"
 
@@ -131,8 +131,17 @@ text = "Skip Tutorial"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=291695505]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAAAAUAAgABAAAAAAACAAUAAgABAAAAAAADAAUAAgABAAAAAAAFAAUAAgABAAAAAAAHAAUAAgABAAAAAAAJAAUAAgABAAAAAAALAAUAAgABAAAAAAANAAUAAgABAAAAAAAPAAUAAgABAAAAAAARAAUAAgABAAAAAAABAAUAAgABAAAAAAAEAAUAAgABAAAAAAAGAAUAAgABAAAAAAAIAAUAAgABAAAAAAAKAAUAAgABAAAAAAAMAAUAAgABAAAAAAAOAAUAAgABAAAAAAAQAAUAAgABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAUAAgABAAAAAAACAAUAAgABAAAAAAADAAUAAgABAAAAAAAFAAUAAgABAAAAAAAHAAUAAgABAAAAAAAJAAUAAgABAAAAAAALAAUAAgABAAAAAAANAAUAAgABAAAAAAAPAAUAAgABAAAAAAARAAUAAgABAAAAAAABAAUAAgABAAAAAAAEAAUAAgABAAAAAAAGAAUAAgABAAAAAAAIAAUAAgABAAAAAAAKAAUAAgABAAAAAAAMAAUAAgABAAAAAAAOAAUAAgABAAAAAAAQAAUAAgABAAAAAAASAAUAAgABAAAAAAAUAAUAAgABAAAAAAATAAUAAgABAAAAAAAVAAUAAgABAAAAAAAWAAUAAgABAAAAAAAXAAUAAgABAAAAAAAYAAUAAgABAAAAAAAZAAUAAgABAAAAAAAaAAUAAgABAAAAAAAbAAUAAgABAAAAAAAcAAUAAgABAAAAAAAdAAUAAgABAAAAAAALAAQAAgABAAAAAAALAAMAAgABAAAAAAAWAAQAAgABAAAAAAA=")
 tile_set = SubResource("TileSet_ys4pu")
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="." unique_id=755079754]
+offset_left = 964.0
+offset_top = 55.0
+offset_right = 1263.0
+offset_bottom = 197.0
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 16
+text = "Shift to sprint"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1899377613]
 offset_left = 310.0
@@ -145,13 +154,15 @@ text = "D or > to move right
 A or < to move left"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1203936485]
-offset_left = 633.0
-offset_top = 43.0
-offset_right = 932.0
-offset_bottom = 185.0
+offset_left = 585.0
+offset_top = 4.0
+offset_right = 884.0
+offset_bottom = 146.0
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 16
-text = "Spacebar to jump"
+text = "Spacebar to jump
+
+Double click spacebar to double jump"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=7092680]
 offset_left = 3.0
@@ -160,7 +171,7 @@ offset_right = 302.0
 offset_bottom = 178.0
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 16
-text = "Game uses A, D, arrow keys and spacebar
+text = "Game uses A, D, arrow keys, shift and spacebar
 "
 
 [connection signal="pressed" from="Skip Tutorial2" to="." method="_on_skip_tutorial_pressed"]
