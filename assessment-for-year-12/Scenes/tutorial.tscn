@@ -114,10 +114,10 @@ scale = Vector2(44.71094, 28.953123)
 position = Vector2(45, 267)
 
 [node name="Skip Tutorial2" type="Button" parent="." unique_id=1957457802]
-offset_left = 1301.0
-offset_top = 58.0
-offset_right = 1526.0
-offset_bottom = 111.0
+offset_left = 2350.0
+offset_top = 121.0
+offset_right = 2575.0
+offset_bottom = 174.0
 theme_override_font_sizes/font_size = 32
 text = "End tutorial"
 
@@ -130,8 +130,17 @@ text = "Skip Tutorial"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=291695505]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAAAAUAAgABAAAAAAACAAUAAgABAAAAAAADAAUAAgABAAAAAAAFAAUAAgABAAAAAAAHAAUAAgABAAAAAAAJAAUAAgABAAAAAAALAAUAAgABAAAAAAANAAUAAgABAAAAAAAPAAUAAgABAAAAAAARAAUAAgABAAAAAAABAAUAAgABAAAAAAAEAAUAAgABAAAAAAAGAAUAAgABAAAAAAAIAAUAAgABAAAAAAAKAAUAAgABAAAAAAAMAAUAAgABAAAAAAAOAAUAAgABAAAAAAAQAAUAAgABAAAAAAASAAUAAgABAAAAAAAUAAUAAgABAAAAAAATAAUAAgABAAAAAAAVAAUAAgABAAAAAAAWAAUAAgABAAAAAAAXAAUAAgABAAAAAAAYAAUAAgABAAAAAAAZAAUAAgABAAAAAAAaAAUAAgABAAAAAAAbAAUAAgABAAAAAAAcAAUAAgABAAAAAAAdAAUAAgABAAAAAAALAAQAAgABAAAAAAALAAMAAgABAAAAAAAWAAQAAgABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAUAAgABAAAAAAACAAUAAgABAAAAAAADAAUAAgABAAAAAAAFAAUAAgABAAAAAAAHAAUAAgABAAAAAAAJAAUAAgABAAAAAAALAAUAAgABAAAAAAANAAUAAgABAAAAAAAPAAUAAgABAAAAAAARAAUAAgABAAAAAAABAAUAAgABAAAAAAAEAAUAAgABAAAAAAAGAAUAAgABAAAAAAAIAAUAAgABAAAAAAAKAAUAAgABAAAAAAAMAAUAAgABAAAAAAAOAAUAAgABAAAAAAAQAAUAAgABAAAAAAASAAUAAgABAAAAAAAUAAUAAgABAAAAAAATAAUAAgABAAAAAAAVAAUAAgABAAAAAAAWAAUAAgABAAAAAAAXAAUAAgABAAAAAAAYAAUAAgABAAAAAAAZAAUAAgABAAAAAAAaAAUAAgABAAAAAAAbAAUAAgABAAAAAAAcAAUAAgABAAAAAAAdAAUAAgABAAAAAAALAAQAAgABAAAAAAALAAMAAgABAAAAAAAWAAQAAgABAAAAAAAeAAUAAgABAAAAAAAfAAUAAgABAAAAAAAgAAUAAgABAAAAAAAhAAUAAgABAAAAAAAiAAUAAgABAAAAAAAjAAUAAgABAAAAAAAkAAUAAgABAAAAAAAlAAUAAgABAAAAAAAmAAUAAgABAAAAAAAnAAUAAgABAAAAAAA=")
 tile_set = SubResource("TileSet_ys4pu")
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="." unique_id=37209739]
+offset_left = 1535.0
+offset_top = 17.0
+offset_right = 2008.0
+offset_bottom = 159.0
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 16
+text = "To beat a level you need to collect a certain amount of batteries varying between levels."
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="." unique_id=755079754]
 offset_left = 964.0
@@ -174,13 +183,13 @@ text = "Game uses A, D, arrow keys, shift and spacebar
 "
 
 [node name="Battery" parent="." unique_id=1292440501 instance=ExtResource("6_p1f1o")]
-position = Vector2(322, 231)
+position = Vector2(1969, 255)
 
 [node name="Battery2" parent="." unique_id=1105826289 instance=ExtResource("6_p1f1o")]
-position = Vector2(224, 219)
+position = Vector2(2237, 250)
 
 [node name="Battery3" parent="." unique_id=203760289 instance=ExtResource("6_p1f1o")]
-position = Vector2(391, 228)
+position = Vector2(1726, 262)
 
 [connection signal="pressed" from="Skip Tutorial2" to="." method="_on_skip_tutorial_pressed"]
 [connection signal="pressed" from="Skip Tutorial" to="." method="_on_skip_tutorial_pressed"]

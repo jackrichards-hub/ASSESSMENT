@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var animation : AnimatedSprite2D = $AnimatedSprite2D
 
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const SPRINT_SPEED = 900.0
@@ -9,8 +10,8 @@ var sprinting = false
 var can_sprint = true
 var jump_count = 0
 var start_position = Vector2(31,182)
-var score = 0
-signal scored
+var battery_count = 0
+signal collected
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -77,8 +78,9 @@ func _on_sprint_again_timer_timeout() -> void:
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area is Battery:
 		print("collected battery")
-		score += 1
-		scored.emit(score)
+		battery_count += 1
+		collected.emit(battery_count)
+		print(battery_count)
 		area.queue_free()
 
 

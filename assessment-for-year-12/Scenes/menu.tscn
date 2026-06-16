@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://q8jc6iae6ehc"]
 
-[ext_resource type="Texture2D" uid="uid://gpbgdeyx8og8" path="res://Assets/LabPlaceholder (1).jpg" id="1_1rerr"]
 [ext_resource type="Script" uid="uid://da4k7xnc56qn4" path="res://Scripts/main_menu.gd" id="1_xhh6f"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xhh6f"]
-texture = ExtResource("1_1rerr")
-modulate_color = Color(0.61339027, 0.61339027, 0.6133901, 1)
+[ext_resource type="Texture2D" uid="uid://c700urjjwt2t7" path="res://Assets/Background (Power Box).png" id="2_xhh6f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4yt8"]
 bg_color = Color(1, 1, 1, 1)
@@ -25,14 +21,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xhh6f")
 
-[node name="Background" type="Panel" parent="." unique_id=878178166]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_xhh6f")
+[node name="Panel" type="Panel" parent="." unique_id=552942977]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 1153.0
+offset_bottom = 646.0
+metadata/_edit_group_ = true
+
+[node name="Background(powerBox)" type="Sprite2D" parent="Panel" unique_id=532715862]
+position = Vector2(576, 323.00003)
+scale = Vector2(8.976563, 10.078125)
+texture = ExtResource("2_xhh6f")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=535067310]
 layout_mode = 1
@@ -49,13 +49,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="Start Game" type="Button" parent="VBoxContainer" unique_id=958320903]
+[node name="Levels" type="Button" parent="VBoxContainer" unique_id=958320903]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_u4yt8")
-text = "Start Game"
+text = "Levels"
 
 [node name="Achievements" type="Button" parent="VBoxContainer" unique_id=534995145]
 layout_mode = 2
@@ -91,12 +91,14 @@ offset_top = 15.0
 offset_right = 139.0
 offset_bottom = 113.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.98039216, 0.25882354, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 86
 text = "Labratory Bolt"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Levels" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Achievements" to="." method="_on_achievements_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

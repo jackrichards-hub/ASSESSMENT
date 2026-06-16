@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://crxxn8wxncpkv" path="res://Assets/Basic Assets (Proper Size).png" id="3_6444e"]
 [ext_resource type="PackedScene" uid="uid://j3t5jodjqxtd" path="res://Sprites/enemy.tscn" id="6_evi0p"]
 [ext_resource type="PackedScene" uid="uid://l5wv47iw7112" path="res://Sprites/Battery.tscn" id="6_lsmp6"]
+[ext_resource type="PackedScene" uid="uid://2ghiqvtvjd5e" path="res://Sprites/elevator.tscn" id="6_wrinw"]
 [ext_resource type="Script" uid="uid://cq36bjd1d3ian" path="res://Scripts/score_label.gd" id="6_xrdnt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evi0p"]
@@ -106,6 +107,8 @@ sources/2 = SubResource("TileSetAtlasSource_lsmp6")
 [node name="Level1" type="Node2D" unique_id=1070369827]
 script = ExtResource("1_7p6j4")
 
+[node name="Background" type="Parallax2D" parent="." unique_id=2463850]
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1186693519]
 scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAD//wQAAgAAAAAAAAD+/wQAAgAAAAAAAAD9/wQAAgAAAAAAAAD7/wQAAgAAAAAAAAD8/wQAAgAAAAAAAAD6/wQAAgAAAAAAAAD5/wQAAgAAAAAAAAD4/wQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAHAAMAAgAAAAAAAAAIAAMAAgAAAAAAAAAJAAMAAgAAAAAAAAANAAMAAgAAAAAAAAAQAAMAAgAAAAAAAAARAAMAAgAAAAAAAAAVAAYAAgAAAAAAAAAYAAQAAgAAAAAAAAAbAAIAAgAAAAAAAAAdAAQAAgAAAAAAAAAgAAUAAgAAAAAAAAAjAAYAAgAAAAAAAAAlAAIAAgAAAAAAAAAnAAUAAgAAAAAAAAAkAAQAAgAAAAAAAAA0AAUAAgAAAAAAAAA8AAUAAgAAAAAAAABEAAUAAgAAAAAAAABMAAUAAgAAAAAAAABSAAAAAgAAAAAAAABUAAgAAgAAAAAAAABKAAEAAgAAAAAAAABPAAIAAgAAAAAAAABaAAgAAgAAAAAAAABbAAgAAgAAAAAAAABcAAgAAgAAAAAAAABfAAUAAgAAAAAAAABjAAcAAgAAAAAAAABnAAUAAgAAAAAAAABqAAgAAgAAAAAAAAAUAAEAAgAAAAAAAABXAAUAAgAAAAAAAAA3AAMAAgAAAAAAAABAAAMAAgAAAAAAAABHAAMAAgAAAAAAAABPAAMAAgAAAAAAAAAnAP//AgAAAAAAAAAoAP//AgAAAAAAAAApAP//AgAAAAAAAAApAAAAAgAAAAAAAAAxAAcAAgAAAAAAAABtAAgAAgAAAAAAAABuAAgAAgAAAAAAAABvAAgAAgAAAAAAAABwAAgAAgAAAAAAAABxAAgAAgAAAAAAAAByAAgAAgAAAAAAAAB2AAYAAgAAAAAAAAB5AAYAAgAAAAAAAAB1AAgAAgAAAAAAAAB2AAkAAgAAAAAAAAB3AAkAAgAAAAAAAAB4AAkAAgAAAAAAAAB5AAkAAgAAAAAAAAB6AAgAAgAAAAAAAAA=")
@@ -117,6 +120,9 @@ position = Vector2(33, 198)
 [node name="Enemy" parent="." unique_id=2083891825 instance=ExtResource("6_evi0p")]
 position = Vector2(-455, 191)
 
+[node name="Elevator" parent="." unique_id=1501527127 instance=ExtResource("6_wrinw")]
+position = Vector2(7325, 444)
+
 [node name="UI layer" type="CanvasLayer" parent="." unique_id=2021173877]
 
 [node name="UI" type="Control" parent="UI layer" unique_id=194984231]
@@ -127,10 +133,19 @@ offset_bottom = 40.0
 
 [node name="Score label" type="Label" parent="UI layer/UI" unique_id=1803097965]
 layout_mode = 0
-offset_right = 141.0
+offset_left = 6.0
+offset_right = 147.0
 offset_bottom = 48.0
 text = "Batteries: 0"
 script = ExtResource("6_xrdnt")
+
+[node name="Button" type="Button" parent="UI layer/UI" unique_id=309496277]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 24.0
+offset_right = 103.0
+offset_bottom = 46.0
+text = "Back to menu"
 
 [node name="Node" type="Node" parent="." unique_id=412624854]
 
@@ -172,3 +187,5 @@ position = Vector2(3537, 114)
 
 [node name="Battery13" parent="Node" unique_id=1292440501 instance=ExtResource("6_lsmp6")]
 position = Vector2(520, 135)
+
+[connection signal="pressed" from="UI layer/UI/Button" to="." method="_on_button_pressed"]
