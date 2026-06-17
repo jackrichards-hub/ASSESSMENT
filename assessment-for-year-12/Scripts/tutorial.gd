@@ -16,4 +16,4 @@ func _process(delta: float) -> void:
 
 
 func _on_skip_tutorial_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/level_1.tscn")
+	get_tree().change_scene_to_file("res://Scenes/level_menu.tscn")
