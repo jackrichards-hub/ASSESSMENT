@@ -145,7 +145,7 @@ offset_left = 3.0
 offset_top = 24.0
 offset_right = 103.0
 offset_bottom = 46.0
-text = "Back to menu"
+text = "Back to main menu"
 
 [node name="Node" type="Node" parent="." unique_id=412624854]
 
@@ -188,4 +188,6 @@ position = Vector2(3537, 114)
 [node name="Battery13" parent="Node" unique_id=1292440501 instance=ExtResource("6_lsmp6")]
 position = Vector2(520, 135)
 
+[connection signal="collected" from="Player" to="UI layer/UI/Score label" method="_on_player_collected"]
+[connection signal="body_entered" from="Elevator" to="." method="_on_elevator_body_entered"]
 [connection signal="pressed" from="UI layer/UI/Button" to="." method="_on_button_pressed"]

@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @onready var animation : AnimatedSprite2D = $AnimatedSprite2D
@@ -11,7 +12,7 @@ var can_sprint = true
 var jump_count = 0
 var start_position = Vector2(31,182)
 var battery_count = 0
-signal collected
+signal collected(count)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
