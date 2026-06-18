@@ -2,13 +2,14 @@ class_name Player
 extends CharacterBody2D
 
 @onready var animation : AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprint_again_timer: Timer = $dash_cooldown
 
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-const SPRINT_SPEED = 900.0
-var sprinting = false
-var can_sprint = true
+const DASH_SPEED = 900.0
+var dashing = false
+var can_dash = true
 var jump_count = 0
 var start_position = Vector2(31,182)
 var battery_count = 0
@@ -25,17 +26,17 @@ func _physics_process(delta: float) -> void:
 		jump_count +=1 
 		velocity.y = JUMP_VELOCITY
 	
-	if Input.is_action_just_pressed("Sprint") and can_sprint:
-		sprinting = true
-		$sprint_timer.start()
-		$sprint_again_timer.start()
+	if Input.is_action_just_pressed("Sprint") and can_dash:
+		dashing = true
+		$dash_timer.start()
+		$dash_cooldown.start()
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
-		if sprinting: 
-			velocity.x = direction * SPRINT_SPEED
+		if dashing: 
+			velocity.x = direction * DASH_SPEED
 		else:
 			velocity.x = direction * SPEED
 		#flip_h if moving left
@@ -59,8 +60,6 @@ func _physics_process(delta: float) -> void:
 	
 	if position.y > 900:
 		respawn()
-		
-
 
 
 
@@ -68,13 +67,12 @@ func respawn():
 	position = start_position
 	
 #make it stop sprinting
-func _on_sprint_timer_timeout() -> void:
-	print("Sprint ended")
-	sprinting = false
+func _on_dash_timer_timeout() -> void:
+	print("Dash ended")
+	dashing = false
 
-
-func _on_sprint_again_timer_timeout() -> void:
-	can_sprint = true
+func _on_dash_cooldown_timeout() -> void:
+	can_dash = true
 	
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area is Battery:

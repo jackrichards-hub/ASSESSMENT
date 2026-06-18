@@ -162,12 +162,13 @@ autoplay = "Idle"
 frame = 5
 frame_progress = 0.93232596
 
-[node name="sprint_timer" type="Timer" parent="." unique_id=53952120]
+[node name="dash_timer" type="Timer" parent="." unique_id=53952120]
 wait_time = 0.2
 one_shot = true
 
-[node name="sprint_again_timer" type="Timer" parent="." unique_id=1990296702]
-autostart = true
+[node name="dash_cooldown" type="Timer" parent="." unique_id=1990296702]
+wait_time = 4096.0
+one_shot = true
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=576873568]
 
@@ -175,6 +176,6 @@ autostart = true
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_bmk3q")
 
-[connection signal="timeout" from="sprint_timer" to="." method="_on_sprint_timer_timeout"]
-[connection signal="timeout" from="sprint_again_timer" to="." method="_on_sprint_again_timer_timeout"]
+[connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="dash_cooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
