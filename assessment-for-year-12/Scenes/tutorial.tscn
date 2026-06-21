@@ -110,24 +110,33 @@ script = ExtResource("1_i6t4g")
 position = Vector2(489.5002, 457.99985)
 scale = Vector2(44.71094, 28.953123)
 
+[node name="UI layer" type="CanvasLayer" parent="." unique_id=1511105906]
+
+[node name="UI" type="Control" parent="UI layer" unique_id=153691508]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Skip Tutorial" type="Button" parent="UI layer/UI" unique_id=1124736139]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 157.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 24
+text = "Skip Tutorial"
+
 [node name="Player" parent="." unique_id=448143370 instance=ExtResource("3_i6t4g")]
 position = Vector2(45, 267)
 
-[node name="Skip Tutorial2" type="Button" parent="." unique_id=1957457802]
-offset_left = 2350.0
+[node name="End tutorial" type="Button" parent="." unique_id=1957457802]
+offset_left = 2386.0
 offset_top = 121.0
-offset_right = 2575.0
+offset_right = 2611.0
 offset_bottom = 174.0
 theme_override_font_sizes/font_size = 32
 text = "End tutorial"
-
-[node name="Skip Tutorial" type="Button" parent="." unique_id=1124736139]
-offset_left = 3.0
-offset_top = -27.0
-offset_right = 228.0
-offset_bottom = 26.0
-theme_override_font_sizes/font_size = 32
-text = "Skip Tutorial"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=291695505]
 scale = Vector2(0.5, 0.5)
@@ -135,28 +144,28 @@ tile_map_data = PackedByteArray("AAAAAAUAAgABAAAAAAACAAUAAgABAAAAAAADAAUAAgABAAA
 tile_set = SubResource("TileSet_ys4pu")
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="." unique_id=37209739]
-offset_left = 1535.0
-offset_top = 17.0
-offset_right = 2008.0
-offset_bottom = 159.0
+offset_left = 1599.0
+offset_top = 34.0
+offset_right = 2072.0
+offset_bottom = 176.0
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 16
 text = "To beat a level you need to collect a certain amount of batteries varying between levels."
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="." unique_id=755079754]
-offset_left = 964.0
-offset_top = 55.0
-offset_right = 1263.0
-offset_bottom = 197.0
+offset_left = 948.0
+offset_top = 94.0
+offset_right = 1247.0
+offset_bottom = 236.0
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 16
 text = "Shift to dash"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1899377613]
-offset_left = 310.0
-offset_top = 33.0
-offset_right = 609.0
-offset_bottom = 175.0
+offset_left = 298.0
+offset_top = 84.0
+offset_right = 597.0
+offset_bottom = 226.0
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 16
 text = "D or > to move right
@@ -174,10 +183,10 @@ text = "Spacebar to jump
 Double click spacebar to double jump"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=7092680]
-offset_left = 3.0
-offset_top = 36.0
-offset_right = 302.0
-offset_bottom = 178.0
+offset_left = 5.0
+offset_top = 79.0
+offset_right = 304.0
+offset_bottom = 221.0
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 16
 text = "Game uses A, D, arrow keys, shift and spacebar
@@ -192,5 +201,5 @@ position = Vector2(2237, 250)
 [node name="Battery3" parent="." unique_id=203760289 instance=ExtResource("6_p1f1o")]
 position = Vector2(1726, 262)
 
-[connection signal="pressed" from="Skip Tutorial2" to="." method="_on_skip_tutorial_pressed"]
-[connection signal="pressed" from="Skip Tutorial" to="." method="_on_skip_tutorial_pressed"]
+[connection signal="pressed" from="UI layer/UI/Skip Tutorial" to="." method="_on_skip_tutorial_pressed"]
+[connection signal="pressed" from="End tutorial" to="." method="_on_skip_tutorial_pressed"]
