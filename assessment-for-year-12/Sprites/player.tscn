@@ -167,7 +167,6 @@ wait_time = 0.2
 one_shot = true
 
 [node name="dash_cooldown" type="Timer" parent="." unique_id=1990296702]
-wait_time = 4096.0
 one_shot = true
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=576873568]
