@@ -34,18 +34,26 @@ text = "Levels"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1340382195]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.337
-anchor_top = 0.35000002
-anchor_right = 0.69200003
-anchor_bottom = 0.71800005
-offset_left = 1.776001
-offset_top = 0.19998169
-offset_right = -0.184021
-offset_bottom = -0.2640381
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.5
+offset_top = -132.5
+offset_right = 187.5
+offset_bottom = 132.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
+
+[node name="Back to main menu" type="Button" parent="VBoxContainer" unique_id=1152036479]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_c64aj")
+text = "Back to main menu"
 
 [node name="Tutorial button" type="Button" parent="VBoxContainer" unique_id=1559986078]
 layout_mode = 2
@@ -79,5 +87,6 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_c64aj")
 text = "Level three"
 
+[connection signal="pressed" from="VBoxContainer/Back to main menu" to="." method="_on_back_to_main_menu_pressed"]
 [connection signal="pressed" from="VBoxContainer/Tutorial button" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Level 1 button" to="." method="_on_level_1_button_pressed"]
