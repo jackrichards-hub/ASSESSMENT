@@ -1,23 +1,34 @@
 [gd_scene format=3 uid="uid://2ghiqvtvjd5e"]
 
-[ext_resource type="Texture2D" uid="uid://1wq6fbqvr71j" path="res://icon.svg" id="1_atx4v"]
 [ext_resource type="Script" uid="uid://vk2wnh1st2em" path="res://Scripts/elevator.gd" id="1_w4hf2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4hf2"]
 size = Vector2(32.5, 65)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_atx4v"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"closing",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"opening",
+"speed": 5.0
+}]
 
 [node name="Elevator" type="Area2D" unique_id=1501527127]
 scale = Vector2(2, 2)
 script = ExtResource("1_w4hf2")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1741580521]
-position = Vector2(2.3841858e-07, 0)
-scale = Vector2(0.2578125, 0.5)
-texture = ExtResource("1_atx4v")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1865554239]
 position = Vector2(0.25, -0.5)
 shape = SubResource("RectangleShape2D_w4hf2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=280874765]
+sprite_frames = SubResource("SpriteFrames_atx4v")
+animation = &"closing"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
