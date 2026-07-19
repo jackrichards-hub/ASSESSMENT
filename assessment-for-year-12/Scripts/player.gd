@@ -8,6 +8,10 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const DASH_SPEED = 900.0
+const gravity = 120
+const wall_jump_pushback = 100
+const wall_slide_gravity = 100
+var is_wall_sliding = false
 var dashing = false
 var can_dash = true
 var jump_count = 0
@@ -25,12 +29,21 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and jump_count < 2:
 		jump_count +=1 
 		velocity.y = JUMP_VELOCITY
+		
 	
 	if Input.is_action_just_pressed("Sprint") and can_dash:
 		dashing = true
 		can_dash = false
 		$dash_timer.start()
-		$dash_cooldown.start()
+		
+	if is_on_wall() and Input.is_action_just_pressed("ui_accept"):
+			velocity.y = JUMP_VELOCITY
+			velocity.x = -wall_jump_pushback
+	if is_on_wall() and Input.is_action_just_pressed("ui_left"):
+			velocity.y = JUMP_VELOCITY
+			velocity.x = wall_jump_pushback
+	
+	$dash_cooldown.start()
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -47,7 +60,7 @@ func _physics_process(delta: float) -> void:
 			animation.flip_h = false
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
+	wall_slide(delta)
 	
 	
 	move_and_slide()
@@ -62,7 +75,18 @@ func _physics_process(delta: float) -> void:
 	if position.y > 900:
 		respawn()
 
-
+func wall_slide(delta):
+	if is_on_wall() and !is_on_floor():
+		if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
+			is_wall_sliding = true
+		else: 
+			is_wall_sliding = false
+	else:
+		is_wall_sliding = false
+		
+	if is_wall_sliding:
+		velocity.y += (wall_slide_gravity * delta)
+		velocity.y = min(velocity.y, wall_slide_gravity)
 
 func respawn():
 	position = start_position
