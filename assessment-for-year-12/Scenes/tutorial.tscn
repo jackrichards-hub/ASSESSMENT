@@ -131,10 +131,10 @@ text = "Skip Tutorial"
 position = Vector2(45, 267)
 
 [node name="End tutorial" type="Button" parent="." unique_id=1957457802]
-offset_left = 2997.0
-offset_top = -117.0
-offset_right = 3222.0
-offset_bottom = -64.0
+offset_left = 3586.0
+offset_top = -202.0
+offset_right = 3811.0
+offset_bottom = -149.0
 theme_override_font_sizes/font_size = 32
 text = "End tutorial"
 
