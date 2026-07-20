@@ -91,6 +91,8 @@ func wall_slide(delta):
 
 func respawn():
 	position = start_position
+	battery_count = 0
+	collected.emit(battery_count)
 	
 #make it stop sprinting
 func _on_dash_timer_timeout() -> void:
@@ -107,6 +109,10 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		collected.emit(battery_count)
 		print(battery_count)
 		area.queue_free()
+
+func _on_acid_vat_area_entered(area: Area2D) -> void:
+	if Player:
+		respawn()
 
 
 func _on_back_to_menu_pressed() -> void:

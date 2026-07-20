@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://2ghiqvtvjd5e" path="res://Sprites/elevator.tscn" id="6_wrinw"]
 [ext_resource type="Script" uid="uid://cq36bjd1d3ian" path="res://Scripts/score_label.gd" id="6_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://bhshmfb35ev01" path="res://Scenes/game_timer.tscn" id="8_wrinw"]
+[ext_resource type="PackedScene" uid="uid://ckgowlith8v3k" path="res://Sprites/acid_vat.tscn" id="10_chwpn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evi0p"]
 texture = ExtResource("1_vk57k")
@@ -114,7 +115,7 @@ script = ExtResource("1_7p6j4")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1186693519]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAD//wQAAgAAAAAAAAD+/wQAAgAAAAAAAAD9/wQAAgAAAAAAAAD7/wQAAgAAAAAAAAD8/wQAAgAAAAAAAAD6/wQAAgAAAAAAAAD5/wQAAgAAAAAAAAD4/wQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAHAAMAAgAAAAAAAAAIAAMAAgAAAAAAAAAJAAMAAgAAAAAAAAAQAAMAAgAAAAAAAAARAAMAAgAAAAAAAAAYAAQAAgAAAAAAAAAbAAIAAgAAAAAAAAAdAAQAAgAAAAAAAAAgAAUAAgAAAAAAAAAjAAYAAgAAAAAAAAAlAAIAAgAAAAAAAAAnAAUAAgAAAAAAAAAkAAQAAgAAAAAAAAA0AAUAAgAAAAAAAAA8AAUAAgAAAAAAAABEAAUAAgAAAAAAAABMAAUAAgAAAAAAAABSAAAAAgAAAAAAAABUAAgAAgAAAAAAAABKAAEAAgAAAAAAAABPAAIAAgAAAAAAAABaAAgAAgAAAAAAAABbAAgAAgAAAAAAAABcAAgAAgAAAAAAAABfAAUAAgAAAAAAAABjAAcAAgAAAAAAAABnAAUAAgAAAAAAAABqAAgAAgAAAAAAAABXAAUAAgAAAAAAAAA3AAMAAgAAAAAAAABAAAMAAgAAAAAAAABHAAMAAgAAAAAAAABPAAMAAgAAAAAAAAAnAP//AgAAAAAAAAAoAP//AgAAAAAAAAApAP//AgAAAAAAAAApAAAAAgAAAAAAAABtAAgAAgAAAAAAAABuAAgAAgAAAAAAAABvAAgAAgAAAAAAAABwAAgAAgAAAAAAAABxAAgAAgAAAAAAAAByAAgAAgAAAAAAAAAxAAcAAgAAAAAAAAAMAAMAAgAAAAAAAAAPAAMAAgAAAAAAAAAUAAIAAgAAAAAAAAAVAAYAAgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAD//wQAAgAAAAAAAAD+/wQAAgAAAAAAAAD9/wQAAgAAAAAAAAD7/wQAAgAAAAAAAAD8/wQAAgAAAAAAAAD6/wQAAgAAAAAAAAD5/wQAAgAAAAAAAAD4/wQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAANAAYAAgAAAAAAAAAOAAYAAgAAAAAAAAAPAAYAAgAAAAAAAAAQAAYAAgAAAAAAAAARAAYAAgAAAAAAAAASAAYAAgAAAAAAAAATAAYAAgAAAAAAAAATAAUAAgAAAAAAAAATAAQAAgAAAAAAAAATAAMAAgAAAAAAAAATAAIAAgAAAAAAAAAUAAIAAgAAAAAAAAAVAAIAAgAAAAAAAAAVAAMAAgAAAAAAAAAUAAMAAgAAAAAAAAAUAAQAAgAAAAAAAAAVAAQAAgAAAAAAAAAVAAUAAgAAAAAAAAAVAAYAAgAAAAAAAAAUAAYAAgAAAAAAAAAUAAUAAgAAAAAAAAAWAAYAAgAAAAAAAAAXAAYAAgAAAAAAAAAYAAYAAgAAAAAAAAAZAAYAAgAAAAAAAAAaAAYAAgAAAAAAAAAbAAYAAgAAAAAAAAAcAAYAAgAAAAAAAAAMAAYAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_xfk5q")
 
 [node name="Player" parent="." unique_id=448143370 instance=ExtResource("2_8ffim")]
@@ -124,7 +125,7 @@ position = Vector2(33, 198)
 position = Vector2(-455, 191)
 
 [node name="Elevator" parent="." unique_id=1501527127 instance=ExtResource("6_wrinw")]
-position = Vector2(7325, 444)
+position = Vector2(1996, 268)
 
 [node name="UI layer" type="CanvasLayer" parent="." unique_id=2021173877]
 
@@ -169,16 +170,16 @@ offset_bottom = 20.0
 [node name="Node" type="Node" parent="." unique_id=412624854]
 
 [node name="Battery2" parent="Node" unique_id=1027746616 instance=ExtResource("6_lsmp6")]
-position = Vector2(1311, 84)
+position = Vector2(1266, 70)
 
 [node name="Battery3" parent="Node" unique_id=2085486982 instance=ExtResource("6_lsmp6")]
-position = Vector2(1736, 282)
+position = Vector2(1612, 264)
 
 [node name="Battery" parent="Node" unique_id=739383724 instance=ExtResource("6_lsmp6")]
-position = Vector2(2074, 272)
+position = Vector2(1691, 317)
 
 [node name="Battery5" parent="Node" unique_id=265781576 instance=ExtResource("6_lsmp6")]
-position = Vector2(2839, 472)
+position = Vector2(3436, 96)
 
 [node name="Battery11" parent="Node" unique_id=673066312 instance=ExtResource("6_lsmp6")]
 position = Vector2(6615, 215)
@@ -190,17 +191,22 @@ position = Vector2(6582, 586)
 position = Vector2(5352, 308)
 
 [node name="Battery8" parent="Node" unique_id=144799319 instance=ExtResource("6_lsmp6")]
-position = Vector2(4831, 228)
+position = Vector2(1559, 307)
 
 [node name="Battery7" parent="Node" unique_id=781329375 instance=ExtResource("6_lsmp6")]
-position = Vector2(4128, 414)
+position = Vector2(3407, -280)
 
 [node name="Battery6" parent="Node" unique_id=1127831222 instance=ExtResource("6_lsmp6")]
-position = Vector2(3537, 114)
+position = Vector2(3723, -107)
 
 [node name="Battery13" parent="Node" unique_id=1292440501 instance=ExtResource("6_lsmp6")]
-position = Vector2(520, 135)
+position = Vector2(546, 189)
+
+[node name="Acid vat" parent="." unique_id=1120354465 instance=ExtResource("10_chwpn")]
+position = Vector2(1011, 357)
 
 [connection signal="collected" from="Player" to="UI layer/UI/Score label" method="_on_player_collected"]
 [connection signal="body_entered" from="Elevator" to="." method="_on_elevator_body_entered"]
 [connection signal="pressed" from="UI layer/UI/Button" to="." method="_on_button_pressed"]
+[connection signal="area_entered" from="Acid vat" to="." method="_on_acid_vat_area_entered"]
+[connection signal="area_entered" from="Acid vat" to="Player" method="_on_acid_vat_area_entered"]

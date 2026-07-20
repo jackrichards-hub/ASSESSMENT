@@ -1,13 +1,70 @@
 [gd_scene format=3 uid="uid://2ghiqvtvjd5e"]
 
 [ext_resource type="Script" uid="uid://vk2wnh1st2em" path="res://Scripts/elevator.gd" id="1_w4hf2"]
+[ext_resource type="Texture2D" uid="uid://dk7g35jtb7ibk" path="res://Assets/Elevator Tilesheet (1).png" id="2_w4hf2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4hf2"]
 size = Vector2(32.5, 65)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jei4"]
+atlas = ExtResource("2_w4hf2")
+region = Rect2(0, 0, 256, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogcxq"]
+atlas = ExtResource("2_w4hf2")
+region = Rect2(256, 0, 256, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t36xr"]
+atlas = ExtResource("2_w4hf2")
+region = Rect2(512, 0, 256, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs464"]
+atlas = ExtResource("2_w4hf2")
+region = Rect2(768, 0, 256, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwij2"]
+atlas = ExtResource("2_w4hf2")
+region = Rect2(1024, 0, 256, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tblsh"]
+atlas = ExtResource("2_w4hf2")
+region = Rect2(1280, 0, 256, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpcp7"]
+atlas = ExtResource("2_w4hf2")
+region = Rect2(1536, 0, 256, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqlqh"]
+atlas = ExtResource("2_w4hf2")
+region = Rect2(1792, 0, 256, 316)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_atx4v"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jei4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogcxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t36xr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs464")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwij2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tblsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpcp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqlqh")
+}],
 "loop": true,
 "name": &"closing",
 "speed": 5.0
@@ -28,7 +85,10 @@ position = Vector2(0.25, -0.5)
 shape = SubResource("RectangleShape2D_w4hf2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=280874765]
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_atx4v")
 animation = &"closing"
+autoplay = "closing"
+frame_progress = 0.20475164
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
