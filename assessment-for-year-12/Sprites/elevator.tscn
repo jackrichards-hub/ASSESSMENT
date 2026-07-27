@@ -66,12 +66,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_wqlqh")
 }],
 "loop": true,
-"name": &"closing",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"opening",
+"name": &"opening and closing",
 "speed": 5.0
 }]
 
@@ -87,8 +82,7 @@ shape = SubResource("RectangleShape2D_w4hf2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=280874765]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_atx4v")
-animation = &"closing"
-autoplay = "closing"
-frame_progress = 0.20475164
+animation = &"opening and closing"
+autoplay = "opening and closing"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

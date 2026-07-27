@@ -179,25 +179,25 @@ position = Vector2(1612, 264)
 position = Vector2(1691, 317)
 
 [node name="Battery5" parent="Node" unique_id=265781576 instance=ExtResource("6_lsmp6")]
-position = Vector2(3436, 96)
+position = Vector2(1790, 224)
 
 [node name="Battery11" parent="Node" unique_id=673066312 instance=ExtResource("6_lsmp6")]
-position = Vector2(6615, 215)
+position = Vector2(1544, 232)
 
 [node name="Battery10" parent="Node" unique_id=305118399 instance=ExtResource("6_lsmp6")]
-position = Vector2(6582, 586)
+position = Vector2(1606, 180)
 
 [node name="Battery9" parent="Node" unique_id=1131808973 instance=ExtResource("6_lsmp6")]
-position = Vector2(5352, 308)
+position = Vector2(1705, 241)
 
 [node name="Battery8" parent="Node" unique_id=144799319 instance=ExtResource("6_lsmp6")]
 position = Vector2(1559, 307)
 
 [node name="Battery7" parent="Node" unique_id=781329375 instance=ExtResource("6_lsmp6")]
-position = Vector2(3407, -280)
+position = Vector2(1678, 143)
 
 [node name="Battery6" parent="Node" unique_id=1127831222 instance=ExtResource("6_lsmp6")]
-position = Vector2(3723, -107)
+position = Vector2(1816, 138)
 
 [node name="Battery13" parent="Node" unique_id=1292440501 instance=ExtResource("6_lsmp6")]
 position = Vector2(546, 189)
