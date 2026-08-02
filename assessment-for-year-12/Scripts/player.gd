@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @onready var animation : AnimatedSprite2D = $AnimatedSprite2D
 @onready var sprint_again_timer: Timer = $dash_cooldown
-
+@onready var Progress_Dash_Cooldown_Bar: ProgressBar = $"../UI layer/UI/Visual Dash Cooldown"
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 		can_dash = false
 		$dash_timer.start()
 		$dash_cooldown.start()
+		Progress_Dash_Cooldown_Bar.visible()
 		
 	if is_on_wall() and Input.is_action_just_pressed("ui_accept"):
 			velocity.y = JUMP_VELOCITY
