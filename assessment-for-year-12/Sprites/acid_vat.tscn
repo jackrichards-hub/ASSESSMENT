@@ -96,18 +96,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogvdp"]
-size = Vector2(56, 41)
+size = Vector2(81, 67)
 
 [node name="Acid vat" type="Area2D" unique_id=1120354465]
 script = ExtResource("1_0iruw")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=570580974]
-scale = Vector2(0.5, 0.5)
+position = Vector2(13.5, -15)
+scale = Vector2(0.7109375, 0.734375)
 sprite_frames = SubResource("SpriteFrames_6ntcp")
 autoplay = "default"
 frame_progress = 0.51324046
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2070970032]
-position = Vector2(1, 12.5)
+position = Vector2(13.5, -0.5)
 shape = SubResource("RectangleShape2D_ogvdp")

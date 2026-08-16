@@ -3,8 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bwm44aoc1fc51" path="res://Assets/Scientist (Updated) (1).png" id="1_743eh"]
 [ext_resource type="Script" uid="uid://cmfncosdv2flb" path="res://Scripts/player.gd" id="1_bmk3q"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_743eh"]
-size = Vector2(43, 92)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmk3q"]
+radius = 27.0
+height = 120.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bmk3q"]
 atlas = ExtResource("1_743eh")
@@ -146,16 +147,16 @@ size = Vector2(56, 96)
 
 [node name="Player" type="CharacterBody2D" unique_id=448143370]
 script = ExtResource("1_bmk3q")
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1875615503]
-position = Vector2(-1.5, 3)
-shape = SubResource("RectangleShape2D_743eh")
+position = Vector2(-2, 1)
+shape = SubResource("CapsuleShape2D_bmk3q")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1684292872]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1487997537]
-scale = Vector2(3, 3)
+position = Vector2(1.2037062e-35, 0)
+scale = Vector2(3.75, 3.6875002)
 sprite_frames = SubResource("SpriteFrames_eksx6")
 animation = &"Jump"
 autoplay = "Idle"
@@ -172,6 +173,7 @@ one_shot = true
 [node name="Hitbox" type="Area2D" parent="." unique_id=576873568]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1011761222]
+visible = false
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_bmk3q")
 

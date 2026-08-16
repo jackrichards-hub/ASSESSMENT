@@ -36,7 +36,6 @@ func _physics_process(delta: float) -> void:
 		can_dash = false
 		$dash_timer.start()
 		$dash_cooldown.start()
-		Progress_Dash_Cooldown_Bar.visible()
 		
 	if is_on_wall() and Input.is_action_just_pressed("ui_accept"):
 			velocity.y = JUMP_VELOCITY
@@ -44,6 +43,9 @@ func _physics_process(delta: float) -> void:
 	if is_on_wall() and Input.is_action_just_pressed("ui_left"):
 			velocity.y = JUMP_VELOCITY
 			velocity.x = wall_jump_pushback
+	if is_on_wall() and Input.is_action_just_pressed("ui_right"):
+			velocity.y = JUMP_VELOCITY
+			velocity.x = -wall_jump_pushback
 	
 	
 		
@@ -74,7 +76,7 @@ func _physics_process(delta: float) -> void:
 	else: 
 		animation.play("Jump")
 	
-	if position.y > 900:
+	if position.y > 2000:
 		respawn()
 
 func wall_slide(delta):
