@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://jrk3tr2k7wke" path="res://Sprites/player.tscn" id="3_i6t4g"]
 [ext_resource type="Texture2D" uid="uid://crxxn8wxncpkv" path="res://Assets/Basic Assets (Proper Size).png" id="5_p8jf4"]
 [ext_resource type="PackedScene" uid="uid://l5wv47iw7112" path="res://Sprites/Battery.tscn" id="6_p1f1o"]
+[ext_resource type="PackedScene" uid="uid://ckgowlith8v3k" path="res://Sprites/acid_vat.tscn" id="6_ys4pu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p8jf4"]
 texture = ExtResource("1_ka2pi")
@@ -140,24 +141,33 @@ text = "End tutorial"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=291695505]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAAAAUAAgABAAAAAAACAAUAAgABAAAAAAADAAUAAgABAAAAAAAFAAUAAgABAAAAAAAHAAUAAgABAAAAAAAJAAUAAgABAAAAAAALAAUAAgABAAAAAAANAAUAAgABAAAAAAAPAAUAAgABAAAAAAARAAUAAgABAAAAAAABAAUAAgABAAAAAAAEAAUAAgABAAAAAAAGAAUAAgABAAAAAAAIAAUAAgABAAAAAAAKAAUAAgABAAAAAAAMAAUAAgABAAAAAAAOAAUAAgABAAAAAAAQAAUAAgABAAAAAAASAAUAAgABAAAAAAAUAAUAAgABAAAAAAATAAUAAgABAAAAAAAVAAUAAgABAAAAAAAWAAUAAgABAAAAAAAXAAUAAgABAAAAAAAYAAUAAgABAAAAAAAZAAUAAgABAAAAAAAaAAUAAgABAAAAAAAbAAUAAgABAAAAAAAcAAUAAgABAAAAAAAdAAUAAgABAAAAAAAWAAQAAgABAAAAAAAeAAUAAgABAAAAAAAfAAUAAgABAAAAAAAgAAUAAgABAAAAAAAhAAUAAgABAAAAAAAiAAUAAgABAAAAAAAjAAUAAgABAAAAAAAkAAUAAgABAAAAAAAlAAUAAgABAAAAAAAmAAUAAgABAAAAAAAnAAUAAgABAAAAAAAoAAUAAgABAAAAAAApAAUAAgABAAAAAAAqAAUAAgABAAAAAAArAAUAAgABAAAAAAAsAAUAAgABAAAAAAAtAAUAAgABAAAAAAAuAAUAAgABAAAAAAAvAAUAAgABAAAAAAAwAAUAAgABAAAAAAAxAAUAAgABAAAAAAAyAAUAAgABAAAAAAAzAAUAAgABAAAAAAAtAAQAAgABAAAAAAAtAAMAAgABAAAAAAAtAAIAAgABAAAAAAAtAAEAAgABAAAAAAA0AAUAAgABAAAAAAA1AAUAAgABAAAAAAA2AAUAAgABAAAAAAA3AAUAAgABAAAAAAA3AAQAAgABAAAAAAA3AAMAAgABAAAAAAA3AAIAAgABAAAAAAA3AAEAAgABAAAAAAA2AAAAAgABAAAAAAA3AAAAAgABAAAAAAAzAAIAAgABAAAAAAAzAAEAAgABAAAAAAAzAAAAAgABAAAAAAAzAP//AgABAAAAAAAzAP7/AgABAAAAAAAzAP3/AgABAAAAAAA0AP3/AgABAAAAAAANAAQAAgABAAAAAAANAAMAAgABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAUAAgABAAAAAAACAAUAAgABAAAAAAADAAUAAgABAAAAAAAFAAUAAgABAAAAAAAHAAUAAgABAAAAAAAJAAUAAgABAAAAAAALAAUAAgABAAAAAAANAAUAAgABAAAAAAAPAAUAAgABAAAAAAARAAUAAgABAAAAAAABAAUAAgABAAAAAAAEAAUAAgABAAAAAAAGAAUAAgABAAAAAAAIAAUAAgABAAAAAAAKAAUAAgABAAAAAAAMAAUAAgABAAAAAAAOAAUAAgABAAAAAAAQAAUAAgABAAAAAAASAAUAAgABAAAAAAAUAAUAAgABAAAAAAATAAUAAgABAAAAAAAVAAUAAgABAAAAAAAWAAUAAgABAAAAAAAXAAUAAgABAAAAAAAYAAUAAgABAAAAAAAZAAUAAgABAAAAAAAaAAUAAgABAAAAAAAbAAUAAgABAAAAAAAcAAUAAgABAAAAAAAdAAUAAgABAAAAAAAWAAQAAgABAAAAAAAeAAUAAgABAAAAAAAfAAUAAgABAAAAAAAgAAUAAgABAAAAAAAhAAUAAgABAAAAAAAiAAUAAgABAAAAAAAjAAUAAgABAAAAAAAkAAUAAgABAAAAAAAlAAUAAgABAAAAAAAmAAUAAgABAAAAAAAnAAUAAgABAAAAAAAoAAUAAgABAAAAAAApAAUAAgABAAAAAAAqAAUAAgABAAAAAAArAAUAAgABAAAAAAAsAAUAAgABAAAAAAAtAAUAAgABAAAAAAAuAAUAAgABAAAAAAAvAAUAAgABAAAAAAAwAAUAAgABAAAAAAAxAAUAAgABAAAAAAAyAAUAAgABAAAAAAAzAAUAAgABAAAAAAA0AAUAAgABAAAAAAA1AAUAAgABAAAAAAA2AAUAAgABAAAAAAA3AAUAAgABAAAAAAANAAQAAgABAAAAAAANAAMAAgABAAAAAAAxAAQAAgABAAAAAAAxAAMAAgABAAAAAAAxAAIAAgABAAAAAAAxAAEAAgABAAAAAAAxAAAAAgABAAAAAAA4AAUAAgABAAAAAAA5AAUAAgABAAAAAAA6AAUAAgABAAAAAAA7AAUAAgABAAAAAAA3AP//AgABAAAAAAA3AAAAAgABAAAAAAA3AAEAAgABAAAAAAA3AAIAAgABAAAAAAA7AAMAAgABAAAAAAA7AAIAAgABAAAAAAA7AAEAAgABAAAAAAA7AAAAAgABAAAAAAA6AAAAAgABAAAAAAA7AAQAAgABAAAAAAA3AP7/AgABAAAAAAA2AP7/AgABAAAAAAA=")
 tile_set = SubResource("TileSet_ys4pu")
 
+[node name="RichTextLabel8" type="RichTextLabel" parent="." unique_id=1604417556]
+offset_left = 2285.0
+offset_top = 109.0
+offset_right = 2625.0
+offset_bottom = 187.0
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 16
+text = "Quick! Jump over or you die!"
+
 [node name="RichTextLabel7" type="RichTextLabel" parent="." unique_id=1195907769]
-offset_left = 2949.0
-offset_top = 60.0
-offset_right = 3272.0
-offset_bottom = 202.0
+offset_left = 3211.0
+offset_top = 38.0
+offset_right = 3534.0
+offset_bottom = 180.0
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 16
 text = "Using this same movement you can wall jump
 "
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="." unique_id=1238953317]
-offset_left = 2450.0
-offset_top = 33.0
-offset_right = 2749.0
-offset_bottom = 175.0
+offset_left = 2775.0
+offset_top = 7.0
+offset_right = 3074.0
+offset_bottom = 149.0
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 16
 text = "Next is the wall jump function, continuously jump while holding d or > to go up"
@@ -202,23 +212,26 @@ text = "Spacebar to jump
 Double click spacebar to double jump"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=7092680]
-offset_left = 3.0
-offset_top = 90.0
-offset_right = 302.0
-offset_bottom = 232.0
+offset_left = 6.0
+offset_top = 85.0
+offset_right = 305.0
+offset_bottom = 227.0
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 16
 text = "Game uses A, D, arrow keys, shift and spacebar
 "
 
 [node name="Battery" parent="." unique_id=1292440501 instance=ExtResource("6_p1f1o")]
-position = Vector2(1969, 255)
+position = Vector2(1856, 261)
 
 [node name="Battery2" parent="." unique_id=1105826289 instance=ExtResource("6_p1f1o")]
-position = Vector2(2237, 250)
+position = Vector2(2079, 256)
 
 [node name="Battery3" parent="." unique_id=203760289 instance=ExtResource("6_p1f1o")]
-position = Vector2(1726, 262)
+position = Vector2(1654, 262)
+
+[node name="Acid vat" parent="." unique_id=1120354465 instance=ExtResource("6_ys4pu")]
+position = Vector2(2431, 292)
 
 [connection signal="pressed" from="UI layer/UI/Skip Tutorial" to="." method="_on_skip_tutorial_pressed"]
 [connection signal="pressed" from="End tutorial" to="." method="_on_skip_tutorial_pressed"]
