@@ -22,12 +22,15 @@ grow_vertical = 2
 script = ExtResource("1_xhh6f")
 
 [node name="Panel" type="Panel" parent="." unique_id=552942977]
-layout_mode = 0
-offset_left = 2.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.002
+anchor_right = 1.001
+anchor_bottom = 0.99700004
+offset_left = -0.30400014
 offset_top = -1.0
-offset_right = 1153.0
-offset_bottom = 646.0
-metadata/_edit_group_ = true
+offset_right = -0.15209961
+offset_bottom = -0.056030273
 
 [node name="Background(powerBox)" type="Sprite2D" parent="Panel" unique_id=532715862]
 position = Vector2(576, 323.00003)

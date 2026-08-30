@@ -1,19 +1,82 @@
 [gd_scene format=3 uid="uid://j3t5jodjqxtd"]
 
-[ext_resource type="Texture2D" uid="uid://x8ef36h6u5l2" path="res://Assets/Scientist (1).png" id="1_fq4fi"]
+[ext_resource type="Texture2D" uid="uid://bux17i30kgsdq" path="res://Assets/Bolt Guard (1).png" id="1_fq4fi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fq4fi"]
 size = Vector2(30, 57)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r3tu1"]
 atlas = ExtResource("1_fq4fi")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54dgf"]
+atlas = ExtResource("1_fq4fi")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h1x2"]
+atlas = ExtResource("1_fq4fi")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwvs7"]
+atlas = ExtResource("1_fq4fi")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txv1s"]
+atlas = ExtResource("1_fq4fi")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ev7ek"]
+atlas = ExtResource("1_fq4fi")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijl1w"]
+atlas = ExtResource("1_fq4fi")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yalhi"]
+atlas = ExtResource("1_fq4fi")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kgeh"]
+atlas = ExtResource("1_fq4fi")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l74n4"]
+atlas = ExtResource("1_fq4fi")
+region = Rect2(0, 384, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_54dgf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r3tu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54dgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h1x2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwvs7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txv1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ev7ek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijl1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yalhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kgeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l74n4")
 }],
 "loop": true,
 "name": &"default",
@@ -21,7 +84,7 @@ animations = [{
 }]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=2083891825]
-position = Vector2(227, 131)
+position = Vector2(277, 133)
 scale = Vector2(2, 2)
 metadata/_edit_group_ = true
 
@@ -30,6 +93,7 @@ position = Vector2(-3, 4.5)
 shape = SubResource("RectangleShape2D_fq4fi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1012271108]
-position = Vector2(-2, 1)
-scale = Vector2(2, 2)
+position = Vector2(11, 2)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_54dgf")
+autoplay = "default"
