@@ -96,9 +96,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogvdp"]
-size = Vector2(81, 67)
+size = Vector2(71, 60)
 
 [node name="Acid vat" type="Area2D" unique_id=1120354465]
+scale = Vector2(0.9, 0.9)
 script = ExtResource("1_0iruw")
 metadata/_edit_group_ = true
 
@@ -110,5 +111,5 @@ autoplay = "default"
 frame_progress = 0.51324046
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2070970032]
-position = Vector2(13.5, -0.5)
+position = Vector2(13.5, 3)
 shape = SubResource("RectangleShape2D_ogvdp")

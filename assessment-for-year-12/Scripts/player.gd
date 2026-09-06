@@ -30,13 +30,14 @@ func _physics_process(delta: float) -> void:
 		jump_count +=1 
 		velocity.y = JUMP_VELOCITY
 		
-	
+	#This is for dash
 	if Input.is_action_just_pressed("Sprint") and can_dash:
 		dashing = true
 		can_dash = false
 		$dash_timer.start()
 		$dash_cooldown.start()
 		
+		#This is for jumping off walls
 	if is_on_wall() and Input.is_action_just_pressed("ui_accept"):
 			velocity.y = JUMP_VELOCITY
 			velocity.x = -wall_jump_pushback
@@ -50,7 +51,6 @@ func _physics_process(delta: float) -> void:
 	
 		
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		if dashing: 
@@ -78,7 +78,7 @@ func _physics_process(delta: float) -> void:
 	
 	if position.y > 2000:
 		respawn()
-
+#This is for wall sliding which helps the wall jumping
 func wall_slide(delta):
 	if is_on_wall() and !is_on_floor():
 		if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
@@ -92,19 +92,22 @@ func wall_slide(delta):
 		velocity.y += (wall_slide_gravity * delta)
 		velocity.y = min(velocity.y, wall_slide_gravity)
 
+#This is for respawning which resets the battery and the level
 func respawn():
 	position = start_position
 	battery_count = 0
 	collected.emit(battery_count)
+	get_tree().reload_current_scene()
 	
-#make it stop sprinting
+#This stops the dash
 func _on_dash_timer_timeout() -> void:
 	print("Dash ended")
 	dashing = false
-
+#This is the cooldown between dashing
 func _on_dash_cooldown_timeout() -> void:
 	can_dash = true
 	
+	#This is for the collecting of batteries
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area is Battery:
 		print("collected battery")
@@ -113,11 +116,12 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		print(battery_count)
 		area.queue_free()
 
+#For making acid vats work
 func _on_acid_vat_area_entered(area: Area2D) -> void:
 	if Player:
 		respawn()
 
-
+#Sends player back to main menu
 func _on_back_to_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	
