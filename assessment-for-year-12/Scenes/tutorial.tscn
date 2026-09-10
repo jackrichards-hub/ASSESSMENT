@@ -235,3 +235,4 @@ position = Vector2(2431, 292)
 
 [connection signal="pressed" from="UI layer/UI/Skip Tutorial" to="." method="_on_skip_tutorial_pressed"]
 [connection signal="pressed" from="End tutorial" to="." method="_on_skip_tutorial_pressed"]
+[connection signal="area_entered" from="Acid vat" to="Player" method="_on_acid_vat_area_entered"]
