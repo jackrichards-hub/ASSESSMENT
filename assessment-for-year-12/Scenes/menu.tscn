@@ -101,6 +101,8 @@ text = "Labratory Bolt"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=813574959]
+
 [node name="Settings" type="Panel" parent="." unique_id=1843279087]
 layout_mode = 1
 anchors_preset = -1
