@@ -2,7 +2,7 @@ extends Control
 
 @onready var main_buttons: VBoxContainer = $MainButtons
 @onready var settings: Panel = $Settings
-
+@onready var credits: Panel = $Credits
 
 
 
@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 func _ready():
 	main_buttons.visible = true
+	credits.visible = false
 	settings.visible = false
 
 func _on_start_pressed() -> void:
@@ -25,6 +26,12 @@ func _on_achievements_pressed() -> void:
 func _on_settings_pressed() -> void:
 	main_buttons.visible = false
 	settings.visible = true
+	credits.visible = false
+
+func _on_credits_pressed() -> void:
+	main_buttons.visible = false
+	settings.visible = false
+	credits.visible = true
 
 
 func _on_quit_pressed() -> void:
