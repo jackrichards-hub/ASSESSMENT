@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var sprint_again_timer: Timer = $dash_cooldown
 @onready var Progress_Dash_Cooldown_Bar: ProgressBar = $"../UI layer/UI/Visual Dash Cooldown"
 
+
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const DASH_SPEED = 900.0
@@ -20,6 +22,7 @@ var battery_count = 0
 signal collected(count)
 
 func _physics_process(delta: float) -> void:
+	Progress_Dash_Cooldown_Bar.visible = false
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -35,7 +38,6 @@ func _physics_process(delta: float) -> void:
 		dashing = true
 		can_dash = false
 		$dash_timer.start()
-		$dash_cooldown.start()
 		
 		#This is for jumping off walls
 	if is_on_wall() and Input.is_action_just_pressed("ui_accept"):
@@ -101,11 +103,18 @@ func respawn():
 	
 #This stops the dash
 func _on_dash_timer_timeout() -> void:
+	#For when dashing stops a cooldown starts
 	print("Dash ended")
 	dashing = false
+	$dash_cooldown.start()
+	Progress_Dash_Cooldown_Bar.visible = true
+	
+	
 #This is the cooldown between dashing
 func _on_dash_cooldown_timeout() -> void:
+	#for when the dashing cooldown ends the player can dash again
 	can_dash = true
+	Progress_Dash_Cooldown_Bar.visible = false
 	
 	#This is for the collecting of batteries
 func _on_hitbox_area_entered(area: Area2D) -> void:
