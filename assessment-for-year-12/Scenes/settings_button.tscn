@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bq8uwnam7ada3"]
+
+[ext_resource type="Texture2D" uid="uid://dvuvogetd5ssc" path="res://Assets/Tutorial Background.png" id="1_s48mp"]
+[ext_resource type="Texture2D" uid="uid://bucm7opbtry8n" path="res://Assets/Settings Icon-1.png.png" id="2_wiqxg"]
+[ext_resource type="Script" uid="uid://c72ja4wp87k5x" path="res://Scripts/settings_button.gd" id="2_yjy6q"]
+
+[node name="Settings button" type="TextureButton" unique_id=1439796223]
+offset_left = 14.0
+offset_top = 29.0
+offset_right = 81.0
+offset_bottom = 93.0
+texture_normal = ExtResource("2_wiqxg")
+texture_pressed = ExtResource("2_wiqxg")
+script = ExtResource("2_yjy6q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=875453235]
+show_behind_parent = true
+position = Vector2(33.5, 32)
+scale = Vector2(0.53906244, 0.5)
+texture = ExtResource("1_s48mp")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

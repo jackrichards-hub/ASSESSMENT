@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://j8vg3lais4c6"
+path="res://.godot/imported/Laser Beam Sound Effect.mp3-61b556955fe8412db0499ef5b668048d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Laser Beam Sound Effect.mp3"
+dest_files=["res://.godot/imported/Laser Beam Sound Effect.mp3-61b556955fe8412db0499ef5b668048d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

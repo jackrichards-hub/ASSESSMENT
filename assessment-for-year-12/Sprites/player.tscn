@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://bwm44aoc1fc51" path="res://Assets/Scientist (Updated) (1).png" id="1_743eh"]
 [ext_resource type="Script" uid="uid://cmfncosdv2flb" path="res://Scripts/player.gd" id="1_bmk3q"]
+[ext_resource type="Script" uid="uid://blldl4mjexpve" path="res://Scripts/master_slider.gd" id="3_eksx6"]
+[ext_resource type="Script" uid="uid://yxg7pgv5dx4y" path="res://Scripts/sfx_slider.gd" id="4_7x6f1"]
+[ext_resource type="Script" uid="uid://b5ic1wvmsaai2" path="res://Scripts/music_slider.gd" id="5_tgxxa"]
+[ext_resource type="Script" uid="uid://1wi1audcl7fh" path="res://Scripts/fullscreen_control.gd" id="6_10qko"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmk3q"]
 radius = 27.0
@@ -145,6 +149,23 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmk3q"]
 size = Vector2(56, 96)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2m1f"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.61)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_h4eo8"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_pcmbh"]
+color = Color(0.19806886, 0.51460785, 0.90213066, 1)
+thickness = 6
+
 [node name="Player" type="CharacterBody2D" unique_id=448143370]
 script = ExtResource("1_bmk3q")
 
@@ -177,6 +198,151 @@ visible = false
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_bmk3q")
 
+[node name="UI" type="Control" parent="." unique_id=1717614702]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -100.0
+offset_top = -124.0
+offset_right = 103.0
+offset_bottom = -23.0
+
+[node name="Settings" type="Panel" parent="UI" unique_id=1481353845]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.53900003
+anchor_right = 0.508
+anchor_bottom = 0.53900003
+offset_left = -273.124
+offset_top = -100.439
+offset_right = 286.876
+offset_bottom = 256.561
+
+[node name="Settings label" type="Label" parent="UI/Settings" unique_id=343183445]
+layout_mode = 0
+offset_left = 189.0
+offset_right = 434.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+
+[node name="Back" type="Button" parent="UI/Settings/Settings label" unique_id=1859080017]
+layout_mode = 0
+offset_left = -95.0
+offset_top = 308.0
+offset_right = 300.0
+offset_bottom = 353.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_x2m1f")
+text = "Back to menu"
+
+[node name="Credits" type="Button" parent="UI/Settings/Settings label" unique_id=655604277]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.39600003
+anchor_top = 3.8360002
+anchor_right = 1.233
+anchor_bottom = 4.5070004
+offset_left = 0.020004272
+offset_top = -0.012023926
+offset_right = -0.08502197
+offset_bottom = 0.030975342
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_x2m1f")
+text = "Credits
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Settings" unique_id=139798589]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -117.5
+offset_right = 205.0
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Master volume box" type="HBoxContainer" parent="UI/Settings/VBoxContainer" unique_id=1606881607]
+layout_mode = 2
+
+[node name="Music volume" type="Label" parent="UI/Settings/VBoxContainer/Master volume box" unique_id=1166002661]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Master volume"
+
+[node name="Master slider" type="HSlider" parent="UI/Settings/VBoxContainer/Master volume box" unique_id=476288784]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxLine_h4eo8")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_pcmbh")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_pcmbh")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("3_eksx6")
+
+[node name="SFX volume box" type="HBoxContainer" parent="UI/Settings/VBoxContainer" unique_id=859135220]
+layout_mode = 2
+
+[node name="SFX volume" type="Label" parent="UI/Settings/VBoxContainer/SFX volume box" unique_id=1489293068]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "SFX volume"
+
+[node name="SFX slider" type="HSlider" parent="UI/Settings/VBoxContainer/SFX volume box" unique_id=421587159]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxLine_h4eo8")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_pcmbh")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_pcmbh")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("4_7x6f1")
+
+[node name="Music volume box" type="HBoxContainer" parent="UI/Settings/VBoxContainer" unique_id=922983740]
+layout_mode = 2
+
+[node name="Music volume" type="Label" parent="UI/Settings/VBoxContainer/Music volume box" unique_id=350706725]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Music volume"
+
+[node name="Music slider" type="HSlider" parent="UI/Settings/VBoxContainer/Music volume box" unique_id=1036643340]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxLine_h4eo8")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_pcmbh")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_pcmbh")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("5_tgxxa")
+audio_bus_name = "Music"
+
+[node name="FullscreenControl" type="CheckButton" parent="UI/Settings/VBoxContainer" unique_id=1024126271]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_colors/button_checked_color = Color(0.30729616, 0.72874933, 0.4492212, 1)
+theme_override_colors/button_unchecked_color = Color(0.85490197, 0.14509805, 0.25882354, 1)
+text = "Fullscreen"
+script = ExtResource("6_10qko")
+
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="dash_cooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="value_changed" from="UI/Settings/VBoxContainer/Master volume box/Master slider" to="UI/Settings/VBoxContainer/Master volume box/Master slider" method="_on_value_changed"]
+[connection signal="value_changed" from="UI/Settings/VBoxContainer/SFX volume box/SFX slider" to="UI/Settings/VBoxContainer/SFX volume box/SFX slider" method="_on_value_changed"]
+[connection signal="value_changed" from="UI/Settings/VBoxContainer/Music volume box/Music slider" to="UI/Settings/VBoxContainer/Music volume box/Music slider" method="_on_value_changed"]
+[connection signal="toggled" from="UI/Settings/VBoxContainer/FullscreenControl" to="UI/Settings/VBoxContainer/FullscreenControl" method="_on_toggled"]
