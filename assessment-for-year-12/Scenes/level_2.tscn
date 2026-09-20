@@ -1,3 +1,229 @@
-[gd_scene format=3 uid="uid://cs64eoiabga34"]
+[gd_scene format=4 uid="uid://cs64eoiabga34"]
+
+[ext_resource type="Script" uid="uid://q8doi6po2dig" path="res://Scripts/level_2.gd" id="1_v3rpw"]
+[ext_resource type="Texture2D" uid="uid://1wq6fbqvr71j" path="res://icon.svg" id="2_2mgoq"]
+[ext_resource type="Texture2D" uid="uid://c1ejpgyd48r3t" path="res://Assets/Acid Vat Pipe.png" id="3_uhnj4"]
+[ext_resource type="Texture2D" uid="uid://crxxn8wxncpkv" path="res://Assets/Basic Assets (Proper Size).png" id="4_42uki"]
+[ext_resource type="PackedScene" uid="uid://jrk3tr2k7wke" path="res://Sprites/player.tscn" id="5_t7v2y"]
+[ext_resource type="Script" uid="uid://cq36bjd1d3ian" path="res://Scripts/score_label.gd" id="6_ait6c"]
+[ext_resource type="PackedScene" uid="uid://bhshmfb35ev01" path="res://Scenes/game_timer.tscn" id="7_vcilj"]
+[ext_resource type="Texture2D" uid="uid://bucm7opbtry8n" path="res://Assets/Settings Icon-1.png.png" id="8_bl0du"]
+[ext_resource type="PackedScene" uid="uid://l5wv47iw7112" path="res://Sprites/Battery.tscn" id="9_42uki"]
+[ext_resource type="PackedScene" uid="uid://ckgowlith8v3k" path="res://Sprites/acid_vat.tscn" id="10_t7v2y"]
+[ext_resource type="PackedScene" uid="uid://2ghiqvtvjd5e" path="res://Sprites/elevator.tscn" id="11_t7v2y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t7v2y"]
+texture = ExtResource("2_2mgoq")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ait6c"]
+texture = ExtResource("3_uhnj4")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcilj"]
+texture = ExtResource("4_42uki")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -7, 64, -7, 64, 14, -64, 12)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -8, 64, -7, 64, 14, -64, 12)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -9, 64, -7, 64, 14, -64, 12)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -8, -0.035152435, -7.5002747, 64, -7, 64, 13, -64, 14)
+
+[sub_resource type="TileSet" id="TileSet_fhuy1"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_t7v2y")
+sources/2 = SubResource("TileSetAtlasSource_vcilj")
+sources/1 = SubResource("TileSetAtlasSource_ait6c")
 
 [node name="Level2" type="Node2D" unique_id=1327504563]
+script = ExtResource("1_v3rpw")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=433863321]
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAAAAAQAAgAAAAAAAAABAAQAAgAAAAAAAAD//wQAAgAAAAAAAAD+/wQAAgAAAAAAAAD9/wQAAgAAAAAAAAD7/wQAAgAAAAAAAAD8/wQAAgAAAAAAAAD6/wQAAgAAAAAAAAD5/wQAAgAAAAAAAAD4/wQAAgAAAAAAAAAHAAQAAgAAAAAAAAAIAAQAAgAAAAAAAAAJAAQAAgAAAAAAAAACAAQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAGAAQAAgAAAAAAAAALAAQAAgAAAAAAAAAMAAQAAgAAAAAAAAAKAAQAAgAAAAAAAAANAAQAAgAAAAAAAAAOAAQAAgAAAAAAAAAPAAQAAgAAAAAAAAAQAAQAAgAAAAAAAAARAAQAAgAAAAAAAAARAAUAAgAAAAAAAAARAAYAAgAAAAAAAAARAAcAAgAAAAAAAAAQAAUAAgAAAAAAAAAQAAYAAgAAAAAAAAAPAAUAAgAAAAAAAAAPAAYAAgAAAAAAAAAPAAcAAgAAAAAAAAAQAAcAAgAAAAAAAAAWAAQAAgAAAAAAAAAWAAUAAgAAAAAAAAAWAAYAAgAAAAAAAAAWAAcAAgAAAAAAAAAXAAQAAgAAAAAAAAAXAAUAAgAAAAAAAAAXAAYAAgAAAAAAAAAXAAcAAgAAAAAAAAAYAAQAAgAAAAAAAAAYAAUAAgAAAAAAAAAYAAYAAgAAAAAAAAAYAAcAAgAAAAAAAAAWAAMAAgAAAAAAAAAWAAIAAgAAAAAAAAAWAAEAAgAAAAAAAAAWAAAAAgAAAAAAAAAWAP//AgAAAAAAAAAWAP7/AgAAAAAAAAAXAP7/AgAAAAAAAAAYAP7/AgAAAAAAAAAYAP//AgAAAAAAAAAYAAAAAgAAAAAAAAAYAAEAAgAAAAAAAAAYAAIAAgAAAAAAAAAYAAMAAgAAAAAAAAAXAAMAAgAAAAAAAAAXAAIAAgAAAAAAAAAXAAEAAgAAAAAAAAAXAAAAAgAAAAAAAAAXAP//AgAAAAAAAAAYAP3/AgAAAAAAAAAXAP3/AgAAAAAAAAAWAP3/AgAAAAAAAAAVAP3/AgAAAAAAAAAUAP3/AgAAAAAAAAATAP3/AgAAAAAAAAASAP3/AgAAAAAAAAARAP3/AgAAAAAAAAAQAP3/AgAAAAAAAAAPAP3/AgAAAAAAAAAOAP3/AgAAAAAAAAANAP3/AgAAAAAAAAAMAP3/AgAAAAAAAAALAP3/AgAAAAAAAAAKAP3/AgAAAAAAAAAJAP3/AgAAAAAAAAAIAP3/AgAAAAAAAAAHAP3/AgAAAAAAAAAGAP3/AgAAAAAAAAAFAP3/AgAAAAAAAAAEAP3/AgAAAAAAAAADAP3/AgAAAAAAAAACAP3/AgAAAAAAAAABAP3/AgAAAAAAAAAAAP3/AgAAAAAAAAD///3/AgAAAAAAAAD+//3/AgAAAAAAAAD9//3/AgAAAAAAAAD8//3/AgAAAAAAAAD7//3/AgAAAAAAAAD6//3/AgAAAAAAAAD5//3/AgAAAAAAAAD4//3/AgAAAAAAAAD3//3/AgAAAAAAAAD3//7/AgAAAAAAAAD3////AgAAAAAAAAD2////AgAAAAAAAAD2/wAAAgAAAAAAAAD2/wEAAgAAAAAAAAD2/wIAAgAAAAAAAAD2/wMAAgAAAAAAAAD2/wQAAgAAAAAAAAD3/wQAAgAAAAAAAAD3/wMAAgAAAAAAAAD3/wIAAgAAAAAAAAD3/wEAAgAAAAAAAAD3/wAAAgAAAAAAAAD2//7/AgAAAAAAAAD2//3/AgAAAAAAAAAWAAgAAgAAAAAAAAAWAAkAAgAAAAAAAAAWAAoAAgAAAAAAAAAWAAsAAgAAAAAAAAAWAAwAAgAAAAAAAAAWAA0AAgAAAAAAAAAVAA0AAgAAAAAAAAAUAA0AAgAAAAAAAAATAA0AAgAAAAAAAAASAA0AAgAAAAAAAAARAA0AAgAAAAAAAAAQAA0AAgAAAAAAAAAPAA0AAgAAAAAAAAAOAA0AAgAAAAAAAAANAA0AAgAAAAAAAAAMAA0AAgAAAAAAAAALAA0AAgAAAAAAAAAKAA0AAgAAAAAAAAAXAAgAAgAAAAAAAAAYAAgAAgAAAAAAAAAYAAkAAgAAAAAAAAAYAAoAAgAAAAAAAAAXAAoAAgAAAAAAAAAXAAsAAgAAAAAAAAAXAAkAAgAAAAAAAAAXAAwAAgAAAAAAAAAYAAwAAgAAAAAAAAAYAAsAAgAAAAAAAAAYAA0AAgAAAAAAAAAXAA0AAgAAAAAAAAAJAA0AAgAAAAAAAAAIAA0AAgAAAAAAAAAHAA0AAgAAAAAAAAAGAA0AAgAAAAAAAAAFAA0AAgAAAAAAAAAEAA0AAgAAAAAAAAADAA0AAgAAAAAAAAACAA0AAgAAAAAAAAABAA0AAgAAAAAAAAAAAA0AAgAAAAAAAAD//w0AAgAAAAAAAAD+/w0AAgAAAAAAAAD9/w0AAgAAAAAAAAD8/w0AAgAAAAAAAAD2/w0AAgAAAAAAAAD2/wwAAgAAAAAAAAD2/wsAAgAAAAAAAAD2/woAAgAAAAAAAAD2/wkAAgAAAAAAAAD2/wgAAgAAAAAAAAD2/wcAAgAAAAAAAAD2/wYAAgAAAAAAAAD2/wUAAgAAAAAAAAD3/wUAAgAAAAAAAAD3/wYAAgAAAAAAAAD3/wcAAgAAAAAAAAD3/wgAAgAAAAAAAAD3/wkAAgAAAAAAAAD3/woAAgAAAAAAAAD3/wsAAgAAAAAAAAD3/wwAAgAAAAAAAAD3/w0AAgAAAAAAAAD3/w4AAgAAAAAAAAD2/w4AAgAAAAAAAAD2/w8AAgAAAAAAAAD2/xAAAgAAAAAAAAD3/xAAAgAAAAAAAAD3/xEAAgAAAAAAAAD3/xIAAgAAAAAAAAD2/xIAAgAAAAAAAAD2/xEAAgAAAAAAAAD3/w8AAgAAAAAAAAAOAAUAAgAAAAAAAAANAAUAAgAAAAAAAAAMAAUAAgAAAAAAAAALAAUAAgAAAAAAAAAKAAUAAgAAAAAAAAAJAAUAAgAAAAAAAAAIAAUAAgAAAAAAAAAHAAUAAgAAAAAAAAAGAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAADAAUAAgAAAAAAAAACAAUAAgAAAAAAAAABAAUAAgAAAAAAAAAAAAUAAgAAAAAAAAD//wUAAgAAAAAAAAD+/wUAAgAAAAAAAAD9/wUAAgAAAAAAAAD8/wUAAgAAAAAAAAD7/wUAAgAAAAAAAAD6/wUAAgAAAAAAAAD5/wUAAgAAAAAAAAD4/wUAAgAAAAAAAAD4/wYAAgAAAAAAAAD2/xMAAgAAAAAAAAD3/xMAAgAAAAAAAAD4/xMAAgAAAAAAAAD5/xMAAgAAAAAAAAD6/xMAAgAAAAAAAAD7/xMAAgAAAAAAAAD8/xMAAgAAAAAAAAD9/xMAAgAAAAAAAAD+/xMAAgAAAAAAAAD//xMAAgAAAAAAAAAAABMAAgAAAAAAAAAAABIAAgAAAAAAAAABABIAAgAAAAAAAAACABIAAgAAAAAAAAADABIAAgAAAAAA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")
+tile_set = SubResource("TileSet_fhuy1")
+
+[node name="Player" parent="." unique_id=448143370 instance=ExtResource("5_t7v2y")]
+position = Vector2(36, 191)
+
+[node name="Elevator" parent="." unique_id=1501527127 instance=ExtResource("11_t7v2y")]
+position = Vector2(2161, 33.999996)
+scale = Vector2(2.05, 2.05)
+
+[node name="UI layer" type="CanvasLayer" parent="." unique_id=428614595]
+
+[node name="UI" type="Control" parent="UI layer" unique_id=400963530]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 40.0
+
+[node name="Score label" type="Label" parent="UI layer/UI" unique_id=457005574]
+layout_mode = 0
+offset_top = 55.0
+offset_right = 141.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0.1680183, 0.90382373, 0.39588127, 1)
+text = "Batteries: 0"
+script = ExtResource("6_ait6c")
+
+[node name="back to main menu" type="Button" parent="UI layer/UI" unique_id=1897362733]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 159.0
+offset_bottom = 32.0
+text = "Back to main menu"
+
+[node name="Label" type="Label" parent="UI layer/UI" unique_id=1045629363]
+layout_mode = 0
+offset_top = 30.0
+offset_right = 159.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(1, 0, 0.3113789, 1)
+text = "Batteries required: 10"
+
+[node name="Game Timer" parent="UI layer/UI" unique_id=406137728 instance=ExtResource("7_vcilj")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.25
+anchor_bottom = 0.5
+offset_left = 527.0
+offset_top = 27.0
+offset_right = 437.0
+offset_bottom = 7.0
+grow_vertical = 1
+
+[node name="Visual Dash Cooldown" type="ProgressBar" parent="UI layer/UI" unique_id=1879035971]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 94.0
+offset_right = 63.0
+offset_bottom = 122.0
+step = 1.0
+
+[node name="Settings" type="Button" parent="UI layer/UI" unique_id=126599509]
+layout_mode = 0
+offset_left = 1078.0
+offset_right = 1153.0
+offset_bottom = 74.0
+icon = ExtResource("8_bl0du")
+
+[node name="Battery Node" type="Node" parent="." unique_id=1906289891]
+
+[node name="Battery2" parent="Battery Node" unique_id=1292440501 instance=ExtResource("9_42uki")]
+position = Vector2(1027, 210)
+
+[node name="Battery3" parent="Battery Node" unique_id=726635794 instance=ExtResource("9_42uki")]
+position = Vector2(1353, 1164)
+
+[node name="Battery" parent="Battery Node" unique_id=330146305 instance=ExtResource("9_42uki")]
+position = Vector2(-474, 503)
+
+[node name="Battery5" parent="Battery Node" unique_id=1414727987 instance=ExtResource("9_42uki")]
+position = Vector2(1660, 813)
+
+[node name="Battery11" parent="Battery Node" unique_id=942026873 instance=ExtResource("9_42uki")]
+position = Vector2(2137, 1174)
+
+[node name="Battery10" parent="Battery Node" unique_id=1703046100 instance=ExtResource("9_42uki")]
+position = Vector2(1165, 948)
+
+[node name="Battery9" parent="Battery Node" unique_id=1048531307 instance=ExtResource("9_42uki")]
+position = Vector2(1661, 327)
+
+[node name="Battery8" parent="Battery Node" unique_id=299457210 instance=ExtResource("9_42uki")]
+position = Vector2(633, 937)
+
+[node name="Battery7" parent="Battery Node" unique_id=1157234569 instance=ExtResource("9_42uki")]
+position = Vector2(1286, 778)
+
+[node name="Battery6" parent="Battery Node" unique_id=1019308240 instance=ExtResource("9_42uki")]
+position = Vector2(1962, 53)
+
+[node name="Battery13" parent="Battery Node" unique_id=1278985943 instance=ExtResource("9_42uki")]
+position = Vector2(546, 189)
+
+[node name="Acid Vat Node" type="Node" parent="." unique_id=1924081209]
+
+[node name="Acid vat" parent="Acid Vat Node" unique_id=1120354465 instance=ExtResource("10_t7v2y")]
+position = Vector2(1045, 802)
+
+[node name="Acid vat2" parent="Acid Vat Node" unique_id=358043905 instance=ExtResource("10_t7v2y")]
+position = Vector2(653, 800)
+
+[node name="Acid vat3" parent="Acid Vat Node" unique_id=555295478 instance=ExtResource("10_t7v2y")]
+position = Vector2(320, 799)
+
+[node name="Acid vat4" parent="Acid Vat Node" unique_id=1164071145 instance=ExtResource("10_t7v2y")]
+position = Vector2(-73, 801)
+
+[node name="Acid vat5" parent="Acid Vat Node" unique_id=801772007 instance=ExtResource("10_t7v2y")]
+position = Vector2(527, 610)
+rotation = -3.1415925
+
+[node name="Acid vat6" parent="Acid Vat Node" unique_id=1070000778 instance=ExtResource("10_t7v2y")]
+position = Vector2(790.00006, 608)
+rotation = -3.1415925
+
+[node name="Acid vat7" parent="Acid Vat Node" unique_id=913346023 instance=ExtResource("10_t7v2y")]
+position = Vector2(137, 603)
+rotation = -3.1415925
+
+[node name="Acid vat8" parent="Acid Vat Node" unique_id=1502765090 instance=ExtResource("10_t7v2y")]
+position = Vector2(718, 1193)
+
+[node name="Acid vat9" parent="Acid Vat Node" unique_id=1099053014 instance=ExtResource("10_t7v2y")]
+position = Vector2(912, 981)
+rotation = -3.1415925
+
+[node name="Acid vat10" parent="Acid Vat Node" unique_id=816581767 instance=ExtResource("10_t7v2y")]
+position = Vector2(1126, 1189)
+
+[node name="Acid vat11" parent="Acid Vat Node" unique_id=1582837731 instance=ExtResource("10_t7v2y")]
+position = Vector2(1307, 970)
+rotation = -3.1415925
+
+[connection signal="collected" from="Player" to="UI layer/UI/Score label" method="_on_player_collected"]
+[connection signal="body_entered" from="Elevator" to="." method="_on_elevator_body_entered"]
+[connection signal="pressed" from="UI layer/UI/back to main menu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="area_entered" from="Acid Vat Node/Acid vat" to="Player" method="_on_acid_vat_area_entered"]
+[connection signal="area_entered" from="Acid Vat Node/Acid vat2" to="Player" method="_on_acid_vat_area_entered"]
+[connection signal="area_entered" from="Acid Vat Node/Acid vat3" to="Player" method="_on_acid_vat_area_entered"]
+[connection signal="area_entered" from="Acid Vat Node/Acid vat4" to="Player" method="_on_acid_vat_area_entered"]
+[connection signal="area_entered" from="Acid Vat Node/Acid vat5" to="Player" method="_on_acid_vat_area_entered"]
+[connection signal="area_entered" from="Acid Vat Node/Acid vat6" to="Player" method="_on_acid_vat_area_entered"]
+[connection signal="area_entered" from="Acid Vat Node/Acid vat7" to="Player" method="_on_acid_vat_area_entered"]
+[connection signal="area_entered" from="Acid Vat Node/Acid vat8" to="Player" method="_on_acid_vat_area_entered"]
+[connection signal="area_entered" from="Acid Vat Node/Acid vat9" to="Player" method="_on_acid_vat_area_entered"]
+[connection signal="area_entered" from="Acid Vat Node/Acid vat10" to="Player" method="_on_acid_vat_area_entered"]
+[connection signal="area_entered" from="Acid Vat Node/Acid vat11" to="Player" method="_on_acid_vat_area_entered"]
