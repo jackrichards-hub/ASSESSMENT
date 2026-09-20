@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://q8jc6iae6ehc"]
 
 [ext_resource type="Script" uid="uid://da4k7xnc56qn4" path="res://Scripts/main_menu.gd" id="1_xhh6f"]
-[ext_resource type="Texture2D" uid="uid://c700urjjwt2t7" path="res://Assets/Background (Power Box).png" id="2_xhh6f"]
 [ext_resource type="AudioStream" uid="uid://d3eoqxmc2w6m2" path="res://Assets/Jammin Bread - Casa Rosa's Tulum Vibes.mp3" id="3_cayip"]
 [ext_resource type="Script" uid="uid://b5ic1wvmsaai2" path="res://Scripts/music_slider.gd" id="4_jsrd8"]
 [ext_resource type="Script" uid="uid://blldl4mjexpve" path="res://Scripts/master_slider.gd" id="4_wbdvm"]
@@ -9,7 +8,6 @@
 [ext_resource type="Script" uid="uid://yxg7pgv5dx4y" path="res://Scripts/sfx_slider.gd" id="6_jsrd8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_158mb"]
-texture = ExtResource("2_xhh6f")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4yt8"]
 bg_color = Color(1, 1, 1, 1)
@@ -45,8 +43,8 @@ anchor_right = 1.001
 anchor_bottom = 0.99700004
 offset_left = -0.30400014
 offset_top = -1.0
-offset_right = -0.15209961
-offset_bottom = -0.056030273
+offset_right = -5.1520996
+offset_bottom = -7.0560303
 theme_override_styles/panel = SubResource("StyleBoxTexture_158mb")
 
 [node name="MainButtons" type="VBoxContainer" parent="." unique_id=535067310]
