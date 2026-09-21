@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ejpgyd48r3t" path="res://Assets/Acid Vat Pipe.png" id="2_jtv8s"]
 [ext_resource type="Texture2D" uid="uid://crxxn8wxncpkv" path="res://Assets/Basic Assets (Proper Size).png" id="3_c81s1"]
 [ext_resource type="PackedScene" uid="uid://jrk3tr2k7wke" path="res://Sprites/player.tscn" id="4_n4vm5"]
-[ext_resource type="PackedScene" uid="uid://2ghiqvtvjd5e" path="res://Sprites/elevator.tscn" id="5_fxnjf"]
+[ext_resource type="PackedScene" uid="uid://b3w8rtcedb0xe" path="res://Sprites/elevator_3.tscn" id="6_jtv8s"]
 [ext_resource type="Script" uid="uid://cq36bjd1d3ian" path="res://Scripts/score_label.gd" id="6_xjeco"]
 [ext_resource type="PackedScene" uid="uid://bhshmfb35ev01" path="res://Scenes/game_timer.tscn" id="7_j77fg"]
 [ext_resource type="Texture2D" uid="uid://bucm7opbtry8n" path="res://Assets/Settings Icon-1.png.png" id="8_ki8bc"]
@@ -74,9 +74,9 @@ tile_set = SubResource("TileSet_yykrm")
 [node name="Player" parent="." unique_id=448143370 instance=ExtResource("4_n4vm5")]
 position = Vector2(36, 191)
 
-[node name="Elevator" parent="." unique_id=1501527127 instance=ExtResource("5_fxnjf")]
-position = Vector2(2161, 33.999996)
-scale = Vector2(2.05, 2.05)
+[node name="Elevator3" parent="." unique_id=1618886010 instance=ExtResource("6_jtv8s")]
+position = Vector2(2163, 32)
+scale = Vector2(0.62, 0.62)
 
 [node name="UI layer" type="CanvasLayer" parent="." unique_id=1099953545]
 
@@ -141,7 +141,7 @@ icon = ExtResource("8_ki8bc")
 [node name="Battery Node" type="Node" parent="." unique_id=1913028865]
 
 [node name="Battery2" parent="Battery Node" unique_id=1292440501 instance=ExtResource("9_nbwsh")]
-position = Vector2(1027, 210)
+position = Vector2(1075, 213)
 
 [node name="Battery3" parent="Battery Node" unique_id=1742253783 instance=ExtResource("9_nbwsh")]
 position = Vector2(1353, 1164)
@@ -214,7 +214,7 @@ position = Vector2(1307, 970)
 rotation = -3.1415925
 
 [connection signal="collected" from="Player" to="UI layer/UI/Score label" method="_on_player_collected"]
-[connection signal="body_entered" from="Elevator" to="." method="_on_elevator_body_entered"]
+[connection signal="body_entered" from="Elevator3" to="." method="_on_elevator_body_entered"]
 [connection signal="pressed" from="UI layer/UI/back to main menu" to="." method="_on_back_to_main_menu_pressed"]
 [connection signal="area_entered" from="Acid Vat Node/Acid vat" to="Player" method="_on_acid_vat_area_entered"]
 [connection signal="area_entered" from="Acid Vat Node/Acid vat2" to="Player" method="_on_acid_vat_area_entered"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://q8jc6iae6ehc"]
 
 [ext_resource type="Script" uid="uid://da4k7xnc56qn4" path="res://Scripts/main_menu.gd" id="1_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://m6ym1h2jo08u" path="res://Assets/Title screen V2-1.png.png" id="2_wbdvm"]
 [ext_resource type="AudioStream" uid="uid://d3eoqxmc2w6m2" path="res://Assets/Jammin Bread - Casa Rosa's Tulum Vibes.mp3" id="3_cayip"]
 [ext_resource type="Script" uid="uid://b5ic1wvmsaai2" path="res://Scripts/music_slider.gd" id="4_jsrd8"]
 [ext_resource type="Script" uid="uid://blldl4mjexpve" path="res://Scripts/master_slider.gd" id="4_wbdvm"]
@@ -8,6 +9,7 @@
 [ext_resource type="Script" uid="uid://yxg7pgv5dx4y" path="res://Scripts/sfx_slider.gd" id="6_jsrd8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_158mb"]
+texture = ExtResource("2_wbdvm")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4yt8"]
 bg_color = Color(1, 1, 1, 1)
@@ -54,10 +56,10 @@ anchor_left = 0.337
 anchor_top = 0.35000002
 anchor_right = 0.69200003
 anchor_bottom = 0.71800005
-offset_left = 1.776001
-offset_top = 0.19998169
-offset_right = -0.184021
-offset_bottom = -0.2640381
+offset_left = -377.224
+offset_top = 83.19998
+offset_right = -328.18402
+offset_bottom = 154.73596
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -78,7 +80,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_u4yt8")
 text = "Achievements"
 
-[node name="Settings" type="Button" parent="MainButtons" unique_id=1596786288]
+[node name="Settings2" type="Button" parent="MainButtons" unique_id=1596786288]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -99,16 +101,16 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -120.0
-offset_top = 15.0
-offset_right = 139.0
-offset_bottom = 113.0
+offset_left = -563.0
+offset_top = -5.0
+offset_right = 25.0
+offset_bottom = 241.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 0.98039216, 0.25882354, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 86
-text = "Labratory Bolt"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 105
+text = "Labratory
+Bolt"
 vertical_alignment = 1
 
 [node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=813574959]
@@ -316,7 +318,7 @@ Licensed via the YouTube Audio Library"
 
 [connection signal="pressed" from="MainButtons/Levels" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButtons/Achievements" to="." method="_on_achievements_pressed"]
-[connection signal="pressed" from="MainButtons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainButtons/Settings2" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MainButtons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Settings/Settings label/Back" to="." method="_on_back_options_pressed"]
 [connection signal="pressed" from="Settings/Settings label/Credits" to="." method="_on_credits_pressed"]

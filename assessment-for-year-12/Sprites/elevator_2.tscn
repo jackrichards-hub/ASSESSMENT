@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://blc60xfg8ridq"]
+
+[ext_resource type="Texture2D" uid="uid://dk7g35jtb7ibk" path="res://Assets/Elevator Tilesheet (1).png" id="1_x156u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x156u"]
+size = Vector2(128, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ismdt"]
+atlas = ExtResource("1_x156u")
+region = Rect2(0, 316, 256, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lqkk"]
+atlas = ExtResource("1_x156u")
+region = Rect2(256, 316, 256, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81co0"]
+atlas = ExtResource("1_x156u")
+region = Rect2(512, 316, 256, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_airjd"]
+atlas = ExtResource("1_x156u")
+region = Rect2(768, 316, 256, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6a37"]
+atlas = ExtResource("1_x156u")
+region = Rect2(1024, 316, 256, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0b2g"]
+atlas = ExtResource("1_x156u")
+region = Rect2(1280, 316, 256, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chcky"]
+atlas = ExtResource("1_x156u")
+region = Rect2(1536, 316, 256, 316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lesrc"]
+atlas = ExtResource("1_x156u")
+region = Rect2(1792, 316, 256, 316)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qr68"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ismdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lqkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81co0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_airjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6a37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0b2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chcky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lesrc")
+}],
+"loop": true,
+"name": &"Closing and opening",
+"speed": 5.0
+}]
+
+[node name="Elevator2" type="Area2D" unique_id=694619768]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=916280965]
+shape = SubResource("RectangleShape2D_x156u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=704586114]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_4qr68")
+animation = &"Closing and opening"
+autoplay = "Closing and opening"

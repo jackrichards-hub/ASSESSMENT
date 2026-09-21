@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://crxxn8wxncpkv" path="res://Assets/Basic Assets (Proper Size).png" id="4_42uki"]
 [ext_resource type="PackedScene" uid="uid://jrk3tr2k7wke" path="res://Sprites/player.tscn" id="5_t7v2y"]
 [ext_resource type="Script" uid="uid://cq36bjd1d3ian" path="res://Scripts/score_label.gd" id="6_ait6c"]
+[ext_resource type="PackedScene" uid="uid://blc60xfg8ridq" path="res://Sprites/elevator_2.tscn" id="6_t7v2y"]
 [ext_resource type="PackedScene" uid="uid://bhshmfb35ev01" path="res://Scenes/game_timer.tscn" id="7_vcilj"]
 [ext_resource type="Texture2D" uid="uid://bucm7opbtry8n" path="res://Assets/Settings Icon-1.png.png" id="8_bl0du"]
 [ext_resource type="PackedScene" uid="uid://l5wv47iw7112" path="res://Sprites/Battery.tscn" id="9_42uki"]
 [ext_resource type="PackedScene" uid="uid://ckgowlith8v3k" path="res://Sprites/acid_vat.tscn" id="10_t7v2y"]
-[ext_resource type="PackedScene" uid="uid://2ghiqvtvjd5e" path="res://Sprites/elevator.tscn" id="11_t7v2y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t7v2y"]
 texture = ExtResource("2_2mgoq")
@@ -74,9 +74,9 @@ tile_set = SubResource("TileSet_fhuy1")
 [node name="Player" parent="." unique_id=448143370 instance=ExtResource("5_t7v2y")]
 position = Vector2(36, 191)
 
-[node name="Elevator" parent="." unique_id=1501527127 instance=ExtResource("11_t7v2y")]
-position = Vector2(2161, 33.999996)
-scale = Vector2(2.05, 2.05)
+[node name="Elevator2" parent="." unique_id=694619768 instance=ExtResource("6_t7v2y")]
+position = Vector2(2163, 34.000004)
+scale = Vector2(1.3, 1.3)
 
 [node name="UI layer" type="CanvasLayer" parent="." unique_id=428614595]
 
@@ -214,7 +214,7 @@ position = Vector2(1307, 970)
 rotation = -3.1415925
 
 [connection signal="collected" from="Player" to="UI layer/UI/Score label" method="_on_player_collected"]
-[connection signal="body_entered" from="Elevator" to="." method="_on_elevator_body_entered"]
+[connection signal="body_entered" from="Elevator2" to="." method="_on_elevator_body_entered"]
 [connection signal="pressed" from="UI layer/UI/back to main menu" to="." method="_on_back_to_main_menu_pressed"]
 [connection signal="area_entered" from="Acid Vat Node/Acid vat" to="Player" method="_on_acid_vat_area_entered"]
 [connection signal="area_entered" from="Acid Vat Node/Acid vat2" to="Player" method="_on_acid_vat_area_entered"]
