@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://b3w8rtcedb0xe" path="res://Sprites/elevator_3.tscn" id="6_jtv8s"]
 [ext_resource type="Script" uid="uid://cq36bjd1d3ian" path="res://Scripts/score_label.gd" id="6_xjeco"]
 [ext_resource type="PackedScene" uid="uid://bhshmfb35ev01" path="res://Scenes/game_timer.tscn" id="7_j77fg"]
-[ext_resource type="Texture2D" uid="uid://bucm7opbtry8n" path="res://Assets/Settings Icon-1.png.png" id="8_ki8bc"]
 [ext_resource type="PackedScene" uid="uid://l5wv47iw7112" path="res://Sprites/Battery.tscn" id="9_nbwsh"]
 [ext_resource type="PackedScene" uid="uid://ckgowlith8v3k" path="res://Sprites/acid_vat.tscn" id="10_kgmqw"]
 
@@ -130,13 +129,6 @@ offset_top = 94.0
 offset_right = 63.0
 offset_bottom = 122.0
 step = 1.0
-
-[node name="Settings" type="Button" parent="UI layer/UI" unique_id=1339831345]
-layout_mode = 0
-offset_left = 1078.0
-offset_right = 1153.0
-offset_bottom = 74.0
-icon = ExtResource("8_ki8bc")
 
 [node name="Battery Node" type="Node" parent="." unique_id=1913028865]
 
