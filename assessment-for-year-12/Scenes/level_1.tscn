@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cq36bjd1d3ian" path="res://Scripts/score_label.gd" id="6_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://bhshmfb35ev01" path="res://Scenes/game_timer.tscn" id="8_wrinw"]
 [ext_resource type="PackedScene" uid="uid://ckgowlith8v3k" path="res://Sprites/acid_vat.tscn" id="10_chwpn"]
+[ext_resource type="PackedScene" uid="uid://huuklhd7x8h5" path="res://Sprites/lasershooter.tscn" id="12_uy8f0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uy8f0"]
 texture = ExtResource("1_vk57k")
@@ -74,11 +75,8 @@ tile_set = SubResource("TileSet_xfk5q")
 [node name="Player" parent="." unique_id=448143370 instance=ExtResource("2_8ffim")]
 position = Vector2(31, 208)
 
-[node name="Enemy2" parent="." unique_id=2083891825 instance=ExtResource("6_evi0p")]
+[node name="Enemy" parent="." unique_id=2083891825 instance=ExtResource("6_evi0p")]
 position = Vector2(473, 1147)
-
-[node name="Enemy" parent="." unique_id=178193459 instance=ExtResource("6_evi0p")]
-position = Vector2(-451, 187)
 
 [node name="Elevator" parent="." unique_id=1501527127 instance=ExtResource("6_wrinw")]
 position = Vector2(2161, 33.999996)
@@ -211,6 +209,12 @@ position = Vector2(1126, 1189)
 [node name="Acid vat11" parent="Acid Vat Node" unique_id=1712035853 instance=ExtResource("10_chwpn")]
 position = Vector2(1307, 970)
 rotation = -3.1415925
+
+[node name="Enemy2" parent="." unique_id=1204647259 instance=ExtResource("6_evi0p")]
+position = Vector2(-452, 192)
+
+[node name="lasershooter" parent="." unique_id=9529942 instance=ExtResource("12_uy8f0")]
+position = Vector2(-462, 54)
 
 [connection signal="collected" from="Player" to="UI layer/UI/Score label" method="_on_player_collected"]
 [connection signal="body_entered" from="Elevator" to="." method="_on_elevator_body_entered"]

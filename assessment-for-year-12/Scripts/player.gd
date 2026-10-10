@@ -4,8 +4,7 @@ extends CharacterBody2D
 @onready var animation : AnimatedSprite2D = $AnimatedSprite2D
 @onready var sprint_again_timer: Timer = $dash_cooldown
 @onready var Progress_Dash_Cooldown_Bar: ProgressBar = $"../UI layer/UI/Visual Dash Cooldown"
-
-
+@onready var jumpsound: AudioStreamPlayer2D = $jumpsound
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -32,6 +31,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and jump_count < 2:
 		jump_count +=1 
 		velocity.y = JUMP_VELOCITY
+		jumpsound.play()
 		
 	#This is for dash
 	if Input.is_action_just_pressed("Sprint") and can_dash:
@@ -99,7 +99,9 @@ func respawn():
 	position = start_position
 	battery_count = 0
 	collected.emit(battery_count)
+	get_tree().call_group("lasers", "queue_free")
 	get_tree().reload_current_scene()
+	
 	
 #This stops the dash
 func _on_dash_timer_timeout() -> void:
@@ -116,7 +118,7 @@ func _on_dash_cooldown_timeout() -> void:
 	can_dash = true
 	Progress_Dash_Cooldown_Bar.visible = false
 	
-	#This is for the collecting of batteries
+#This is for the collecting of batteries
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area is Battery:
 		print("collected battery")
@@ -124,7 +126,10 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		collected.emit(battery_count)
 		print(battery_count)
 		area.queue_free()
-
+	#when laser hits player, player dies
+	if area is Laser:
+		respawn()
+		
 #For making acid vats work
 func _on_acid_vat_area_entered(area: Area2D) -> void:
 	if Player:

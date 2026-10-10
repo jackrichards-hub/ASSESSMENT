@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://bwm44aoc1fc51" path="res://Assets/Scientist (Updated) (1).png" id="1_743eh"]
 [ext_resource type="Script" uid="uid://cmfncosdv2flb" path="res://Scripts/player.gd" id="1_bmk3q"]
-[ext_resource type="Script" uid="uid://blldl4mjexpve" path="res://Scripts/master_slider.gd" id="3_eksx6"]
 [ext_resource type="Script" uid="uid://yxg7pgv5dx4y" path="res://Scripts/sfx_slider.gd" id="4_7x6f1"]
 [ext_resource type="Script" uid="uid://b5ic1wvmsaai2" path="res://Scripts/music_slider.gd" id="5_tgxxa"]
 [ext_resource type="Script" uid="uid://1wi1audcl7fh" path="res://Scripts/fullscreen_control.gd" id="6_10qko"]
+[ext_resource type="AudioStream" uid="uid://d1w6xkge4beek" path="res://Assets/Jump Sound Effect.mp3" id="6_eksx6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmk3q"]
 radius = 27.0
@@ -272,25 +272,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Master volume box" type="HBoxContainer" parent="UI/Settings/VBoxContainer" unique_id=1606881607]
-layout_mode = 2
-
-[node name="Music volume" type="Label" parent="UI/Settings/VBoxContainer/Master volume box" unique_id=1166002661]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Master volume"
-
-[node name="Master slider" type="HSlider" parent="UI/Settings/VBoxContainer/Master volume box" unique_id=476288784]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/slider = SubResource("StyleBoxLine_h4eo8")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_pcmbh")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_pcmbh")
-max_value = 1.0
-step = 0.05
-value = 1.0
-script = ExtResource("3_eksx6")
-
 [node name="SFX volume box" type="HBoxContainer" parent="UI/Settings/VBoxContainer" unique_id=859135220]
 layout_mode = 2
 
@@ -339,10 +320,13 @@ theme_override_colors/button_unchecked_color = Color(0.85490197, 0.14509805, 0.2
 text = "Fullscreen"
 script = ExtResource("6_10qko")
 
+[node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=1272600929]
+stream = ExtResource("6_eksx6")
+bus = &"SFX"
+
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="dash_cooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
-[connection signal="value_changed" from="UI/Settings/VBoxContainer/Master volume box/Master slider" to="UI/Settings/VBoxContainer/Master volume box/Master slider" method="_on_value_changed"]
 [connection signal="value_changed" from="UI/Settings/VBoxContainer/SFX volume box/SFX slider" to="UI/Settings/VBoxContainer/SFX volume box/SFX slider" method="_on_value_changed"]
 [connection signal="value_changed" from="UI/Settings/VBoxContainer/Music volume box/Music slider" to="UI/Settings/VBoxContainer/Music volume box/Music slider" method="_on_value_changed"]
 [connection signal="toggled" from="UI/Settings/VBoxContainer/FullscreenControl" to="UI/Settings/VBoxContainer/FullscreenControl" method="_on_toggled"]

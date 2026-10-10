@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://m6ym1h2jo08u" path="res://Assets/Title screen V2-1.png.png" id="2_wbdvm"]
 [ext_resource type="AudioStream" uid="uid://d3eoqxmc2w6m2" path="res://Assets/Jammin Bread - Casa Rosa's Tulum Vibes.mp3" id="3_cayip"]
 [ext_resource type="Script" uid="uid://b5ic1wvmsaai2" path="res://Scripts/music_slider.gd" id="4_jsrd8"]
-[ext_resource type="Script" uid="uid://blldl4mjexpve" path="res://Scripts/master_slider.gd" id="4_wbdvm"]
 [ext_resource type="Script" uid="uid://1wi1audcl7fh" path="res://Scripts/fullscreen_control.gd" id="5_wwsa2"]
 [ext_resource type="Script" uid="uid://yxg7pgv5dx4y" path="res://Scripts/sfx_slider.gd" id="6_jsrd8"]
 
@@ -184,25 +183,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Master volume box" type="HBoxContainer" parent="Settings/VBoxContainer" unique_id=1905785795]
-layout_mode = 2
-
-[node name="Music volume" type="Label" parent="Settings/VBoxContainer/Master volume box" unique_id=349031328]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Master volume"
-
-[node name="Master slider" type="HSlider" parent="Settings/VBoxContainer/Master volume box" unique_id=994638623]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/slider = SubResource("StyleBoxLine_cayip")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_158mb")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_158mb")
-max_value = 1.0
-step = 0.05
-value = 1.0
-script = ExtResource("4_wbdvm")
-
 [node name="SFX volume box" type="HBoxContainer" parent="Settings/VBoxContainer" unique_id=1888472704]
 layout_mode = 2
 
@@ -221,6 +201,7 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 script = ExtResource("6_jsrd8")
+audio_bus_name = "SFX"
 
 [node name="Music volume box" type="HBoxContainer" parent="Settings/VBoxContainer" unique_id=1140264439]
 layout_mode = 2
@@ -322,7 +303,6 @@ Licensed via the YouTube Audio Library"
 [connection signal="pressed" from="MainButtons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Settings/Settings label/Back" to="." method="_on_back_options_pressed"]
 [connection signal="pressed" from="Settings/Settings label/Credits" to="." method="_on_credits_pressed"]
-[connection signal="value_changed" from="Settings/VBoxContainer/Master volume box/Master slider" to="Settings/VBoxContainer/Master volume box/Master slider" method="_on_value_changed"]
 [connection signal="value_changed" from="Settings/VBoxContainer/SFX volume box/SFX slider" to="Settings/VBoxContainer/SFX volume box/SFX slider" method="_on_value_changed"]
 [connection signal="value_changed" from="Settings/VBoxContainer/Music volume box/Music slider" to="Settings/VBoxContainer/Music volume box/Music slider" method="_on_value_changed"]
 [connection signal="toggled" from="Settings/VBoxContainer/FullscreenControl" to="Settings/VBoxContainer/FullscreenControl" method="_on_toggled"]

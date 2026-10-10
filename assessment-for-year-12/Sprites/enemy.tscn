@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://j3t5jodjqxtd"]
 
+[ext_resource type="Script" uid="uid://suxoy3ppoler" path="res://Scripts/enemy.gd" id="1_54dgf"]
 [ext_resource type="Texture2D" uid="uid://bux17i30kgsdq" path="res://Assets/Bolt Guard (1).png" id="1_fq4fi"]
+[ext_resource type="PackedScene" uid="uid://bsdauqexpp5jl" path="res://Sprites/gun.tscn" id="2_r3tu1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fq4fi"]
 size = Vector2(30, 57)
@@ -80,12 +82,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=2083891825]
 position = Vector2(277, 133)
 scale = Vector2(2, 2)
+script = ExtResource("1_54dgf")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055178342]
@@ -97,3 +100,5 @@ position = Vector2(11, 2)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_54dgf")
 autoplay = "default"
+
+[node name="Gun" parent="." unique_id=722942440 instance=ExtResource("2_r3tu1")]

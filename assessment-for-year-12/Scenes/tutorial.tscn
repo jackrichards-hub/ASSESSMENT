@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://crxxn8wxncpkv" path="res://Assets/Basic Assets (Proper Size).png" id="5_p8jf4"]
 [ext_resource type="PackedScene" uid="uid://l5wv47iw7112" path="res://Sprites/Battery.tscn" id="6_p1f1o"]
 [ext_resource type="PackedScene" uid="uid://ckgowlith8v3k" path="res://Sprites/acid_vat.tscn" id="6_ys4pu"]
+[ext_resource type="PackedScene" uid="uid://huuklhd7x8h5" path="res://Sprites/lasershooter.tscn" id="7_ys4pu"]
+[ext_resource type="PackedScene" uid="uid://j3t5jodjqxtd" path="res://Sprites/enemy.tscn" id="8_h2ono"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p8jf4"]
 texture = ExtResource("1_ka2pi")
@@ -140,23 +142,39 @@ step = 1.0
 position = Vector2(45, 267)
 
 [node name="End tutorial" type="Button" parent="." unique_id=1957457802]
-offset_left = 3586.0
-offset_top = -202.0
-offset_right = 3811.0
-offset_bottom = -149.0
+offset_left = 5053.0
+offset_top = 156.0
+offset_right = 5278.0
+offset_bottom = 209.0
 theme_override_font_sizes/font_size = 32
 text = "End tutorial"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=291695505]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAAAAAUAAgABAAAAAAACAAUAAgABAAAAAAADAAUAAgABAAAAAAAFAAUAAgABAAAAAAAHAAUAAgABAAAAAAAJAAUAAgABAAAAAAALAAUAAgABAAAAAAANAAUAAgABAAAAAAAPAAUAAgABAAAAAAARAAUAAgABAAAAAAABAAUAAgABAAAAAAAEAAUAAgABAAAAAAAGAAUAAgABAAAAAAAIAAUAAgABAAAAAAAKAAUAAgABAAAAAAAMAAUAAgABAAAAAAAOAAUAAgABAAAAAAAQAAUAAgABAAAAAAASAAUAAgABAAAAAAAUAAUAAgABAAAAAAATAAUAAgABAAAAAAAVAAUAAgABAAAAAAAWAAUAAgABAAAAAAAXAAUAAgABAAAAAAAYAAUAAgABAAAAAAAZAAUAAgABAAAAAAAaAAUAAgABAAAAAAAbAAUAAgABAAAAAAAcAAUAAgABAAAAAAAdAAUAAgABAAAAAAAWAAQAAgABAAAAAAAeAAUAAgABAAAAAAAfAAUAAgABAAAAAAAgAAUAAgABAAAAAAAhAAUAAgABAAAAAAAiAAUAAgABAAAAAAAjAAUAAgABAAAAAAAkAAUAAgABAAAAAAAlAAUAAgABAAAAAAAmAAUAAgABAAAAAAAnAAUAAgABAAAAAAAoAAUAAgABAAAAAAApAAUAAgABAAAAAAAqAAUAAgABAAAAAAArAAUAAgABAAAAAAAsAAUAAgABAAAAAAAtAAUAAgABAAAAAAAuAAUAAgABAAAAAAAvAAUAAgABAAAAAAAwAAUAAgABAAAAAAAxAAUAAgABAAAAAAAyAAUAAgABAAAAAAAzAAUAAgABAAAAAAA0AAUAAgABAAAAAAA1AAUAAgABAAAAAAA2AAUAAgABAAAAAAA3AAUAAgABAAAAAAANAAQAAgABAAAAAAANAAMAAgABAAAAAAAxAAQAAgABAAAAAAAxAAMAAgABAAAAAAAxAAIAAgABAAAAAAAxAAEAAgABAAAAAAAxAAAAAgABAAAAAAA4AAUAAgABAAAAAAA5AAUAAgABAAAAAAA6AAUAAgABAAAAAAA7AAUAAgABAAAAAAA3AP//AgABAAAAAAA3AAAAAgABAAAAAAA3AAEAAgABAAAAAAA3AAIAAgABAAAAAAA7AAMAAgABAAAAAAA7AAIAAgABAAAAAAA7AAEAAgABAAAAAAA7AAAAAgABAAAAAAA6AAAAAgABAAAAAAA7AAQAAgABAAAAAAA3AP7/AgABAAAAAAA2AP7/AgABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAUAAgABAAAAAAACAAUAAgABAAAAAAADAAUAAgABAAAAAAAFAAUAAgABAAAAAAAHAAUAAgABAAAAAAAJAAUAAgABAAAAAAALAAUAAgABAAAAAAANAAUAAgABAAAAAAAPAAUAAgABAAAAAAARAAUAAgABAAAAAAABAAUAAgABAAAAAAAEAAUAAgABAAAAAAAGAAUAAgABAAAAAAAIAAUAAgABAAAAAAAKAAUAAgABAAAAAAAMAAUAAgABAAAAAAAOAAUAAgABAAAAAAAQAAUAAgABAAAAAAASAAUAAgABAAAAAAAUAAUAAgABAAAAAAATAAUAAgABAAAAAAAVAAUAAgABAAAAAAAWAAUAAgABAAAAAAAXAAUAAgABAAAAAAAYAAUAAgABAAAAAAAZAAUAAgABAAAAAAAaAAUAAgABAAAAAAAbAAUAAgABAAAAAAAcAAUAAgABAAAAAAAdAAUAAgABAAAAAAAeAAUAAgABAAAAAAAfAAUAAgABAAAAAAAgAAUAAgABAAAAAAAhAAUAAgABAAAAAAAiAAUAAgABAAAAAAAjAAUAAgABAAAAAAAkAAUAAgABAAAAAAAlAAUAAgABAAAAAAAmAAUAAgABAAAAAAAnAAUAAgABAAAAAAAoAAUAAgABAAAAAAApAAUAAgABAAAAAAAqAAUAAgABAAAAAAArAAUAAgABAAAAAAAsAAUAAgABAAAAAAAtAAUAAgABAAAAAAAuAAUAAgABAAAAAAAvAAUAAgABAAAAAAAwAAUAAgABAAAAAAAxAAUAAgABAAAAAAAyAAUAAgABAAAAAAAzAAUAAgABAAAAAAA0AAUAAgABAAAAAAA1AAUAAgABAAAAAAA2AAUAAgABAAAAAAA3AAUAAgABAAAAAAAxAAQAAgABAAAAAAAxAAMAAgABAAAAAAAxAAIAAgABAAAAAAAxAAEAAgABAAAAAAAxAAAAAgABAAAAAAA4AAUAAgABAAAAAAA5AAUAAgABAAAAAAA6AAUAAgABAAAAAAA7AAUAAgABAAAAAAA3AP//AgABAAAAAAA3AAAAAgABAAAAAAA3AAEAAgABAAAAAAA3AAIAAgABAAAAAAA7AAMAAgABAAAAAAA7AAIAAgABAAAAAAA7AAEAAgABAAAAAAA7AAAAAgABAAAAAAA6AAAAAgABAAAAAAA7AAQAAgABAAAAAAA3AP7/AgABAAAAAAA2AP7/AgABAAAAAAA8AAUAAgABAAAAAAA9AAUAAgABAAAAAAA+AAUAAgABAAAAAAA/AAUAAgABAAAAAABAAAUAAgABAAAAAABBAAUAAgABAAAAAABCAAUAAgABAAAAAABDAAUAAgABAAAAAABEAAUAAgABAAAAAABFAAUAAgABAAAAAABGAAUAAgABAAAAAABHAAUAAgABAAAAAABIAAUAAgABAAAAAABJAAUAAgABAAAAAABKAAUAAgABAAAAAABLAAUAAgABAAAAAABMAAUAAgABAAAAAABNAAUAAgABAAAAAABOAAUAAgABAAAAAABPAAUAAgABAAAAAABQAAUAAgABAAAAAAASAAQAAgABAAAAAAASAAMAAgABAAAAAAAYAAQAAgABAAAAAABRAAUAAgABAAAAAABSAAUAAgABAAAAAABTAAUAAgABAAAAAABUAAUAAgABAAAAAABVAAUAAgABAAAAAABWAAUAAgABAAAAAABXAAUAAgABAAAAAABXAAQAAgABAAAAAABXAAMAAgABAAAAAABXAAIAAgABAAAAAABXAAEAAgABAAAAAABXAAAAAgABAAAAAABXAP//AgABAAAAAABXAP7/AgABAAAAAABWAP7/AgABAAAAAABVAP7/AgABAAAAAABUAP7/AgABAAAAAABTAP7/AgABAAAAAABSAP7/AgABAAAAAABRAP7/AgABAAAAAABQAP7/AgABAAAAAAA=")
 tile_set = SubResource("TileSet_ys4pu")
 
+[node name="RichTextLabel10" type="RichTextLabel" parent="." unique_id=592846246]
+offset_left = 4406.0
+offset_top = -25.0
+offset_right = 4738.0
+offset_bottom = 84.0
+text = "The enemy isn't looking but you have to pass him to end this tutorial. Dodge the laser behind and the ones from the enemy. (The enemy is a slower shooter)"
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="." unique_id=1613454285]
+offset_left = 3832.0
+offset_top = -199.0
+offset_right = 4231.0
+offset_bottom = -67.0
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 16
+text = "The evil scientists have set up lasers all over the lab so you must dodge them. Be Careful!"
+
 [node name="RichTextLabel8" type="RichTextLabel" parent="." unique_id=1604417556]
-offset_left = 2285.0
-offset_top = 109.0
-offset_right = 2625.0
-offset_bottom = 187.0
+offset_left = 2267.0
+offset_top = 127.0
+offset_right = 2607.0
+offset_bottom = 205.0
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 16
 text = "Quick! Jump over or you die!"
@@ -172,10 +190,10 @@ text = "Using this same movement you can wall jump
 "
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="." unique_id=1238953317]
-offset_left = 2775.0
-offset_top = 7.0
-offset_right = 3074.0
-offset_bottom = 149.0
+offset_left = 2771.0
+offset_top = 47.0
+offset_right = 3070.0
+offset_bottom = 189.0
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 16
 text = "Next is the wall jump function, continuously jump while holding d or > to go up"
@@ -190,10 +208,10 @@ theme_override_font_sizes/bold_font_size = 16
 text = "To beat a level you need to collect a certain amount of batteries varying between levels."
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="." unique_id=755079754]
-offset_left = 948.0
-offset_top = 94.0
-offset_right = 1247.0
-offset_bottom = 236.0
+offset_left = 1288.0
+offset_top = 199.0
+offset_right = 1587.0
+offset_bottom = 341.0
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 16
 text = "Shift to dash"
@@ -209,15 +227,24 @@ text = "D or > to move right
 A or < to move left"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1203936485]
-offset_left = 585.0
-offset_top = 4.0
-offset_right = 884.0
-offset_bottom = 146.0
+offset_left = 998.0
+offset_top = 29.0
+offset_right = 1297.0
+offset_bottom = 171.0
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 16
 text = "Spacebar to jump
 
 Double click spacebar to double jump"
+
+[node name="RichTextLabel11" type="RichTextLabel" parent="." unique_id=502313992]
+offset_left = 623.0
+offset_top = 35.0
+offset_right = 922.0
+offset_bottom = 177.0
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 16
+text = "During your time as a scientist you have gained many strange mutations, one being double jump"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=7092680]
 offset_left = 6.0
@@ -230,16 +257,22 @@ text = "Game uses A, D, arrow keys, shift and spacebar
 "
 
 [node name="Battery" parent="." unique_id=1292440501 instance=ExtResource("6_p1f1o")]
-position = Vector2(1856, 261)
+position = Vector2(2016, 231)
 
 [node name="Battery2" parent="." unique_id=1105826289 instance=ExtResource("6_p1f1o")]
-position = Vector2(2079, 256)
+position = Vector2(2159, 275)
 
 [node name="Battery3" parent="." unique_id=203760289 instance=ExtResource("6_p1f1o")]
-position = Vector2(1654, 262)
+position = Vector2(1866, 282)
 
 [node name="Acid vat" parent="." unique_id=1120354465 instance=ExtResource("6_ys4pu")]
-position = Vector2(2431, 292)
+position = Vector2(2403, 291)
+
+[node name="lasershooter" parent="." unique_id=9529942 instance=ExtResource("7_ys4pu")]
+position = Vector2(3887, 139)
+
+[node name="Enemy" parent="." unique_id=2083891825 instance=ExtResource("8_h2ono")]
+position = Vector2(4553, 254)
 
 [connection signal="pressed" from="UI layer/UI/Skip Tutorial" to="." method="_on_skip_tutorial_pressed"]
 [connection signal="pressed" from="End tutorial" to="." method="_on_skip_tutorial_pressed"]

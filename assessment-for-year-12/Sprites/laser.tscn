@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://bmqmvfwkts4te"]
+
+[ext_resource type="Texture2D" uid="uid://bdikwnjyw68tl" path="res://Assets/Laser for Bolt Guard.png" id="1_cx7dj"]
+[ext_resource type="Script" uid="uid://cu1ry4oc1ktkb" path="res://Scripts/laser.gd" id="1_mfdl1"]
+[ext_resource type="AudioStream" uid="uid://j8vg3lais4c6" path="res://Assets/Laser Beam Sound Effect.mp3" id="3_eu5sk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfdl1"]
+atlas = ExtResource("1_cx7dj")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu5sk"]
+atlas = ExtResource("1_cx7dj")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqh2b"]
+atlas = ExtResource("1_cx7dj")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5kud"]
+atlas = ExtResource("1_cx7dj")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v6lf"]
+atlas = ExtResource("1_cx7dj")
+region = Rect2(320, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6xq8"]
+atlas = ExtResource("1_cx7dj")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn1le"]
+atlas = ExtResource("1_cx7dj")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu2if"]
+atlas = ExtResource("1_cx7dj")
+region = Rect2(512, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h1u1"]
+atlas = ExtResource("1_cx7dj")
+region = Rect2(576, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5vqfi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfdl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eu5sk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqh2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5kud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6v6lf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6xq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn1le")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eu2if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h1u1")
+}],
+"loop": true,
+"name": &"Shooting",
+"speed": 18.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_quu7r"]
+size = Vector2(58, 22)
+
+[node name="laser" type="Area2D" unique_id=244733286]
+script = ExtResource("1_mfdl1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1825711380]
+sprite_frames = SubResource("SpriteFrames_5vqfi")
+animation = &"Shooting"
+autoplay = "Shooting"
+frame_progress = 0.008560085
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=209953192]
+position = Vector2(-4, 1)
+shape = SubResource("RectangleShape2D_quu7r")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1417043802]
+stream = ExtResource("3_eu5sk")
+autoplay = true
+bus = &"SFX"
