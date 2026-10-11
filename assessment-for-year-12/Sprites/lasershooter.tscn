@@ -74,7 +74,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="lasershooter" type="Node2D" unique_id=9529942]
+[node name="lasershooterright" type="Node2D" unique_id=9529942]
 script = ExtResource("1_0k2gs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1877304193]

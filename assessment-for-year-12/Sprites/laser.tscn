@@ -85,7 +85,7 @@ script = ExtResource("1_mfdl1")
 sprite_frames = SubResource("SpriteFrames_5vqfi")
 animation = &"Shooting"
 autoplay = "Shooting"
-frame_progress = 0.008560085
+frame_progress = 0.14698166
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=209953192]
 position = Vector2(-4, 1)
@@ -95,3 +95,5 @@ shape = SubResource("RectangleShape2D_quu7r")
 stream = ExtResource("3_eu5sk")
 autoplay = true
 bus = &"SFX"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

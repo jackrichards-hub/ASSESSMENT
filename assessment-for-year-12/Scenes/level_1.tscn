@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://cq36bjd1d3ian" path="res://Scripts/score_label.gd" id="6_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://bhshmfb35ev01" path="res://Scenes/game_timer.tscn" id="8_wrinw"]
 [ext_resource type="PackedScene" uid="uid://ckgowlith8v3k" path="res://Sprites/acid_vat.tscn" id="10_chwpn"]
-[ext_resource type="PackedScene" uid="uid://huuklhd7x8h5" path="res://Sprites/lasershooter.tscn" id="12_uy8f0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uy8f0"]
 texture = ExtResource("1_vk57k")
@@ -210,23 +209,17 @@ position = Vector2(1126, 1189)
 position = Vector2(1307, 970)
 rotation = -3.1415925
 
-[node name="Enemy2" parent="." unique_id=1204647259 instance=ExtResource("6_evi0p")]
-position = Vector2(-452, 192)
-
-[node name="lasershooter" parent="." unique_id=9529942 instance=ExtResource("12_uy8f0")]
-position = Vector2(-462, 54)
-
 [connection signal="collected" from="Player" to="UI layer/UI/Score label" method="_on_player_collected"]
 [connection signal="body_entered" from="Elevator" to="." method="_on_elevator_body_entered"]
 [connection signal="pressed" from="UI layer/UI/back to main menu" to="." method="_on_back_to_main_menu_pressed"]
-[connection signal="area_entered" from="Acid Vat Node/Acid vat" to="Player" method="_on_acid_vat_area_entered"]
-[connection signal="area_entered" from="Acid Vat Node/Acid vat2" to="Player" method="_on_acid_vat_area_entered"]
-[connection signal="area_entered" from="Acid Vat Node/Acid vat3" to="Player" method="_on_acid_vat_area_entered"]
-[connection signal="area_entered" from="Acid Vat Node/Acid vat4" to="Player" method="_on_acid_vat_area_entered"]
-[connection signal="area_entered" from="Acid Vat Node/Acid vat5" to="Player" method="_on_acid_vat_area_entered"]
-[connection signal="area_entered" from="Acid Vat Node/Acid vat6" to="Player" method="_on_acid_vat_area_entered"]
-[connection signal="area_entered" from="Acid Vat Node/Acid vat7" to="Player" method="_on_acid_vat_area_entered"]
-[connection signal="area_entered" from="Acid Vat Node/Acid vat8" to="Player" method="_on_acid_vat_area_entered"]
-[connection signal="area_entered" from="Acid Vat Node/Acid vat9" to="Player" method="_on_acid_vat_area_entered"]
-[connection signal="area_entered" from="Acid Vat Node/Acid vat10" to="Player" method="_on_acid_vat_area_entered"]
-[connection signal="area_entered" from="Acid Vat Node/Acid vat11" to="Player" method="_on_acid_vat_area_entered"]
+[connection signal="body_entered" from="Acid Vat Node/Acid vat" to="Player" method="_on_acid_vat_body_entered"]
+[connection signal="body_entered" from="Acid Vat Node/Acid vat2" to="Player" method="_on_acid_vat_body_entered"]
+[connection signal="body_entered" from="Acid Vat Node/Acid vat3" to="Player" method="_on_acid_vat_body_entered"]
+[connection signal="body_entered" from="Acid Vat Node/Acid vat4" to="Player" method="_on_acid_vat_body_entered"]
+[connection signal="body_entered" from="Acid Vat Node/Acid vat5" to="Player" method="_on_acid_vat_body_entered"]
+[connection signal="body_entered" from="Acid Vat Node/Acid vat6" to="Player" method="_on_acid_vat_body_entered"]
+[connection signal="body_entered" from="Acid Vat Node/Acid vat7" to="Player" method="_on_acid_vat_body_entered"]
+[connection signal="body_entered" from="Acid Vat Node/Acid vat8" to="Player" method="_on_acid_vat_body_entered"]
+[connection signal="body_entered" from="Acid Vat Node/Acid vat9" to="Player" method="_on_acid_vat_body_entered"]
+[connection signal="body_entered" from="Acid Vat Node/Acid vat10" to="Player" method="_on_acid_vat_body_entered"]
+[connection signal="body_entered" from="Acid Vat Node/Acid vat11" to="Player" method="_on_acid_vat_body_entered"]

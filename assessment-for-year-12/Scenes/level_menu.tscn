@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://xvqh0l2yh60v"]
 
 [ext_resource type="Script" uid="uid://berf1rkqd1ju2" path="res://Scripts/level_menu.gd" id="1_c64aj"]
+[ext_resource type="Texture2D" uid="uid://c700urjjwt2t7" path="res://Assets/Background (Power Box).png" id="2_ymr0u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4bw2l"]
+texture = ExtResource("2_ymr0u")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c64aj"]
 bg_color = Color(1, 1, 1, 1)
@@ -20,6 +24,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c64aj")
 
+[node name="Background" type="Panel" parent="." unique_id=851967356]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 646.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_4bw2l")
+
 [node name="Label" type="Label" parent="." unique_id=1666563428]
 layout_mode = 1
 anchors_preset = 5
@@ -29,6 +39,7 @@ offset_left = -144.0
 offset_right = 144.0
 offset_bottom = 132.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 96
 text = "Levels"
 

@@ -78,8 +78,6 @@ func _physics_process(delta: float) -> void:
 	else: 
 		animation.play("Jump")
 	
-	if position.y > 2000:
-		respawn()
 #This is for wall sliding which helps the wall jumping
 func wall_slide(delta):
 	if is_on_wall() and !is_on_floor():
@@ -130,12 +128,13 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area is Laser:
 		respawn()
 		
-#For making acid vats work
-func _on_acid_vat_area_entered(area: Area2D) -> void:
-	if Player:
-		respawn()
 
 #Sends player back to main menu
 func _on_back_to_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	
+
+#For making acid vats kill player
+func _on_acid_vat_body_entered(body: Node2D) -> void:
+	if body is Player:
+		respawn()

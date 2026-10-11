@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bsdauqexpp5jl" path="res://Sprites/gun.tscn" id="2_r3tu1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fq4fi"]
-size = Vector2(30, 57)
+size = Vector2(23.5, 41.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r3tu1"]
 atlas = ExtResource("1_fq4fi")
@@ -92,12 +92,12 @@ script = ExtResource("1_54dgf")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055178342]
-position = Vector2(-3, 4.5)
+position = Vector2(0.25, 5.75)
 shape = SubResource("RectangleShape2D_fq4fi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1012271108]
 position = Vector2(11, 2)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_54dgf")
 autoplay = "default"
 
