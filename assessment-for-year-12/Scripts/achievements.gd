@@ -1,9 +1,34 @@
-extends Node2D
+extends Control
+
+@onready var level130: Panel = $"Achievement list/Level1/Label/level130"
+@onready var level160: Panel = $"Achievement list/Level1/Label/level160"
+@onready var level1120: Panel = $"Achievement list/Level1/Label/level1120"
+@onready var level230: Panel = $"Achievement list/Level2/Label/level230"
+@onready var level260: Panel = $"Achievement list/Level2/Label/level260"
+@onready var level2120: Panel = $"Achievement list/Level2/Label/level2120"
+@onready var level350: Panel = $"Achievement list/Level3/Label/level350"
+@onready var level3100: Panel = $"Achievement list/Level3/Label/level3100"
+@onready var level3150: Panel = $"Achievement list/Level3/Label/level3150"
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	var t1 := Level_1.winning_time
+	var t2 := Level_2.winning_time
+	var t3 := Level_3.winning_time
+	if t1 > 0:
+		level130.visible = t1 <= 30
+		level160.visible = t1 <= 60
+		level1120.visible = t1 <= 120
+	if t2 > 0:
+		level230.visible = t2 <= 30
+		level260.visible = t2 <= 60
+		level2120.visible = t2 <= 120
+	if t3 > 0:
+		level350.visible = t3 <= 50
+		level3100.visible = t3 <= 100
+		level3150.visible = t3 <= 150
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

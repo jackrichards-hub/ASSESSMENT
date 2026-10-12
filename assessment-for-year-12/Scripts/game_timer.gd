@@ -1,6 +1,6 @@
 extends Control
-
-var total_time_in_secs : int = 0
+class_name GameTimer
+static var total_time_in_secs : int = 0
 
 func _ready():
 	$Timer.start()
