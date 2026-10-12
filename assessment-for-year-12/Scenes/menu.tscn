@@ -240,10 +240,10 @@ anchor_left = 0.087000005
 anchor_top = 0.008
 anchor_right = 0.90500003
 anchor_bottom = 1.011
-offset_left = 259.776
-offset_top = 159.816
-offset_right = -235.56006
-offset_bottom = -134.12805
+offset_left = 244.776
+offset_top = 156.816
+offset_right = -146.56006
+offset_bottom = -97.12805
 
 [node name="Credits label" type="Label" parent="Credits" unique_id=1101732247]
 layout_mode = 1
@@ -265,10 +265,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -112.0
-offset_top = 229.0
-offset_right = 133.0
-offset_bottom = 274.0
+offset_left = -113.50006
+offset_top = 271.455
+offset_right = 131.49994
+offset_bottom = 316.455
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 3
@@ -279,23 +279,33 @@ text = "Back to settings"
 
 [node name="Jack and Josh credit" type="Label" parent="Credits/Credits label" unique_id=309856249]
 layout_mode = 0
-offset_left = -100.5
-offset_top = 79.0
-offset_right = 279.5
-offset_bottom = 107.0
+offset_left = -101.5
+offset_top = 59.0
+offset_right = 278.5
+offset_bottom = 87.0
 theme_override_font_sizes/font_size = 20
 text = "This game was created by Jack and Josh"
 
 [node name="Label" type="Label" parent="Credits/Credits label" unique_id=310524224]
 layout_mode = 0
-offset_left = -95.5
-offset_top = 141.0
-offset_right = 284.5
-offset_bottom = 231.0
+offset_left = -94.5
+offset_top = 113.0
+offset_right = 285.5
+offset_bottom = 203.0
 theme_override_font_sizes/font_size = 20
 text = "Music Credits:\"Jammin Bread\"
  by Casa Rosa
 Licensed via the YouTube Audio Library"
+
+[node name="Label2" type="Label" parent="Credits/Credits label" unique_id=1270330795]
+layout_mode = 0
+offset_left = -152.85303
+offset_top = 235.0
+offset_right = 349.14697
+offset_bottom = 310.0
+text = "Thank you to Godot for suppling the game development software
+Thank you Github for allowing easy development
+Thank you Itch.io for supplying a platform to upload this game"
 
 [connection signal="pressed" from="MainButtons/Levels" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButtons/Achievements" to="." method="_on_achievements_pressed"]

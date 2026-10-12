@@ -1,14 +1,14 @@
 extends Control
 
-@onready var level130: Panel = $"Achievement list/Level1/Label/level130"
-@onready var level160: Panel = $"Achievement list/Level1/Label/level160"
-@onready var level1120: Panel = $"Achievement list/Level1/Label/level1120"
-@onready var level230: Panel = $"Achievement list/Level2/Label/level230"
-@onready var level260: Panel = $"Achievement list/Level2/Label/level260"
-@onready var level2120: Panel = $"Achievement list/Level2/Label/level2120"
-@onready var level350: Panel = $"Achievement list/Level3/Label/level350"
-@onready var level3100: Panel = $"Achievement list/Level3/Label/level3100"
-@onready var level3150: Panel = $"Achievement list/Level3/Label/level3150"
+@onready var level130: Panel = $"Achievement list/Level1/Level 1 label/level130"
+@onready var level160: Panel = $"Achievement list/Level1/Level 1 label/level160"
+@onready var level1120: Panel = $"Achievement list/Level1/Level 1 label/level1120"
+@onready var level230: Panel = $"Achievement list/Level2/Level 2 label/level240"
+@onready var level260: Panel = $"Achievement list/Level2/Level 2 label/level280"
+@onready var level2120: Panel = $"Achievement list/Level2/Level 2 label/level2120"
+@onready var level350: Panel = $"Achievement list/Level3/Level 3 label/level350"
+@onready var level3100: Panel = $"Achievement list/Level3/Level 3 label/level3100"
+@onready var level3150: Panel = $"Achievement list/Level3/Level 3 label/level3150"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,8 +21,8 @@ func _ready() -> void:
 		level160.visible = t1 <= 60
 		level1120.visible = t1 <= 120
 	if t2 > 0:
-		level230.visible = t2 <= 30
-		level260.visible = t2 <= 60
+		level230.visible = t2 <= 40
+		level260.visible = t2 <= 80
 		level2120.visible = t2 <= 120
 	if t3 > 0:
 		level350.visible = t3 <= 50

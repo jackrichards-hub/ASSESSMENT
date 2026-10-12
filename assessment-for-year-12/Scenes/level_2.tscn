@@ -171,10 +171,10 @@ position = Vector2(486, 212)
 [node name="Acid Vat Node" type="Node" parent="." unique_id=1924081209]
 
 [node name="Acid vat" parent="Acid Vat Node" unique_id=1120354465 instance=ExtResource("10_t7v2y")]
-position = Vector2(273, 223)
+position = Vector2(276, 228)
 
 [node name="Acid vat2" parent="Acid Vat Node" unique_id=358043905 instance=ExtResource("10_t7v2y")]
-position = Vector2(704, 222)
+position = Vector2(706.00006, 227)
 
 [node name="Acid vat3" parent="Acid Vat Node" unique_id=555295478 instance=ExtResource("10_t7v2y")]
 position = Vector2(1104, 231)
@@ -184,7 +184,7 @@ position = Vector2(-106.00001, 912.00006)
 rotation = 1.5707964
 
 [node name="Acid vat5" parent="Acid Vat Node" unique_id=801772007 instance=ExtResource("10_t7v2y")]
-position = Vector2(514, -92)
+position = Vector2(516, -102)
 rotation = -3.1415925
 
 [node name="Acid vat6" parent="Acid Vat Node" unique_id=1070000778 instance=ExtResource("10_t7v2y")]
@@ -192,7 +192,7 @@ position = Vector2(917, -100)
 rotation = -3.1415925
 
 [node name="Acid vat7" parent="Acid Vat Node" unique_id=913346023 instance=ExtResource("10_t7v2y")]
-position = Vector2(1522, -90.00001)
+position = Vector2(1512, -103)
 rotation = -3.1415925
 
 [node name="Acid vat8" parent="Acid Vat Node" unique_id=1502765090 instance=ExtResource("10_t7v2y")]
@@ -203,7 +203,7 @@ position = Vector2(461.00006, 408)
 rotation = -3.1415925
 
 [node name="Acid vat10" parent="Acid Vat Node" unique_id=816581767 instance=ExtResource("10_t7v2y")]
-position = Vector2(1485, 1246)
+position = Vector2(1486.0001, 1251)
 
 [node name="Acid vat11" parent="Acid Vat Node" unique_id=1582837731 instance=ExtResource("10_t7v2y")]
 position = Vector2(102, 1255)

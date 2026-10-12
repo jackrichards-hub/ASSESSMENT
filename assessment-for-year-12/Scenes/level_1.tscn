@@ -75,7 +75,7 @@ tile_set = SubResource("TileSet_xfk5q")
 position = Vector2(31, 208)
 
 [node name="Enemy" parent="." unique_id=2083891825 instance=ExtResource("6_evi0p")]
-position = Vector2(473, 1147)
+position = Vector2(475, 1161)
 
 [node name="Elevator" parent="." unique_id=1501527127 instance=ExtResource("6_wrinw")]
 position = Vector2(2161, 33.999996)
@@ -175,20 +175,20 @@ position = Vector2(546, 189)
 position = Vector2(1045, 802)
 
 [node name="Acid vat2" parent="Acid Vat Node" unique_id=1421529117 instance=ExtResource("10_chwpn")]
-position = Vector2(653, 800)
+position = Vector2(654, 803)
 
 [node name="Acid vat3" parent="Acid Vat Node" unique_id=700141516 instance=ExtResource("10_chwpn")]
-position = Vector2(320, 799)
+position = Vector2(320, 805)
 
 [node name="Acid vat4" parent="Acid Vat Node" unique_id=1335635105 instance=ExtResource("10_chwpn")]
 position = Vector2(-73, 801)
 
 [node name="Acid vat5" parent="Acid Vat Node" unique_id=1209823204 instance=ExtResource("10_chwpn")]
-position = Vector2(527, 610)
+position = Vector2(526, 603.00006)
 rotation = -3.1415925
 
 [node name="Acid vat6" parent="Acid Vat Node" unique_id=287489759 instance=ExtResource("10_chwpn")]
-position = Vector2(790.00006, 608)
+position = Vector2(780, 606.00006)
 rotation = -3.1415925
 
 [node name="Acid vat7" parent="Acid Vat Node" unique_id=120458737 instance=ExtResource("10_chwpn")]

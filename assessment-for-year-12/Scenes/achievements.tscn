@@ -1,6 +1,234 @@
 [gd_scene format=3 uid="uid://driupamdf7o0j"]
 
 [ext_resource type="Script" uid="uid://q03tgujraqbp" path="res://Scripts/achievements.gd" id="1_7xtne"]
+[ext_resource type="Texture2D" uid="uid://cx5guk236xqge" path="res://Assets/Achievements (V3).png" id="2_frbbq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frbbq"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(192, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uik63"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g04om"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcp42"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38hx6"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4rvt"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypges"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbeki"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(192, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qajii"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ncvy"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsebr"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24bfi"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihs1y"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(128, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dtim"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(160, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_223aj"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(192, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdr4g"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv35e"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p4bk"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40rae"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(96, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s66t"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(128, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0eco"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(160, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so2fp"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(192, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpwh6"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjll6"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77hbw"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgvlu"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru65y"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(128, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_elwlk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frbbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uik63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g04om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcp42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38hx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4rvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypges")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbeki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qajii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ncvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsebr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24bfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihs1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dtim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_223aj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdr4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uv35e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p4bk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40rae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s66t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0eco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so2fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpwh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjll6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77hbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgvlu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru65y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 19.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_did3i"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ywsg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_did3i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m5au"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uik63"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m5au")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Achievements" type="Control" unique_id=192996801]
 layout_mode = 3
@@ -41,11 +269,35 @@ theme_override_constants/separation = 110
 [node name="Level1" type="HBoxContainer" parent="Achievement list" unique_id=1648204468]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Achievement list/Level1" unique_id=41349707]
+[node name="Level 1 label" type="Label" parent="Achievement list/Level1" unique_id=41349707]
 layout_mode = 2
 text = "Level 1"
 
-[node name="level130" type="Panel" parent="Achievement list/Level1/Label" unique_id=565455950]
+[node name="30" type="Label" parent="Achievement list/Level1/Level 1 label" unique_id=852966752]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 106.0
+offset_right = 113.0
+offset_bottom = 129.0
+text = "30"
+
+[node name="60" type="Label" parent="Achievement list/Level1/Level 1 label" unique_id=848723466]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 107.0
+offset_right = 251.0
+offset_bottom = 130.0
+text = "60"
+
+[node name="120" type="Label" parent="Achievement list/Level1/Level 1 label" unique_id=395520151]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 105.0
+offset_right = 379.0
+offset_bottom = 128.0
+text = "120"
+
+[node name="level130" type="Panel" parent="Achievement list/Level1/Level 1 label" unique_id=565455950]
 visible = false
 layout_mode = 0
 offset_left = 17.0
@@ -53,54 +305,71 @@ offset_top = 24.0
 offset_right = 121.0
 offset_bottom = 105.0
 
-[node name="Label" type="Label" parent="Achievement list/Level1/Label/level130" unique_id=852966752]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 82.0
-offset_right = 96.0
-offset_bottom = 105.0
-text = "30"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Level1/Level 1 label/level130" unique_id=119197225]
+position = Vector2(52.250015, 42.50001)
+scale = Vector2(3.296876, 2.4687502)
+sprite_frames = SubResource("SpriteFrames_elwlk")
+autoplay = "default"
+frame_progress = 0.541923
 
-[node name="level160" type="Panel" parent="Achievement list/Level1/Label" unique_id=1738155955]
+[node name="level160" type="Panel" parent="Achievement list/Level1/Level 1 label" unique_id=1738155955]
 visible = false
 layout_mode = 0
-offset_left = 145.0
-offset_top = 26.0
-offset_right = 264.0
-offset_bottom = 101.0
+offset_left = 169.0
+offset_top = 24.0
+offset_right = 263.0
+offset_bottom = 107.0
 
-[node name="Label" type="Label" parent="Achievement list/Level1/Label/level160" unique_id=848723466]
-layout_mode = 0
-offset_left = 49.0
-offset_top = 78.0
-offset_right = 89.0
-offset_bottom = 101.0
-text = "60"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Level1/Level 1 label/level160" unique_id=777963813]
+position = Vector2(52.156254, 40.125)
+scale = Vector2(3.0527346, 2.4453125)
+sprite_frames = SubResource("SpriteFrames_2ywsg")
 
-[node name="level1120" type="Panel" parent="Achievement list/Level1/Label" unique_id=1924481669]
+[node name="level1120" type="Panel" parent="Achievement list/Level1/Level 1 label" unique_id=1924481669]
 visible = false
 layout_mode = 0
-offset_left = 303.0
-offset_top = 25.0
-offset_right = 434.0
-offset_bottom = 99.0
+offset_left = 310.0
+offset_top = 34.0
+offset_right = 396.0
+offset_bottom = 110.0
 
-[node name="Label" type="Label" parent="Achievement list/Level1/Label/level1120" unique_id=395520151]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 83.0
-offset_right = 89.0
-offset_bottom = 106.0
-text = "120"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Level1/Level 1 label/level1120" unique_id=468329354]
+position = Vector2(55.43751, 34.51562)
+scale = Vector2(3.0976565, 2.4697263)
+sprite_frames = SubResource("SpriteFrames_uik63")
 
 [node name="Level2" type="HBoxContainer" parent="Achievement list" unique_id=1918247071]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Achievement list/Level2" unique_id=10914249]
+[node name="Level 2 label" type="Label" parent="Achievement list/Level2" unique_id=10914249]
 layout_mode = 2
 text = "Level 2"
 
-[node name="level230" type="Panel" parent="Achievement list/Level2/Label" unique_id=1657041521]
+[node name="40" type="Label" parent="Achievement list/Level2/Level 2 label" unique_id=556896432]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 125.0
+offset_right = 106.0
+offset_bottom = 148.0
+text = "40"
+
+[node name="80" type="Label" parent="Achievement list/Level2/Level 2 label" unique_id=267368628]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 123.0
+offset_right = 251.0
+offset_bottom = 146.0
+text = "80"
+
+[node name="120" type="Label" parent="Achievement list/Level2/Level 2 label" unique_id=1640794749]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 125.0
+offset_right = 391.0
+offset_bottom = 148.0
+text = "120"
+
+[node name="level240" type="Panel" parent="Achievement list/Level2/Level 2 label" unique_id=1657041521]
 visible = false
 layout_mode = 0
 offset_left = 24.0
@@ -108,100 +377,110 @@ offset_top = 47.0
 offset_right = 120.0
 offset_bottom = 120.0
 
-[node name="Label" type="Label" parent="Achievement list/Level2/Label/level230" unique_id=556896432]
-layout_mode = 0
-offset_left = 37.0
-offset_top = 73.0
-offset_right = 77.0
-offset_bottom = 96.0
-text = "30"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Level2/Level 2 label/level240" unique_id=2030923884]
+position = Vector2(50.000015, 29.000008)
+scale = Vector2(3.156251, 2.6875)
+sprite_frames = SubResource("SpriteFrames_elwlk")
+autoplay = "default"
+frame_progress = 0.5870083
 
-[node name="level260" type="Panel" parent="Achievement list/Level2/Label" unique_id=1914164643]
+[node name="level280" type="Panel" parent="Achievement list/Level2/Level 2 label" unique_id=1914164643]
 visible = false
 layout_mode = 0
-offset_left = 154.0
-offset_top = 48.0
-offset_right = 274.0
-offset_bottom = 119.0
+offset_left = 172.0
+offset_top = 34.0
+offset_right = 271.0
+offset_bottom = 124.0
 
-[node name="Label" type="Label" parent="Achievement list/Level2/Label/level260" unique_id=267368628]
-layout_mode = 0
-offset_left = 45.0
-offset_top = 73.0
-offset_right = 85.0
-offset_bottom = 96.0
-text = "60"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Level2/Level 2 label/level280" unique_id=1239778389]
+position = Vector2(48.999992, 44)
+scale = Vector2(2.9179683, 2.59375)
+sprite_frames = SubResource("SpriteFrames_2ywsg")
 
-[node name="level2120" type="Panel" parent="Achievement list/Level2/Label" unique_id=1262673649]
+[node name="level2120" type="Panel" parent="Achievement list/Level2/Level 2 label" unique_id=1262673649]
 visible = false
 layout_mode = 0
 offset_left = 315.0
-offset_top = 47.0
-offset_right = 431.0
-offset_bottom = 118.0
+offset_top = 31.0
+offset_right = 417.0
+offset_bottom = 125.0
 
-[node name="Label" type="Label" parent="Achievement list/Level2/Label/level2120" unique_id=1640794749]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 74.0
-offset_right = 84.0
-offset_bottom = 97.0
-text = "120"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Level2/Level 2 label/level2120" unique_id=1132215968]
+position = Vector2(47.374996, 46.96876)
+scale = Vector2(3.101562, 2.501953)
+sprite_frames = SubResource("SpriteFrames_uik63")
 
 [node name="Level3" type="HBoxContainer" parent="Achievement list" unique_id=1940926809]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Achievement list/Level3" unique_id=2062964588]
+[node name="Level 3 label" type="Label" parent="Achievement list/Level3" unique_id=2062964588]
 layout_mode = 2
 text = "Level 3"
 
-[node name="level350" type="Panel" parent="Achievement list/Level3/Label" unique_id=2042835405]
+[node name="50" type="Label" parent="Achievement list/Level3/Level 3 label" unique_id=1816491917]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 114.0
+offset_right = 103.0
+offset_bottom = 137.0
+text = "50"
+
+[node name="100" type="Label" parent="Achievement list/Level3/Level 3 label" unique_id=1634843213]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 115.0
+offset_right = 249.0
+offset_bottom = 138.0
+text = "100"
+
+[node name="150" type="Label" parent="Achievement list/Level3/Level 3 label" unique_id=551148360]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 119.0
+offset_right = 393.0
+offset_bottom = 142.0
+text = "150"
+
+[node name="level350" type="Panel" parent="Achievement list/Level3/Level 3 label" unique_id=2042835405]
 visible = false
 layout_mode = 0
-offset_left = 10.0
-offset_top = 29.0
-offset_right = 136.0
-offset_bottom = 109.0
-
-[node name="Label" type="Label" parent="Achievement list/Level3/Label/level350" unique_id=1816491917]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 79.0
-offset_right = 84.0
-offset_bottom = 102.0
-text = "30"
-
-[node name="level3100" type="Panel" parent="Achievement list/Level3/Label" unique_id=210560289]
-visible = false
-layout_mode = 0
-offset_left = 173.0
-offset_top = 29.0
-offset_right = 292.0
-offset_bottom = 109.0
-
-[node name="Label" type="Label" parent="Achievement list/Level3/Label/level3100" unique_id=1634843213]
-layout_mode = 0
-offset_left = 47.0
-offset_top = 81.0
-offset_right = 87.0
-offset_bottom = 104.0
-text = "60"
-
-[node name="level3150" type="Panel" parent="Achievement list/Level3/Label" unique_id=2024487299]
-visible = false
-layout_mode = 0
-offset_left = 314.0
+offset_left = 28.0
 offset_top = 31.0
-offset_right = 425.0
-offset_bottom = 111.0
+offset_right = 123.0
+offset_bottom = 113.0
 
-[node name="Label" type="Label" parent="Achievement list/Level3/Label/level3150" unique_id=551148360]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Level3/Level 3 label/level350" unique_id=930512075]
+position = Vector2(49.000015, 44)
+scale = Vector2(3.156251, 2.6875)
+sprite_frames = SubResource("SpriteFrames_elwlk")
+autoplay = "default"
+frame_progress = 0.8126223
+
+[node name="level3100" type="Panel" parent="Achievement list/Level3/Level 3 label" unique_id=210560289]
+visible = false
 layout_mode = 0
-offset_left = 40.0
-offset_top = 83.0
-offset_right = 80.0
-offset_bottom = 106.0
-text = "120"
+offset_left = 175.0
+offset_top = 22.0
+offset_right = 271.0
+offset_bottom = 114.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Level3/Level 3 label/level3100" unique_id=1281271786]
+position = Vector2(48, 50)
+scale = Vector2(2.9179683, 2.59375)
+sprite_frames = SubResource("SpriteFrames_2ywsg")
+
+[node name="level3150" type="Panel" parent="Achievement list/Level3/Level 3 label" unique_id=2024487299]
+visible = false
+layout_mode = 0
+offset_left = 315.0
+offset_top = 22.0
+offset_right = 414.0
+offset_bottom = 118.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Level3/Level 3 label/level3150" unique_id=1139846926]
+position = Vector2(50, 50.00001)
+scale = Vector2(3.1406245, 2.628906)
+sprite_frames = SubResource("SpriteFrames_uik63")
 
 [node name="Miscellaneous" type="HBoxContainer" parent="Achievement list" unique_id=1534744464]
 layout_mode = 2
