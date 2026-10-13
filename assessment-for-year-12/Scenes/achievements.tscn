@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cx5guk236xqge" path="res://Assets/Achievements (V3).png" id="2_frbbq"]
 [ext_resource type="Texture2D" uid="uid://cfuetfkcl6b37" path="res://Assets/Achievements Menu-1.png.png" id="2_uik63"]
 [ext_resource type="Texture2D" uid="uid://bplmf2ry538l3" path="res://Assets/100 Deaths Achievement-1.png.png" id="3_3m5au"]
+[ext_resource type="FontFile" uid="uid://bbb1io4w1jjdy" path="res://Assets/green_matcha font/Green Matcha.otf" id="3_bcp42"]
+[ext_resource type="FontFile" uid="uid://dsqutlgufwmc7" path="res://Assets/akira_expanded/Akira Expanded Demo.otf" id="4_38hx6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g04om"]
 texture = ExtResource("2_uik63")
@@ -364,11 +366,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -218.0
-offset_right = 218.0
-offset_bottom = 89.0
+offset_left = -198.0
+offset_top = 21.0
+offset_right = 327.0
+offset_bottom = 99.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 64
+theme_override_fonts/font = ExtResource("3_bcp42")
+theme_override_font_sizes/font_size = 50
 text = "Achievements"
 
 [node name="Achievement menu" type="Panel" parent="." unique_id=1761151989]
@@ -391,6 +395,7 @@ layout_mode = 2
 
 [node name="Level 1 label" type="Label" parent="Achievement list/Level1" unique_id=41349707]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_38hx6")
 text = "Level 1"
 
 [node name="30" type="Label" parent="Achievement list/Level1/Level 1 label" unique_id=852966752]
@@ -463,43 +468,44 @@ layout_mode = 2
 
 [node name="Level 2 label" type="Label" parent="Achievement list/Level2" unique_id=10914249]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_38hx6")
 text = "Level 2"
 
 [node name="40" type="Label" parent="Achievement list/Level2/Level 2 label" unique_id=556896432]
 layout_mode = 0
-offset_left = 66.0
-offset_top = 125.0
-offset_right = 106.0
-offset_bottom = 148.0
+offset_left = 55.0
+offset_top = 104.0
+offset_right = 95.0
+offset_bottom = 127.0
 text = "40"
 
 [node name="80" type="Label" parent="Achievement list/Level2/Level 2 label" unique_id=267368628]
 layout_mode = 0
-offset_left = 211.0
-offset_top = 123.0
-offset_right = 251.0
-offset_bottom = 146.0
+offset_left = 204.0
+offset_top = 109.0
+offset_right = 244.0
+offset_bottom = 144.0
 text = "80"
 
 [node name="120" type="Label" parent="Achievement list/Level2/Level 2 label" unique_id=1640794749]
 layout_mode = 0
 offset_left = 351.0
-offset_top = 125.0
+offset_top = 113.0
 offset_right = 391.0
-offset_bottom = 148.0
+offset_bottom = 136.0
 text = "120"
 
 [node name="level240" type="Panel" parent="Achievement list/Level2/Level 2 label" unique_id=1657041521]
 visible = false
 layout_mode = 0
-offset_left = 24.0
-offset_top = 47.0
-offset_right = 120.0
-offset_bottom = 120.0
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 112.0
+offset_bottom = 105.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Level2/Level 2 label/level240" unique_id=2030923884]
-position = Vector2(50.000015, 29.000008)
-scale = Vector2(3.156251, 2.6875)
+position = Vector2(51.000015, 35.00002)
+scale = Vector2(2.640626, 2.1874998)
 sprite_frames = SubResource("SpriteFrames_elwlk")
 autoplay = "default"
 frame_progress = 0.5870083
@@ -509,24 +515,24 @@ visible = false
 layout_mode = 0
 offset_left = 172.0
 offset_top = 34.0
-offset_right = 271.0
-offset_bottom = 124.0
+offset_right = 268.0
+offset_bottom = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Level2/Level 2 label/level280" unique_id=1239778389]
-position = Vector2(48.999992, 44)
-scale = Vector2(2.9179683, 2.59375)
+position = Vector2(43.32813, 31.875)
+scale = Vector2(2.6669924, 2.1796875)
 sprite_frames = SubResource("SpriteFrames_2ywsg")
 
 [node name="level2120" type="Panel" parent="Achievement list/Level2/Level 2 label" unique_id=1262673649]
 visible = false
 layout_mode = 0
-offset_left = 315.0
+offset_left = 316.0
 offset_top = 31.0
-offset_right = 417.0
-offset_bottom = 125.0
+offset_right = 410.0
+offset_bottom = 113.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Level2/Level 2 label/level2120" unique_id=1132215968]
-position = Vector2(47.374996, 46.96876)
+position = Vector2(46.999996, 37.00001)
 scale = Vector2(3.101562, 2.501953)
 sprite_frames = SubResource("SpriteFrames_uik63")
 
@@ -535,30 +541,31 @@ layout_mode = 2
 
 [node name="Level 3 label" type="Label" parent="Achievement list/Level3" unique_id=2062964588]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_38hx6")
 text = "Level 3"
 
 [node name="50" type="Label" parent="Achievement list/Level3/Level 3 label" unique_id=1816491917]
 layout_mode = 0
-offset_left = 63.0
-offset_top = 114.0
-offset_right = 103.0
-offset_bottom = 137.0
+offset_left = 62.0
+offset_top = 107.0
+offset_right = 102.0
+offset_bottom = 130.0
 text = "50"
 
 [node name="100" type="Label" parent="Achievement list/Level3/Level 3 label" unique_id=1634843213]
 layout_mode = 0
-offset_left = 209.0
-offset_top = 115.0
-offset_right = 249.0
-offset_bottom = 138.0
+offset_left = 207.0
+offset_top = 110.0
+offset_right = 247.0
+offset_bottom = 133.0
 text = "100"
 
 [node name="150" type="Label" parent="Achievement list/Level3/Level 3 label" unique_id=551148360]
 layout_mode = 0
 offset_left = 353.0
-offset_top = 119.0
+offset_top = 109.0
 offset_right = 393.0
-offset_bottom = 142.0
+offset_bottom = 132.0
 text = "150"
 
 [node name="level350" type="Panel" parent="Achievement list/Level3/Level 3 label" unique_id=2042835405]
@@ -570,8 +577,8 @@ offset_right = 123.0
 offset_bottom = 113.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Level3/Level 3 label/level350" unique_id=930512075]
-position = Vector2(49.000015, 44)
-scale = Vector2(3.156251, 2.6875)
+position = Vector2(44.25001, 36)
+scale = Vector2(2.8593757, 2.4375)
 sprite_frames = SubResource("SpriteFrames_elwlk")
 autoplay = "default"
 frame_progress = 0.8126223
@@ -585,8 +592,8 @@ offset_right = 271.0
 offset_bottom = 114.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Level3/Level 3 label/level3100" unique_id=1281271786]
-position = Vector2(48, 50)
-scale = Vector2(2.9179683, 2.59375)
+position = Vector2(49.15624, 43.750015)
+scale = Vector2(2.9277332, 2.234374)
 sprite_frames = SubResource("SpriteFrames_2ywsg")
 
 [node name="level3150" type="Panel" parent="Achievement list/Level3/Level 3 label" unique_id=2024487299]
@@ -598,8 +605,8 @@ offset_right = 414.0
 offset_bottom = 118.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Level3/Level 3 label/level3150" unique_id=1139846926]
-position = Vector2(50, 50.00001)
-scale = Vector2(3.1406245, 2.628906)
+position = Vector2(49.375, 43.00002)
+scale = Vector2(3.101562, 2.3750002)
 sprite_frames = SubResource("SpriteFrames_uik63")
 
 [node name="Miscellaneous" type="HBoxContainer" parent="Achievement list" unique_id=1534744464]
@@ -607,6 +614,7 @@ layout_mode = 2
 
 [node name="Miscellaneous label" type="Label" parent="Achievement list/Miscellaneous" unique_id=1483909276]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_38hx6")
 text = "Miscellaneous"
 
 [node name="100 deaths" type="Label" parent="Achievement list/Miscellaneous/Miscellaneous label" unique_id=347043852]
