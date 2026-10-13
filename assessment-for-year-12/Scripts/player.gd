@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @onready var animation : AnimatedSprite2D = $AnimatedSprite2D
 @onready var sprint_again_timer: Timer = $dash_cooldown
-@onready var Progress_Dash_Cooldown_Bar: ProgressBar = $"../UI layer/UI/Visual Dash Cooldown"
+@onready var Progress_Dash_Cooldown_Bar: ProgressBar = $"UI/Visual Dash Cooldown"
 @onready var jumpsound: AudioStreamPlayer2D = $jumpsound
 
 const SPEED = 300.0
@@ -19,9 +19,11 @@ var jump_count = 0
 var start_position = Vector2(31,182)
 var battery_count = 0
 signal collected(count)
+static var death_count = 0
 
 func _physics_process(delta: float) -> void:
-	Progress_Dash_Cooldown_Bar.visible = false
+	if $dash_cooldown.time_left > 0:
+		Progress_Dash_Cooldown_Bar.value = ($dash_cooldown.time_left / $dash_cooldown.wait_time) * 100.0
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -92,14 +94,19 @@ func wall_slide(delta):
 		velocity.y += (wall_slide_gravity * delta)
 		velocity.y = min(velocity.y, wall_slide_gravity)
 
-#This is for respawning which resets the battery and the level
+#This is for respawning which resets the battery and level and adds 1 to the deathcount which is for achievements
 func respawn():
 	position = start_position
 	battery_count = 0
 	collected.emit(battery_count)
+	Player.death_count += 1
+	print(death_count)
 	get_tree().call_group("lasers", "queue_free")
 	get_tree().reload_current_scene()
 	
+#When the player spawns in make the progress dash cooldown bar invisible. 
+func _ready() -> void:
+	Progress_Dash_Cooldown_Bar.visible = false
 	
 #This stops the dash
 func _on_dash_timer_timeout() -> void:
@@ -107,13 +114,17 @@ func _on_dash_timer_timeout() -> void:
 	print("Dash ended")
 	dashing = false
 	$dash_cooldown.start()
+	#This makes the player able to see the dash cooldown bar
 	Progress_Dash_Cooldown_Bar.visible = true
+	#Starts at 100 and counts down to 0 in a second based of dash_timer
+	Progress_Dash_Cooldown_Bar.value = 100
 	
 	
 #This is the cooldown between dashing
 func _on_dash_cooldown_timeout() -> void:
 	#for when the dashing cooldown ends the player can dash again
 	can_dash = true
+	#makes the progress bar for cooldown disappear as the player can dash again
 	Progress_Dash_Cooldown_Bar.visible = false
 	
 #This is for the collecting of batteries

@@ -286,7 +286,7 @@ offset_bottom = 87.0
 theme_override_font_sizes/font_size = 20
 text = "This game was created by Jack and Josh"
 
-[node name="Label" type="Label" parent="Credits/Credits label" unique_id=310524224]
+[node name="Music cred" type="Label" parent="Credits/Credits label" unique_id=310524224]
 layout_mode = 0
 offset_left = -94.5
 offset_top = 113.0
@@ -297,14 +297,14 @@ text = "Music Credits:\"Jammin Bread\"
  by Casa Rosa
 Licensed via the YouTube Audio Library"
 
-[node name="Label2" type="Label" parent="Credits/Credits label" unique_id=1270330795]
+[node name="Thank you" type="Label" parent="Credits/Credits label" unique_id=1270330795]
 layout_mode = 0
-offset_left = -152.85303
-offset_top = 235.0
-offset_right = 349.14697
-offset_bottom = 310.0
+offset_left = -154.85303
+offset_top = 232.0
+offset_right = 364.14697
+offset_bottom = 313.0
 text = "Thank you to Godot for suppling the game development software
-Thank you Github for allowing easy development
+Thank you Github for allowing easy development across platforms
 Thank you Itch.io for supplying a platform to upload this game"
 
 [connection signal="pressed" from="MainButtons/Levels" to="." method="_on_start_pressed"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://q03tgujraqbp" path="res://Scripts/achievements.gd" id="1_7xtne"]
 [ext_resource type="Texture2D" uid="uid://cx5guk236xqge" path="res://Assets/Achievements (V3).png" id="2_frbbq"]
+[ext_resource type="Texture2D" uid="uid://bplmf2ry538l3" path="res://Assets/100 Deaths Achievement-1.png.png" id="3_3m5au"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_frbbq"]
 atlas = ExtResource("2_frbbq")
@@ -224,6 +225,113 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3m5au")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elwlk"]
+atlas = ExtResource("3_3m5au")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_did3i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elwlk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ywsg"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pivqk"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7wey"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtvsj"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjrb8"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pncmh"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44mxq"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wb3mj"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo5ld"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vf1yt"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td0i5"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfp1v"]
+atlas = ExtResource("2_frbbq")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dfd0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ywsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pivqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7wey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtvsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjrb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pncmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44mxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wb3mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo5ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vf1yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td0i5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfp1v")
 }],
 "loop": true,
 "name": &"default",
@@ -485,39 +593,53 @@ sprite_frames = SubResource("SpriteFrames_uik63")
 [node name="Miscellaneous" type="HBoxContainer" parent="Achievement list" unique_id=1534744464]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Achievement list/Miscellaneous" unique_id=1483909276]
+[node name="Miscellaneous label" type="Label" parent="Achievement list/Miscellaneous" unique_id=1483909276]
 layout_mode = 2
 text = "Miscellaneous"
 
-[node name="miscdeath" type="Panel" parent="Achievement list/Miscellaneous/Label" unique_id=2139213945]
+[node name="100 deaths" type="Label" parent="Achievement list/Miscellaneous/Miscellaneous label" unique_id=347043852]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 105.0
+offset_right = 179.0
+offset_bottom = 128.0
+text = "100 deaths"
+
+[node name="?????? label" type="Label" parent="Achievement list/Miscellaneous/Miscellaneous label" unique_id=2141141590]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 109.0
+offset_right = 355.0
+offset_bottom = 132.0
+text = "?????"
+
+[node name="miscdeath" type="Panel" parent="Achievement list/Miscellaneous/Miscellaneous label" unique_id=2139213945]
+visible = false
 layout_mode = 0
 offset_left = 90.0
 offset_top = 30.0
 offset_right = 180.0
 offset_bottom = 105.0
 
-[node name="Label" type="Label" parent="Achievement list/Miscellaneous/Label/miscdeath" unique_id=347043852]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 75.0
-offset_right = 89.0
-offset_bottom = 98.0
-text = "100 deaths"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Miscellaneous/Miscellaneous label/miscdeath" unique_id=929013639]
+position = Vector2(45.500008, 37.500027)
+scale = Vector2(2.8437505, 2.2812507)
+sprite_frames = SubResource("SpriteFrames_did3i")
 
-[node name="miscsecret" type="Panel" parent="Achievement list/Miscellaneous/Label" unique_id=759821597]
+[node name="miscsecret" type="Panel" parent="Achievement list/Miscellaneous/Miscellaneous label" unique_id=759821597]
+visible = false
 layout_mode = 0
-offset_left = 300.0
+offset_left = 283.0
 offset_top = 31.0
 offset_right = 375.0
-offset_bottom = 100.0
+offset_bottom = 112.0
 
-[node name="Label" type="Label" parent="Achievement list/Miscellaneous/Label/miscsecret" unique_id=2141141590]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 73.0
-offset_right = 60.0
-offset_bottom = 96.0
-text = "?????"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Achievement list/Miscellaneous/Miscellaneous label/miscsecret" unique_id=1566138796]
+position = Vector2(48.000004, 39.999996)
+scale = Vector2(2.7968752, 2.4999998)
+sprite_frames = SubResource("SpriteFrames_dfd0s")
+autoplay = "default"
+frame_progress = 0.6738699
 
 [node name="Button" type="Button" parent="Achievement list" unique_id=1052334495]
 layout_mode = 2

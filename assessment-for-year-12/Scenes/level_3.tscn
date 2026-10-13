@@ -125,14 +125,6 @@ offset_right = 437.0
 offset_bottom = 7.0
 grow_vertical = 1
 
-[node name="Visual Dash Cooldown" type="ProgressBar" parent="UI layer/UI" unique_id=1194334179]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 94.0
-offset_right = 63.0
-offset_bottom = 122.0
-step = 1.0
-
 [node name="Battery Node" type="Node" parent="." unique_id=1913028865]
 
 [node name="Battery2" parent="Battery Node" unique_id=1292440501 instance=ExtResource("9_nbwsh")]
