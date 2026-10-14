@@ -13,7 +13,6 @@ extends Control
 @onready var miscdeath: Panel = $"Achievement list/Miscellaneous/Miscellaneous label/miscdeath"
 @onready var miscsecret: Panel = $"Achievement list/Miscellaneous/Miscellaneous label/miscsecret"
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Connects the t variables to each individual levels winning time as to then be able to unlock achievements
@@ -25,7 +24,6 @@ func _ready() -> void:
 		level130.visible = t1 <= 30
 		level160.visible = t1 <= 60
 		level1120.visible = t1 <= 120
-		
 	if t2 > 0:
 		#For level 2 achievements
 		level230.visible = t2 <= 40
