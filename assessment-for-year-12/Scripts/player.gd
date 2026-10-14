@@ -17,7 +17,7 @@ var is_wall_sliding = false
 #for dashing
 var dashing = false
 var can_dash = true
-#also for wall jumping (when jump_count reaches 2 wall jump cannot occur)
+#for double jump (when jump_count reaches 2 double jump cannot go again)
 var jump_count = 0
 #for respawn
 var start_position = Vector2(31,182)
