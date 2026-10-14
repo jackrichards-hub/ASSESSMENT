@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bwm44aoc1fc51" path="res://Assets/Scientist (Updated) (1).png" id="1_743eh"]
 [ext_resource type="Script" uid="uid://cmfncosdv2flb" path="res://Scripts/player.gd" id="1_bmk3q"]
-[ext_resource type="AudioStream" uid="uid://d1w6xkge4beek" path="res://Assets/Jump Sound Effect.mp3" id="6_eksx6"]
+[ext_resource type="AudioStream" uid="uid://cbpmftttm07fm" path="res://Assets/JumpSoundEffect.mp3" id="3_dgdwv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmk3q"]
 radius = 27.0
@@ -194,7 +194,7 @@ offset_right = -384.0
 offset_bottom = -67.0
 
 [node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=1272600929]
-stream = ExtResource("6_eksx6")
+stream = ExtResource("3_dgdwv")
 bus = &"SFX"
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
