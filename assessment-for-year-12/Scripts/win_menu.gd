@@ -1,7 +1,7 @@
 extends Control
 
 
-
+#this is the winning menu when you have entered an elevator
 
 
 func _on_button_pressed() -> void:

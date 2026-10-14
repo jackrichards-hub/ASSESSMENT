@@ -1,5 +1,6 @@
 extends Control
 
+#each button clicked on the level menu takes it to its respective level
 
 func _on_tutorial_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/tutorial.tscn")

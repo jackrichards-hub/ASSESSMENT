@@ -163,7 +163,7 @@ position = Vector2(486, 212)
 [node name="Acid Vat Node" type="Node" parent="." unique_id=1924081209]
 
 [node name="Acid vat" parent="Acid Vat Node" unique_id=1120354465 instance=ExtResource("10_t7v2y")]
-position = Vector2(300, 225)
+position = Vector2(284, 231.00002)
 
 [node name="Acid vat2" parent="Acid Vat Node" unique_id=358043905 instance=ExtResource("10_t7v2y")]
 position = Vector2(706.00006, 227)

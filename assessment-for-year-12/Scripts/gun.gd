@@ -1,9 +1,10 @@
 extends Node2D
 
+#variable for making it so gun can shoot lasers
 var laser_prefab = preload("res://Sprites/laser.tscn")
-
 var num_bullets = 1
 
+#timer for cooldown between shooting
 func _on_timer_timeout() -> void:
 	#call the spawn laser
 	shoot()
@@ -24,5 +25,5 @@ func shoot():
 	var direction = Vector2.RIGHT
 	
 	for i in range(num_bullets):
-		#spawn a bullet
+		#spawn a laser
 		spawn_laser(direction)

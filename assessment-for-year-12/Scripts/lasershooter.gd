@@ -4,6 +4,7 @@ var laser_prefab = preload("res://Sprites/laser.tscn")
 
 var num_bullets = 1
 
+#timer for cooldown between laser shots
 func _on_timer_timeout() -> void:
 	#call the spawn laser
 	shoot()
@@ -22,9 +23,6 @@ func spawn_laser(direction : Vector2):
 	
 func shoot():
 	var direction = Vector2.RIGHT
-	#var step = 2*PI / num_bullets
 	for i in range(num_bullets):
 		#spawn a bullet
 		spawn_laser(direction)
-		#rotate direction
-		#direction = direction.rotated(step)

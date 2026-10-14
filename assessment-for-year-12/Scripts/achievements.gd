@@ -14,7 +14,6 @@ extends Control
 @onready var miscsecret: Panel = $"Achievement list/Miscellaneous/Miscellaneous label/miscsecret"
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Connects the t variables to each individual levels winning time as to then be able to unlock achievements
@@ -26,6 +25,7 @@ func _ready() -> void:
 		level130.visible = t1 <= 30
 		level160.visible = t1 <= 60
 		level1120.visible = t1 <= 120
+		
 	if t2 > 0:
 		#For level 2 achievements
 		level230.visible = t2 <= 40
@@ -36,9 +36,12 @@ func _ready() -> void:
 		level350.visible = t3 <= 50
 		level3100.visible = t3 <= 100
 		level3150.visible = t3 <= 150
+		#When players death count reaches 100 or over the death achievement is unlocked
 	if Player.death_count >= 100:
 		miscdeath.visible = true
-
+		#when a secret battery on level 3 is collected the secret achievement is unlocked
+	if Player.secret_achievement == true:
+		miscsecret.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

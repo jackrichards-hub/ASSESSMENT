@@ -400,27 +400,27 @@ text = "Level 1"
 
 [node name="30" type="Label" parent="Achievement list/Level1/Level 1 label" unique_id=852966752]
 layout_mode = 0
-offset_left = 53.0
+offset_left = 31.0
 offset_top = 106.0
-offset_right = 113.0
+offset_right = 117.0
 offset_bottom = 129.0
-text = "30"
+text = "30 seconds"
 
 [node name="60" type="Label" parent="Achievement list/Level1/Level 1 label" unique_id=848723466]
 layout_mode = 0
-offset_left = 211.0
-offset_top = 107.0
-offset_right = 251.0
-offset_bottom = 130.0
-text = "60"
+offset_left = 186.0
+offset_top = 106.0
+offset_right = 272.0
+offset_bottom = 129.0
+text = "60 seconds"
 
 [node name="120" type="Label" parent="Achievement list/Level1/Level 1 label" unique_id=395520151]
 layout_mode = 0
-offset_left = 340.0
-offset_top = 105.0
-offset_right = 379.0
-offset_bottom = 128.0
-text = "120"
+offset_left = 328.0
+offset_top = 107.0
+offset_right = 423.0
+offset_bottom = 130.0
+text = "120 seconds"
 
 [node name="level130" type="Panel" parent="Achievement list/Level1/Level 1 label" unique_id=565455950]
 visible = false
@@ -473,27 +473,27 @@ text = "Level 2"
 
 [node name="40" type="Label" parent="Achievement list/Level2/Level 2 label" unique_id=556896432]
 layout_mode = 0
-offset_left = 55.0
-offset_top = 104.0
-offset_right = 95.0
-offset_bottom = 127.0
-text = "40"
+offset_left = 30.0
+offset_top = 105.0
+offset_right = 116.0
+offset_bottom = 128.0
+text = "40 seconds"
 
 [node name="80" type="Label" parent="Achievement list/Level2/Level 2 label" unique_id=267368628]
 layout_mode = 0
-offset_left = 204.0
-offset_top = 109.0
-offset_right = 244.0
-offset_bottom = 144.0
-text = "80"
+offset_left = 179.0
+offset_top = 103.0
+offset_right = 265.0
+offset_bottom = 138.0
+text = "80 seconds"
 
 [node name="120" type="Label" parent="Achievement list/Level2/Level 2 label" unique_id=1640794749]
 layout_mode = 0
-offset_left = 351.0
-offset_top = 113.0
-offset_right = 391.0
-offset_bottom = 136.0
-text = "120"
+offset_left = 320.0
+offset_top = 109.0
+offset_right = 415.0
+offset_bottom = 132.0
+text = "120 seconds"
 
 [node name="level240" type="Panel" parent="Achievement list/Level2/Level 2 label" unique_id=1657041521]
 visible = false
@@ -546,27 +546,27 @@ text = "Level 3"
 
 [node name="50" type="Label" parent="Achievement list/Level3/Level 3 label" unique_id=1816491917]
 layout_mode = 0
-offset_left = 62.0
-offset_top = 107.0
-offset_right = 102.0
-offset_bottom = 130.0
-text = "50"
+offset_left = 35.0
+offset_top = 108.0
+offset_right = 121.0
+offset_bottom = 131.0
+text = "50 seconds"
 
 [node name="100" type="Label" parent="Achievement list/Level3/Level 3 label" unique_id=1634843213]
 layout_mode = 0
-offset_left = 207.0
+offset_left = 181.0
 offset_top = 110.0
-offset_right = 247.0
+offset_right = 276.0
 offset_bottom = 133.0
-text = "100"
+text = "100 seconds"
 
 [node name="150" type="Label" parent="Achievement list/Level3/Level 3 label" unique_id=551148360]
 layout_mode = 0
-offset_left = 353.0
-offset_top = 109.0
-offset_right = 393.0
-offset_bottom = 132.0
-text = "150"
+offset_left = 322.0
+offset_top = 112.0
+offset_right = 417.0
+offset_bottom = 135.0
+text = "150 seconds"
 
 [node name="level350" type="Panel" parent="Achievement list/Level3/Level 3 label" unique_id=2042835405]
 visible = false

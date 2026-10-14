@@ -10,18 +10,27 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const DASH_SPEED = 900.0
 const gravity = 120
+#for wall jumping
 const wall_jump_pushback = 400
 const wall_slide_gravity = 200
 var is_wall_sliding = false
+#for dashing
 var dashing = false
 var can_dash = true
+#also for wall jumping (when jump_count reaches 2 wall jump cannot occur)
 var jump_count = 0
+#for respawn
 var start_position = Vector2(31,182)
 var battery_count = 0
+#for num of batteries on ui label
 signal collected(count)
+#for achievements
 static var death_count = 0
+static var secret_achievement = false
 
 func _physics_process(delta: float) -> void:
+	#This is for the dash cooldown progress bar, it is connected to a value from 0 min to 100 max
+	#it is basically the rapidly decreasing time divided by the original time
 	if $dash_cooldown.time_left > 0:
 		Progress_Dash_Cooldown_Bar.value = ($dash_cooldown.time_left / $dash_cooldown.wait_time) * 100.0
 	# Add the gravity.
@@ -80,7 +89,8 @@ func _physics_process(delta: float) -> void:
 	else: 
 		animation.play("Jump")
 	
-#This is for wall sliding which helps the wall jumping
+#this is for wall sliding which causes the player to slide down the wall
+#this is part of the wall jumping mechanics
 func wall_slide(delta):
 	if is_on_wall() and !is_on_floor():
 		if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
@@ -94,13 +104,14 @@ func wall_slide(delta):
 		velocity.y += (wall_slide_gravity * delta)
 		velocity.y = min(velocity.y, wall_slide_gravity)
 
-#This is for respawning which resets the battery and level and adds 1 to the deathcount which is for achievements
+#this is for respawning which resets the battery and level and adds 1 to the deathcount which is for achievements
 func respawn():
 	position = start_position
 	battery_count = 0
 	collected.emit(battery_count)
 	Player.death_count += 1
 	print(death_count)
+	#in the laser script it was added to a group so that the entire group can be queued free as opposed to each singular laser
 	get_tree().call_group("lasers", "queue_free")
 	get_tree().reload_current_scene()
 	
@@ -116,11 +127,12 @@ func _on_dash_timer_timeout() -> void:
 	$dash_cooldown.start()
 	#This makes the player able to see the dash cooldown bar
 	Progress_Dash_Cooldown_Bar.visible = true
-	#Starts at 100 and counts down to 0 in a second based of dash_timer
+	#Starts at 100 and counts down to 0 in a second
+	#connected to the dash progress bar mechanics in the physics process at the top
 	Progress_Dash_Cooldown_Bar.value = 100
 	
 	
-#This is the cooldown between dashing
+#this is the cooldown between dashing
 func _on_dash_cooldown_timeout() -> void:
 	#for when the dashing cooldown ends the player can dash again
 	can_dash = true
@@ -149,3 +161,7 @@ func _on_back_to_menu_pressed() -> void:
 func _on_acid_vat_body_entered(body: Node2D) -> void:
 	if body is Player:
 		respawn()
+
+#This is for when secret battery is collected the secret achievement is unlocked
+func _on_battery_area_entered(area: Area2D) -> void:
+	Player.secret_achievement = true

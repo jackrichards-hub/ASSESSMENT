@@ -1,5 +1,7 @@
 extends Node2D
 
+#This code is the same as lasershooter but the direction is left as I was unsure how to do it all in one script
+
 var laser_prefab = preload("res://Sprites/laser.tscn")
 
 var num_bullets = 1
@@ -22,9 +24,6 @@ func spawn_laser(direction : Vector2):
 	
 func shoot():
 	var direction = Vector2.LEFT
-	#var step = 2*PI / num_bullets
 	for i in range(num_bullets):
 		#spawn a bullet
 		spawn_laser(direction)
-		#rotate direction
-		#direction = direction.rotated(step)

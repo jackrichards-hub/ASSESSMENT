@@ -224,6 +224,7 @@ position = Vector2(325, 1069)
 [connection signal="collected" from="Player" to="UI layer/UI/Score label" method="_on_player_collected"]
 [connection signal="body_entered" from="Elevator3" to="." method="_on_elevator_body_entered"]
 [connection signal="pressed" from="UI layer/UI/back to main menu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="area_entered" from="Battery Node/Battery" to="Player" method="_on_battery_area_entered"]
 [connection signal="body_entered" from="Acid Vat Node/Acid vat" to="Player" method="_on_acid_vat_body_entered"]
 [connection signal="body_entered" from="Acid Vat Node/Acid vat2" to="Player" method="_on_acid_vat_body_entered"]
 [connection signal="body_entered" from="Acid Vat Node/Acid vat3" to="Player" method="_on_acid_vat_body_entered"]
